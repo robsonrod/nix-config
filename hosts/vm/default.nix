@@ -6,4 +6,6 @@
       ../../configuration
     ];
 
+   hostname.hostname = "nixos-vm";
+
 }

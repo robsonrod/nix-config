@@ -1,7 +1,22 @@
-{ config, pkgs, inputs, ... }:
+{ config, options, lib, pkgs, ... }:
+
+with lib;
+with lib.types;
+let
+  cfg = config.hostname;
+in
 {
-networking = {
-    hostName = "iracema";
+  options.hostname = {
+    hostname = mkOption {
+      type = str;
+      default = "iracema";
+    };
+  };
+
+  config = {
+
+  networking = {
+    hostName = "${cfg.hostname}";
     networkmanager = {
       enable = true;
       dns = "dnsmasq";
@@ -20,4 +35,6 @@ networking = {
     nm-applet.enable = true;
   };
 
- }
+};
+
+}
