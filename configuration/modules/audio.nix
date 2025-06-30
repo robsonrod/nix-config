@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }:
 {
-services = {
-pulseaudio = { enable = false; };
-pipewire = {
+  services = {
+    pulseaudio = { enable = false; };
+    pipewire = {
       audio.enable = true;
       enable = true;
       alsa.enable = true;
@@ -12,6 +12,6 @@ pipewire = {
       wireplumber.enable = true;
     };
 
-};
+  };
 
 }

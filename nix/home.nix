@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }:
 {
   home.packages = with pkgs; [
@@ -62,7 +61,7 @@
     pipx
 
     # Networking & SSH
-    inetutils  # includes ping, etc.
+    inetutils # includes ping, etc.
     openssh
 
     # Archiving

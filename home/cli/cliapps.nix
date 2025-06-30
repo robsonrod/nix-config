@@ -13,15 +13,15 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-     file
-     grc
-     hwinfo
-     libnotify
-     lshw
-     vivid
-     xdg-utils
-     pinentry
-     dysk
+      file
+      grc
+      hwinfo
+      libnotify
+      lshw
+      vivid
+      xdg-utils
+      pinentry
+      dysk
     ];
 
     programs = {

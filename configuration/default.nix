@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports =
-    [ 
+    [
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/locale.nix

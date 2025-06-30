@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
-users.users.robson = {
+  users.users.robson = {
     isNormalUser = true;
     description = "robson";
     extraGroups = [

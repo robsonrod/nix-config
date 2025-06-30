@@ -14,7 +14,7 @@ in
   };
 
   config = mkIf cfg.enable {
-      home.packages = [ pkgs.tmuxinator ];
+    home.packages = [ pkgs.tmuxinator ];
   };
 
 }

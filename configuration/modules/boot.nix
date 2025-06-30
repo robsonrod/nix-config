@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
-boot = {
+  boot = {
     loader = {
       efi = {
         canTouchEfiVariables = true;

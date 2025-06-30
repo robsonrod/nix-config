@@ -25,19 +25,19 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, ... }:
     let
-     vars = {
-       user = "robson";
-       terminal = "kitty";
-       editor = "emacs";
-     };
-     home-modules = ./home;
+      vars = {
+        user = "robson";
+        terminal = "kitty";
+        editor = "emacs";
+      };
+      home-modules = ./home;
     in
     {
       nixosConfigurations = (
         import ./hosts {
-	    inherit (nixpkgs) lib;
-	    inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules;
-	}
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules;
+        }
       );
 
       homeConfigurations = (

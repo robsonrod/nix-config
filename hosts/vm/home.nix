@@ -19,5 +19,5 @@
   chromium.enable = true;
 
   kitty.enable = true;
-  
- }
+
+}

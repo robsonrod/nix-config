@@ -17,12 +17,12 @@ in
     programs = {
       vscode = {
         enable = true;
-	extensions = with pkgs.vscode-extensions; [
-        formulahendry.code-runner
-	ms-python.python
-	bbenoist.Nix
-        ms-vscode.cpptools-extension-pack
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [];
+        extensions = with pkgs.vscode-extensions; [
+          formulahendry.code-runner
+          ms-python.python
+          bbenoist.Nix
+          ms-vscode.cpptools-extension-pack
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [ ];
       };
     };
 

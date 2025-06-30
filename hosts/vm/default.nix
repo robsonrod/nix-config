@@ -2,10 +2,11 @@
 
 {
   imports =
-    [ ./hardware-configuration.nix
+    [
+      ./hardware-configuration.nix
       ../../configuration
     ];
 
-   hostname.hostname = "nixos-vm";
+  hostname.hostname = "nixos-vm";
 
 }

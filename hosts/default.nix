@@ -1,4 +1,4 @@
-{inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, ... }:
 let
   system = "x86_64-linux";
 
@@ -24,17 +24,17 @@ in
       ./vm
       home-manager.nixosModules.home-manager
       {
-         home-manager = {
-             useGlobalPkgs = true;
-             useUserPackages = true;
-             extraSpecialArgs = inputs;
-             users.robson = {
-	      imports = [
-	        ./vm/home.nix
-	        home-modules	
-	      ];
-	     };
-         };
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = inputs;
+          users.robson = {
+            imports = [
+              ./vm/home.nix
+              home-modules
+            ];
+          };
+        };
       }
     ];
   };

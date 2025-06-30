@@ -13,11 +13,11 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-     delta
+      delta
     ];
 
     programs.git = {
-     enable = true;
+      enable = true;
     };
   };
 }

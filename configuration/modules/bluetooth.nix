@@ -1,21 +1,21 @@
 { config, pkgs, inputs, ... }:
 {
-hardware = {
-      enableRedistributableFirmware = true;
+  hardware = {
+    enableRedistributableFirmware = true;
 
-      bluetooth = {
-        enable = true;
-        settings = {
-          General = {
-            Enable = "Source,Sink,Media,Socket";
-            MultiProfile = "multiple";
-          };
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          MultiProfile = "multiple";
         };
       };
     };
+  };
 
-      services = {
-      	   blueman.enable = true;
-      };
+  services = {
+    blueman.enable = true;
+  };
 
 }
