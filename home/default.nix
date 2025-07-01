@@ -7,6 +7,7 @@
     ./browsers/firefox.nix
     ./cli/git.nix
     ./cli/cliapps.nix
+    ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix
     ./editors/emacs.nix
