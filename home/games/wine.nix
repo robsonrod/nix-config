@@ -6,7 +6,7 @@ let
   cfg = config.wine;
 in
 {
-  options.emacs = {
+  options.wine = {
     enable = mkOption {
       type = bool;
       default = false;
