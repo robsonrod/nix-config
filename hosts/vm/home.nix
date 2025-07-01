@@ -17,6 +17,7 @@
   peek.enable = true;
   google-chrome.enable = true;
   chromium.enable = true;
+  firefox.enable = true;
 
   kitty.enable = true;
 
