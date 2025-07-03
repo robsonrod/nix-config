@@ -38,4 +38,33 @@ in
       }
     ];
   };
+
+
+  xps = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs system stable vars;
+    };
+    modules = [
+      ./xps
+      nixos-hardware.nixosModules.common-pc-laptop
+      nixos-hardware.nixosModules.common-pc-laptop-ssd
+      nixos-hardware.nixosModules.common-cpu-intel
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = inputs;
+          users.robson = {
+            imports = [
+              ./vm/home.nix
+              home-modules
+            ];
+          };
+        };
+      }
+    ];
+  };
+
 }

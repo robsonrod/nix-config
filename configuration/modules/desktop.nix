@@ -41,6 +41,7 @@
       xorg.xkill
       xorg.xrandr
       xorg.xset
+      v4l-utils
     ];
   };
 
@@ -80,7 +81,7 @@
       };
       enable = true;
       autorun = false;
-      #dpi = 200;
+      dpi = 200;
 
       displayManager = {
         lightdm.enable = true;

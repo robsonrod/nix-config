@@ -14,5 +14,6 @@
       ./modules/nixconfig.nix
       ./modules/misc.nix
       ./modules/docker.nix
+      ./modules/video/intel.nix
     ];
 }

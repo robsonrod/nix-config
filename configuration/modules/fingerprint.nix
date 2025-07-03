@@ -2,9 +2,9 @@
 
 with lib;
 with lib.types;
-let cfg = config.modules.services.fingerprint;
+let cfg = config.fingerprint;
 in {
-  options.modules.services.fingerprint = {
+  options.fingerprint = {
     enable = mkOption {
       type = bool;
       default = false;
