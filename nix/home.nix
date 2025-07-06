@@ -2,7 +2,7 @@
 {
 
   programs = {
-   home-manager.enable = true;
+    home-manager.enable = true;
   };
 
   git.enable = true;
@@ -14,7 +14,7 @@
   peek.enable = true;
   kitty.enable = true;
 
-   nix = {
+  nix = {
     package = pkgs.nix;
 
     gc = {

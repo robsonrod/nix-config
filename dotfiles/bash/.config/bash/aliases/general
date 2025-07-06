@@ -1,0 +1,66 @@
+# general aliases
+alias c='clear'
+alias x='exit'
+alias h='history'
+alias nv='nvim'
+alias em='emacs -nw'
+alias open='xdg-open'
+alias btw='macchina'
+alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
+alias startxb='startx $HOME/.xinitrc'
+alias startxe='startx $HOME/.xinitrc.exwm'
+
+# system admin
+if checkexec paru; then
+    alias i='paru -Sy'
+    alias u='paru -Syy'
+    alias up='paru -Suy '
+else
+    alias i='sudo pacman -Sy'
+    alias u='sudo pacman -Syy'
+    alias up='sudo pacman -Suy '
+    alias r='sudo pacman -Rs'
+    alias cat='bat'
+fi
+
+#
+alias ..='cd ..'
+alias 2.='cd ../..'
+alias 3.='cd ../../..'
+alias 4.='cd ../../../..'
+alias 5.='cd ../../../../..'
+
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+alias gh='history|grep'
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias cpv='rsync -ah --info=progress2'
+
+## other aliases
+alias tkill='tmux kill-server'
+alias rebuildx='xrdb ~/.Xresources'
+alias reload='exec $BASH'
+
+cstatus() {
+    local red="\e[31m"
+    local green="\e[32m"
+    local no_color="\e[0m"
+    if [ "$?" == 0 ]; then
+       echo -e "${green}$?${no_color}"
+    else
+        echo -e "${red}$?${no_color}"
+    fi
+}
+
+path() {
+    local blue="\e[34m"
+    local no_color="\e[0m"
+    echo -e "${blue}$PATH${no_color}"
+}
+
+#dotfiles
+alias bashrc="$EDITOR $HOME/.bashrc"
+alias termcfg="$EDITOR $STARSHIP_CONFIG"
+alias cfg="cd ${DOTFILES}"
+alias aliascfg="${EDITOR} $HOME/.config/bash/aliases"

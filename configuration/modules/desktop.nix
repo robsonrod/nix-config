@@ -4,10 +4,9 @@
     localBinInPath = true;
 
     systemPackages = with pkgs; [
-      v4l-utils
+      betterlockscreen
       alsa-utils
       arandr
-      betterlockscreen
       cacert
       curl
       dunst
@@ -33,6 +32,7 @@
       p7zip
       unzip
       zip
+      procps
       xorg.xauth
       xorg.xdpyinfo
       xorg.xhost
@@ -62,11 +62,17 @@
     printing = { enable = true; };
     gvfs = { enable = true; };
     tumbler = { enable = true; };
+    gnome = {
+      gnome-keyring = {
+        enable = true;
+      };
+    };
 
     libinput = {
       enable = true;
       touchpad = {
         naturalScrolling = true;
+        disableWhileTyping = true;
       };
     };
 
@@ -75,17 +81,16 @@
     };
 
     xserver = {
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
       enable = true;
       autorun = false;
       dpi = 200;
 
       displayManager = {
-        lightdm.enable = true;
-        #startx.enable = true;
+        #lightdm = {
+        #  enable = true;
+        #  greeters.gtk.enable = true;
+        #};
+        startx.enable = true;
       };
 
       desktopManager = {
@@ -106,6 +111,8 @@
         killer = "/run/current-system/systemd/bin/systemctl suspend";
         extraOptions = [ "-detectsleep" ];
       };
+
     };
   };
 }
+

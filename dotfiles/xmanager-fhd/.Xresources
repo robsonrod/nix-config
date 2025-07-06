@@ -1,0 +1,103 @@
+*background: #24273a
+*foreground: #cad3f5
+*cursorColor: #f4dbd6
+
+! black
+*color0: #494d64
+*color8: #5b6078
+
+! red
+*color1: #ed8796
+*color9: #ed8796
+
+! green
+*color2: #a6da95
+*color10: #a6da95
+
+! yellow
+*color3: #eed49f
+*color11: #eed49f
+
+! blue
+*color4: #8aadf4
+*color12: #8aadf4
+
+! magenta
+*color5: #f5bde6
+*color13: #f5bde6
+
+! cyan
+*color6: #8bd5ca
+*color14: #8bd5ca
+
+! white
+*color7: #b8c0e0
+*color15: #a5adcb
+
+!! Xft settings
+XCursor.size:32
+XCursor.theme: Arc-Dark
+
+! These might also be useful depending on your monitor and personal preference:
+*.antialias: true
+*.hinting: true
+*.autohint: true
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 32
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! URxvt Appearance
+URxvt.font: xft:JetBrainsMono Nerd Font:style=Regular:size=11:antialias=true,xft:Iosevka:size=11:hinting=true,xft:Dejavu Sans:size=11:hinting=true,xft:FontAwesome:size=11:style=Solid:antialias=true
+URxvt.boldFont: xft:JetBrainsMono Nerd Font:style=Bold:size=11:antialias=true,xft:Iosevka:size=11:hinting=true,xft:Dejavu Sans:size=11:hinting=true
+URxvt.italicFont: xft:JetBrainsMono Nerd Font:style=Italic:size=11:antialias=true,xft:Iosevka:size=11:hinting=true,xft:Dejavu Sans:size=11:hinting=true
+URxvt.boldItalicFont: xft:JetBrainsMono Nerd Font:style=Bold Italic:size=11:antialias=true,xft:Iosevka:size=11:hinting=true,xft:Dejavu Sans:size=11:hinting=true
+URxvt.transparent: false
+URxvt.shading: 30
+
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+!st.termname:     xst-256color
+st.termname:     xterm-256color
+st.borderless:        0
+st.font:              JetBrainsMono Nerd Font:size=10:antialias=true:autohint=true;
+st.font_fallback:     JetBrainsMono Nerd Font:style=Regular:size=10:antialias=true,Material\\-Design\\-Iconic\\-Font:style=Design-Iconic-Font:pixelsize=13,JoyPixels:pixelsize=13
+st.borderpx:          10
+st.cursorshape:       2
+st.opacity:      245

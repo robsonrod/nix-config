@@ -1,0 +1,126 @@
+#!/usr/bin/env bash
+
+export PATH="${PATH}:$HOME/.config/bin"
+
+pgrep -x sxhkd >/dev/null || sxhkd &
+pkill -f dunst &
+pkill -f polybar &
+
+if [[ "$COMPUTER_NAME" == "xps" ]]; then
+	/usr/bin/gnome-keyring-daemon --start --components=ssh &
+fi
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc config split_ratio 0.5
+bspc config focus_follows_pointer true
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config focus_by_distance true
+bspc config merge_overlapping_monitors true
+bspc config remove_unplugged_monitors true
+
+bspc config top_padding 17
+bspc config bottom_padding 0
+bspc config right_padding 0
+bspc config left_padding 0
+bspc config border_width 2
+bspc config window_gap 3
+
+# use meta key
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_size
+bspc config pointer_action3 resize_corner
+
+# colors
+bspc config normal_border_color "#6e738d"
+bspc config active_border_color "#6e738d"
+bspc config focused_border_color "#f5bde6"
+bspc config presel_feedback_color "#c6a0f6"
+
+# rules
+bspc rule -a URxvt desktop='^1' state=tiled follow=on
+bspc rule -a kitty desktop='^1' state=tiled follow=on
+
+# fix firefox popups
+RESOLUTION=$(xdpyinfo | awk '/dimensions/{print $2}')
+bspc rule -a firefox desktop='^2' state=pseudo_tiled rectangle=$RESOLUTION+0+0 center=on follow=on
+bspc rule -a firefox:firefox state=floating rectangle=1260x760+0+0 center=on
+bspc rule -a firefox:Firefox state=floating rectangle=748x478+0+0 center=on
+
+bspc rule -a Emacs desktop='^3' state=tiled follow=on
+bspc rule -a Google-chrome-unstable desktop='^6' state=tiled follow=on
+bspc rule -a Google-chrome desktop='^6' state=tiled follow=on
+bspc rule -a Thunar desktop='^5' state=tiled follow=on
+bspc rule -a zoom desktop='^5' state=tiled follow=on
+bspc rule -a *:SPLASH='^2' state=floating follow=on
+bspc rule -a Peek state=floating follow=on
+bspc rule -a Transmission-gtk desktop='^5' state=floating follow=on
+bspc rule -a Vmplayer desktop='^7' state=tiled follow=on
+bspc rule -a polybar boder=off manage=off
+
+bspc rule -a mpv state=tiled
+bspc rule -a zathura state=tiled
+bspc rule -a feh state=floating
+bspc rule -a sxiv state=floating
+
+# reload .Xresources
+xrdb -merge ~/.Xresources
+
+xmodmap ~/.Xmodmap
+
+# enables power saving
+xset dpms 240 300 360 &
+
+# fix cursor shape
+xsetroot -cursor_name left_ptr &
+
+# make short-pressed Ctrl behave like Escape:
+xcape -e 'Control_L=Escape'
+
+# polkit
+if [ -d /nix/store/*polkit-gnome*/libexec ]; then
+    AGENT_PATH=$(find /nix/store -type f -path "*/libexec/polkit-gnome-authentication-agent-1" -print -quit)
+    if [ -n "${AGENT_PATH}" ]; then
+      "${AGENT_PATH}" &
+    fi
+fi
+
+if [ -f /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 ]; then
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+fi
+
+# java gui fixes
+export _JAVA_AWT_WM_NONREPARENTING=1
+bspc rule -a sun-awt-X11-XDialogPeer state=floating
+
+# set wallpaper
+feh --bg-scale $HOME/.config/wallpaper/wallpaper.jpg
+
+polybar main &
+
+if [[ $(xrandr -q | grep 'DP-3 connected') ]]; then # If second monitor, also enable second polybar
+	bspc monitor DP-3 -d 6 7 8 9 10
+	bspc wm -O HDMI3 DP-3
+	polybar sec &
+fi
+
+dunst &
+
+#picom &
+
+bluetoothctl power off &>/dev/null &
+
+dropbox &
+
+if [[ "$COMPUTER_NAME" == "xps" ]]; then
+	xrandr --output $MONITOR --primary --mode 3840x2400 --pos 0x0 --rotate normal --output DP-1-2 --off --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output DP-1-3 --off --output DP-2 --off --output DP-1-1 --off
+	xrandr --output $MONITOR --brightness 0.60
+fi
+
+
+screensaver
+
+
+low_bat_notifier

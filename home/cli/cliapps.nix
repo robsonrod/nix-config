@@ -22,6 +22,7 @@ in {
       xdg-utils
       pinentry
       dysk
+      betterlockscreen
     ];
 
     programs = {

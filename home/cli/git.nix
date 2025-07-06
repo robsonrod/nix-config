@@ -18,6 +18,8 @@ in {
 
     programs.git = {
       enable = true;
+      userName = "Robson Rodrigues";
+      userEmail = "robsonrod@gmail.com";
     };
   };
 }

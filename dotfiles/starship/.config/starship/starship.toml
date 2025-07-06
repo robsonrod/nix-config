@@ -1,0 +1,179 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$hostname\
+$sudo\
+$jobs\
+$directory\
+$direnv\
+$git_branch\
+$git_status\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$custom\
+$zig\
+$container\
+$nix_shell\
+$docker_context\
+$line_break\
+$character"""
+
+palette = 'catppuccin_macchiato'
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+[hostname]
+ssh_symbol = " "
+ssh_only = true
+disabled = false
+style = "bold blue"
+format = '[$ssh_symbol](bold blue)[$hostname ](bold blue)'
+trim_at = "-"
+
+[sudo]
+style = "fg:blue"
+symbol = " "
+disabled = false
+
+[directory]
+style = "fg:pink"
+format = "[$path]($style)"
+truncation_length = 2
+truncation_symbol = ""
+truncate_to_repo = true
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[direnv]
+disabled = false
+detect_files = ['.envrc', '.env']
+symbol = '[env]'
+format = '[[ $symbol](fg:rosewater)]($style)'
+
+[git_branch]
+symbol = ""
+style = "fg:green"
+format = '[[ $symbol $branch](fg:lavender)]($style)'
+
+[git_status]
+style = "fg:lavender"
+stashed = '[ $\($count\)](lavender)'
+modified = '[ !\($count\)](peach)'
+staged = '[ +\($count\)](green)'
+untracked = '[ ?\($count\)](yellow)'
+deleted = '[ x\($count\)](red)'
+format = '[[($all_status$ahead_behind )](fg:lavender)]($style)'
+
+[c]
+symbol = " "
+style = "fg:bold teal"
+format = '[[ $symbol( $version)](fg:teal)]($style)'
+
+[rust]
+symbol = ""
+style = "fg:teal"
+format = '[[ $symbol( $version)](fg:teal)]($style)'
+
+[golang]
+symbol = ""
+style = "fg:teal"
+format = '[[ $symbol( $version)](fg:teal)]($style)'
+
+[zig]
+symbol = " "
+style = "fg:teal"
+format = '[[ $symbol( $version)](fg:teal)]($style)'
+
+[custom.lisp]
+symbol = "λ "
+extensions = ["lisp", "el", "clj"]
+style = "bg:teal"
+format = '[[ $symbol ](fg:teal)]($style)'
+
+[nodejs]
+disabled = true
+
+[php]
+disabled = true
+
+[java]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[haskell]
+disabled = true
+
+[python]
+disabled = true
+
+[nix_shell]
+symbol = ' '
+impure_msg = 'impure'
+pure_msg = 'pure'
+unknown_msg = 'unknown'
+format = '[ $state(\($name\))](fg:blue)'
+
+[container]
+symbol = " "
+format = '[[ $symbol( $name)](fg:blue)]($style)'
+
+[docker_context]
+disabled = true
+
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol ]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:text)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:blue)'
+vimcmd_replace_one_symbol = '[❮](bold fg:purple)'
+vimcmd_replace_symbol = '[❮](bold fg:purple)'
+vimcmd_visual_symbol = '[❮](bold fg:lavender)'

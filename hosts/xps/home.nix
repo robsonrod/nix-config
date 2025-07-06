@@ -20,5 +20,7 @@
   firefox.enable = true;
 
   kitty.enable = true;
+  nerdFonts.enable = true;
+  screenlock.enable = true;
 
 }

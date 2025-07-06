@@ -28,15 +28,9 @@ in {
       };
     };
 
-    security.pam.services = {
-      betterlockscreen.fprintAuth = true;
-      login.fprintAuth = true;
-      sudo.fprintAuth = true;
-      polkit.fprintAuth = true;
-    };
-
     services.fprintd = {
       enable = true;
     };
+
   };
 }

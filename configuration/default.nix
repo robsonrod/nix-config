@@ -11,9 +11,11 @@
       ./modules/audio.nix
       ./modules/bluetooth.nix
       ./modules/fingerprint.nix
+      ./modules/security.nix
       ./modules/nixconfig.nix
       ./modules/misc.nix
       ./modules/docker.nix
+      ./modules/keyboard.nix
       ./modules/video/intel.nix
     ];
 }

@@ -10,5 +10,5 @@
   hostname.hostname = "xps";
   fingerprint.enable = true;
   intel.enable = true;
-
+  keyboard.kbdLayout = "br";
 }

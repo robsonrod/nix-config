@@ -18,6 +18,9 @@
     ./terminals/tmux.nix
     ./terminals/tmuxinator.nix
     ./services/gpg.nix
+
+    ../dotfiles
+    ./fonts
   ];
 }
 

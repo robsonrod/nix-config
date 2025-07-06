@@ -4,7 +4,6 @@ with lib;
 with lib.types;
 let
   cfg = config.emacs;
-  emacsPackage = (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages (epkgs: [ epkgs.vterm ]);
 in
 {
   options.emacs = {
@@ -18,7 +17,10 @@ in
     programs = {
       emacs = {
         enable = true;
-        package = emacsPackage;
+        package = pkgs.emacs;
+        extraPackages = epkgs: [
+          epkgs.vterm
+        ];
       };
     };
 
