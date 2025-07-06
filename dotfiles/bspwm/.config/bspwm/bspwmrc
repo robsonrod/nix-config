@@ -80,13 +80,6 @@ xsetroot -cursor_name left_ptr &
 xcape -e 'Control_L=Escape'
 
 # polkit
-if [ -d /nix/store/*polkit-gnome*/libexec ]; then
-    AGENT_PATH=$(find /nix/store -type f -path "*/libexec/polkit-gnome-authentication-agent-1" -print -quit)
-    if [ -n "${AGENT_PATH}" ]; then
-      "${AGENT_PATH}" &
-    fi
-fi
-
 if [ -f /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 ]; then
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
