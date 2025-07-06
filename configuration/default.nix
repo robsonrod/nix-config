@@ -17,5 +17,6 @@
       ./modules/docker.nix
       ./modules/keyboard.nix
       ./modules/video/intel.nix
+      ./modules/nh.nix
     ];
 }

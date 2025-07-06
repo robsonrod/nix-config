@@ -10,6 +10,8 @@
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix
+    ./gui/theme.nix
+    ./gui/xresources.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix

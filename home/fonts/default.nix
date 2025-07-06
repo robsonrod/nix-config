@@ -1,5 +1,19 @@
 { config, options, lib, pkgs, ... }:
+
+with lib;
+with lib.types;
+let
+  cfg = config.nerdFonts;
+in
 {
+  options.nerdFonts = {
+    enable = mkOption {
+      type = bool;
+      default = false;
+    };
+  };
+
+  config = mkIf cfg.enable {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
@@ -14,4 +28,8 @@
     nerd-fonts.roboto-mono
     nerd-fonts.fira-code
   ];
+
+  };
+
 }
+

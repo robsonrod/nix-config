@@ -6,7 +6,6 @@
     stateVersion = "25.05";
   };
 
-  programs.home-manager.enable = true;
 
   git.enable = true;
   cliapps.enable = true;
@@ -18,9 +17,11 @@
   google-chrome.enable = true;
   chromium.enable = true;
   firefox.enable = true;
-
   kitty.enable = true;
+  theme.enable = true;
   nerdFonts.enable = true;
-  screenlock.enable = true;
+  xresources.enable = true;
+
+  programs.home-manager.enable = true;
 
 }

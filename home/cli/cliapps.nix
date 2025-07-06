@@ -23,6 +23,7 @@ in {
       pinentry
       dysk
       betterlockscreen
+      macchina
     ];
 
     programs = {

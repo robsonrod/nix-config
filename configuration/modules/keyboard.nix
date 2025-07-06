@@ -16,6 +16,12 @@ in
       type = str;
       default = "";
     };
+
+    kbdConsole = mkOption {
+      type = str;
+      default = "";
+    };
+
   };
 
   config = {
@@ -25,6 +31,11 @@ in
         variant = "${cfg.kbdVariant}";
       };
     };
+
+   console = {
+     keyMap = "${cfg.kbdConsole}";
+   };
+    
   };
 
 }

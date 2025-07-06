@@ -58,7 +58,7 @@ in
           extraSpecialArgs = inputs;
           users.robson = {
             imports = [
-              ./vm/home.nix
+              ./xps/home.nix
               home-modules
             ];
           };
