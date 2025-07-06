@@ -32,10 +32,10 @@ in
       };
     };
 
-   console = {
-     keyMap = "${cfg.kbdConsole}";
-   };
-    
+    console = {
+      keyMap = "${cfg.kbdConsole}";
+    };
+
   };
 
 }
