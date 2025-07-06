@@ -32,7 +32,7 @@ wm-restack = bspwm
 
 [module/menu]
 type    = custom/text
-content = 
+content =  
 content-foreground = ${colors.cyan}
 content-padding = 1
 click-left = rofi -show drun
