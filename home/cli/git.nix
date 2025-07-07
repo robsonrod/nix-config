@@ -18,15 +18,6 @@ in {
 
     programs.git = {
       enable = true;
-      userName = "Robson Rodrigues";
-      userEmail = "robsonrod@gmail.com";
-      extraConfig = {
-        url = {
-          "git@github.com:" = {
-            insteadOf = "https://github.com/";
-          };
-        };
-      };
     };
   };
 }

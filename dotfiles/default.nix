@@ -81,6 +81,11 @@
       recursive = true;
     };
 
+    ".config/git" = {
+      source = git/.config/git;
+      recursive = true;
+    };
+
   };
 
 }
