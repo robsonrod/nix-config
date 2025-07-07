@@ -11,7 +11,7 @@ width = 100%
 fixed-center = true
 height = ${env:PBHEIGHT}
 monitor = ${env:MONITOR}
-#radius = 10.0
+radius = 10.0
 padding = 2
 module-margin = 1
 tray-detached = false
@@ -21,7 +21,7 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 
 border-size = 2
-border-color = ${colors.bg}
+border-color = ${colors.surface}
 
 modules-left = menu bspwm
 modules-right = vpn dockerst mic keyboard memory cpu volume bluetooth battery wired-network wireless-network updates firmware powermenu
