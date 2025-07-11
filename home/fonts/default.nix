@@ -20,6 +20,7 @@ in
       font-awesome
       source-code-pro
       fira-code
+      fira-code-symbols
       emacs-all-the-icons-fonts
       nerd-fonts.terminess-ttf
       nerd-fonts.iosevka

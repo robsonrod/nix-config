@@ -12,6 +12,7 @@
     ./gui/peek.nix
     ./gui/theme.nix
     ./gui/xresources.nix
+    ./gui/stumpwm.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix

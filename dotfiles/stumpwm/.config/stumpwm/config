@@ -9,7 +9,7 @@
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
-(set-module-dir "/usr/share/stupmwm/contrib/")
+(set-module-dir "~/.config/stumpwm/modules")
 (run-shell-command "sh autostart.sh")
 
 (ql:quickload :clx-truetype)
@@ -36,6 +36,7 @@
 ;;(run-shell-command "xmodmap -e \'keycode 133 = F20\'" t)
 (set-prefix-key (kbd "s-t"))
 
+(setf xft:*font-dirs* (list (format nil "~A/.local/share/fonts/" (uiop:getenv "HOME"))))
 (xft:cache-fonts) ;; Tell clx-truetype about the fonts you have installed. You really only need to do this once, but putting it here means you will not forget in the future.
 ;; font settings
 (clx-truetype:get-font-families)
@@ -52,7 +53,7 @@
       swm-gaps:*outer-gaps-size* 1
       swm-gaps:*head-gaps-size* 2)
 
-;;w(which-key-mode)
+(which-key-mode)
 
 (defvar *ce/workspaces* (list "Term" "Web" "Code" "Files" "Chat" "Game"))
 (stumpwm:grename (nth 0 *ce/workspaces*))
@@ -119,9 +120,10 @@
  m))
 
 (defvar *browser-application-bindings*
- (let ((m (make-sparse-keymap)))
- (define-key m (kbd "f") "exec firefox")
- (define-key m (kbd "c") "exec google-chrome-unstable")
+  (let ((m (make-sparse-keymap)))
+    (define-key m (kbd "b") "exec brave --force-device-scale-factor=2")
+    (define-key m (kbd "f") "exec firefox")
+    (define-key m (kbd "c") "exec google-chrome-unstable")
 m))
 
 (define-key *root-map* (kbd "m") '*menu-application-bindings*)

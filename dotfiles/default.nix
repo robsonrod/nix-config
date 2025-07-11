@@ -86,6 +86,11 @@
       recursive = true;
     };
 
+    ".config/stumpwm" = {
+      source = stumpwm/.config/stumpwm;
+      recursive = true;
+    };
+
   };
 
 }

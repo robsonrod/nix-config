@@ -33,6 +33,7 @@
       unzip
       zip
       procps
+      xcape
       xorg.xauth
       xorg.xdpyinfo
       xorg.xhost
@@ -41,6 +42,7 @@
       xorg.xkill
       xorg.xrandr
       xorg.xset
+      xorg.xmodmap
       v4l-utils
     ];
   };
