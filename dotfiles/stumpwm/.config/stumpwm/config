@@ -9,32 +9,33 @@
 (in-package :stumpwm)
 (setf *default-package* :stumpwm)
 
-(set-module-dir "~/.config/stumpwm/modules")
+(set-module-dir (pathname-as-directory (concat (getenv "HOME") "/.config/stumpwm/modules")))
 (run-shell-command "sh autostart.sh")
 
 (ql:quickload :clx-truetype)
+(ql:quickload :xembed)
 
-
+(load-module "battery-portable")
 (load-module "cpu")
 (load-module "mem")
 (load-module "ttf-fonts")
 (load-module "swm-gaps")
+(load-module "stumptray")
 
 (setf *startup-message* nil
       *message-window-gravity* :center
       *input-window-gravity* :center
-      *window-border-style* :thick
+      *window-border-style* :thin
       *message-window-padding* 10
       *maxsize-border-width* 2
       *normal-border-width* 2
       *transient-border-width* 2
+      *suppress-frame-indicator* t
       stumpwm::*float-window-border* 4
       stumpwm::*float-window-title-height* 20
       *mouse-focus-policy* :click)
 
-;;(run-shell-command "xmodmap -e 'clear mod4'" t)
-;;(run-shell-command "xmodmap -e \'keycode 133 = F20\'" t)
-(set-prefix-key (kbd "s-t"))
+(set-prefix-key (kbd "s-x"))
 
 (setf xft:*font-dirs* (list (format nil "~A/.local/share/fonts/" (uiop:getenv "HOME"))))
 (xft:cache-fonts) ;; Tell clx-truetype about the fonts you have installed. You really only need to do this once, but putting it here means you will not forget in the future.
@@ -43,14 +44,10 @@
 (set-font (list (make-instance 'xft:font
                                :family "Fira Code"
                                :subfamily "Regular"
-                               :size 11)
-                ))
+                               :size 11)))
 
-
-(if (not swm-gaps:*gaps-on*)
-  (swm-gaps:toggle-gaps))
 (setf swm-gaps:*inner-gaps-size* 2
-      swm-gaps:*outer-gaps-size* 1
+      swm-gaps:*outer-gaps-size* 2
       swm-gaps:*head-gaps-size* 2)
 
 (which-key-mode)
@@ -70,15 +67,13 @@
   (let ((output (string-downcase (completing-read
                                   (current-screen)
                                   "Command: "
-                                  (list "restart" "shutdown" "log out" "suspend" "sleep" "hibernate")))))
+                                  (list "restart" "shutdown" "logout" "suspend" "sleep" "hibernate")))))
     (if (string/= output "")
         (cond ((string= output "restart")
-               (kill-all-threads)
                (run-shell-command "reboot"))
               ((string= output "shutdown")
                (run-shell-command "shutdown -h now"))
               ((string= output "log out")
-               (kill-all-threads)
                (eval-command "quit"))
               ((or (string= output "suspend") (string= output "sleep"))
                (run-shell-command "systemctl suspend"))
@@ -86,12 +81,6 @@
                (run-shell-command "systemctl hibernate"))
               (t (echo "Please enter restart, shutdown, log out, suspend or hibernate."))))))
 
-;; border style
-(set-focus-color "#f5bde6")
-(set-win-bg-color "#f5bde6")
-(set-unfocus-color "#6e738d")
-(set-float-focus-color "#f5bde6")
-(set-float-unfocus-color "#6e738d")
 
 (define-key *root-map* (kbd "Q") "better-quit")
 (define-key *root-map* (kbd "R") "restart-hard")
@@ -116,7 +105,7 @@
 
 (defvar *menu-application-bindings*
  (let ((m (make-sparse-keymap)))
- (define-key m (kbd "m") "exec rofi --combi-modi drun,window -show combi")
+   (define-key m (kbd "m") "exec rofi --combi-modi drun,window -show combi")
  m))
 
 (defvar *browser-application-bindings*
@@ -147,6 +136,10 @@ m))
     (remove-split)
     (delete-window window)))
 
+
+(define-key *root-map* (kbd "s-Left") "prev")
+(define-key *root-map* (kbd "s-Right") "next")
+
 ;; Windows
 (define-key *root-map* (kbd "b") "windowlist")
 
@@ -161,6 +154,7 @@ m))
 (define-key *root-map* (kbd "2") "vsplit-and-term")
 (define-key *root-map* (kbd "3") "hsplit-and-term")
 (define-key *root-map* (kbd "o") "next")
+(define-key *root-map* (kbd "O") "prev")
 (define-key *root-map* (kbd "_") "vsplit-and-term")
 (define-key *root-map* (kbd "|") "hsplit-and-term")
 (define-key *root-map* (kbd "x") "kill-and-remove-split")
@@ -169,20 +163,28 @@ m))
 (defparameter mem::*mem-modeline-fmt* "MEM:%p")
 
 ;; Modeline
-;;;; Catppuccin Mocha Colors
-(defparameter +catppuccin-base+     "#1e1e2e")
-(defparameter +catppuccin-mantle+   "#181825")
-(defparameter +catppuccin-crust+    "#11111b")
-(defparameter +catppuccin-text+     "#cdd6f4")
-(defparameter +catppuccin-subtext+  "#a6adc8")
-(defparameter +catppuccin-red+      "#f38ba8")
-(defparameter +catppuccin-green+    "#a6e3a1")
-(defparameter +catppuccin-yellow+   "#f9e2af")
-(defparameter +catppuccin-blue+     "#89b4fa")
-(defparameter +catppuccin-mauve+    "#cba6f7")
-(defparameter +catppuccin-teal+     "#94e2d5")
-(defparameter +catppuccin-peach+    "#fab387")
-(defparameter +catppuccin-pink+     "#f5c2e7")
+;;;; Catppuccin Macchiato Colors
+(defparameter +catppuccin-base+     "#24273a")
+(defparameter +catppuccin-mantle+   "#1e2030")
+(defparameter +catppuccin-crust+    "#181926")
+(defparameter +catppuccin-text+     "#cad3f5")
+(defparameter +catppuccin-subtext+  "#a5adcb")
+(defparameter +catppuccin-red+      "#ed8796")
+(defparameter +catppuccin-green+    "#a6da95")
+(defparameter +catppuccin-yellow+   "#eed49f")
+(defparameter +catppuccin-blue+     "#8aadf4")
+(defparameter +catppuccin-mauve+    "#c6a0f6")
+(defparameter +catppuccin-teal+     "#8bd5ca")
+(defparameter +catppuccin-peach+    "#f5a97f")
+(defparameter +catppuccin-pink+     "#f5bde6")
+
+
+;; border style
+(set-focus-color +catppuccin-base+)
+(set-win-bg-color +catppuccin-base+)
+(set-unfocus-color "#6e738d")
+(set-float-focus-color "#f5bde6")
+(set-float-unfocus-color "#6e738d")
 
 ;;;; Color Palette for StumpWM (mapped to indexes 0-9)
 (setf *colors*
@@ -215,13 +217,31 @@ m))
 (setf *mode-line-foreground-color* +catppuccin-text+)
 
 ;;;; Time Display with Catppuccin Accents
-(setf *time-modeline-string* "^n^B ^8 %d-%m-%Y %H:%M^b")
+(setf *time-modeline-string* "^n^B^8 %d-%m-%Y %H:%M^b")
 
-(setf *screen-mode-line-format* (list "^B^5%g^n^b | %W ^> |^n^B^4%C^n|%M|%d"))
+(setf *screen-mode-line-format* (list "^B^1%g^n^b | %W ^> |^n^B^4%C^n|%M|^BBAT: %B|%d     "))
 
 ;;;; Ensure Mode Line is Enabled
 (if (not (head-mode-line (current-head)))
     (toggle-mode-line (current-screen)
                       (current-head)))
+
+
+;;; Define window placement policy
+;; Clear rules
+(clear-window-placement-rules)
+
+(define-frame-preference "Term"
+  (0 t t :class "kitty"))
+
+
+(define-frame-preference "Code"
+  (0 t t :class "Emacs"))
+
+(stumptray::stumptray)
+(run-shell-command "blueman-applet")
+(run-shell-command "nm-applet")
+
+
 
 (setf *startup-message* "Welcome")
