@@ -8,7 +8,7 @@ let
 in
 {
 
-    options.stumpwm = {
+  options.stumpwm = {
 
     enable = mkOption {
       type = bool;
@@ -16,19 +16,19 @@ in
     };
 
   };
-  
+
   config = mkIf cfg.enable {
- 
-  home.packages = with pkgs; [
-    sbcl
-    stumpwm
-    rlwrap
-  ];
+
+    home.packages = with pkgs; [
+      sbcl
+      stumpwm
+      rlwrap
+    ];
 
 
-  # xsession.windowManager.command = "exec stumpwm";
+    # xsession.windowManager.command = "exec stumpwm";
 
-   #home.file.".stumpwmrc".source = ../../dotfiles/stumpwm/.config/stumpwm/ /stumpwm/config.lisp;
+    #home.file.".stumpwmrc".source = ../../dotfiles/stumpwm/.config/stumpwm/ /stumpwm/config.lisp;
 
-   };
+  };
 }

@@ -22,7 +22,7 @@
   nerdFonts.enable = true;
   xresources.enable = true;
   stumpwm.enable = true;
-  
+
   programs.home-manager.enable = true;
 
 }
