@@ -9,6 +9,7 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;  
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "usbhid" "sd_mod" "i915" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
@@ -50,8 +51,8 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  #  hardware.ipu6 = {
-  #   enable = true;
-  #   platform = "ipu6ep";
-  #  };
+  hardware.ipu6 = {
+     enable = true;
+     platform = "ipu6ep";
+  };
 }

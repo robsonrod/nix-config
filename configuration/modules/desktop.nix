@@ -14,6 +14,7 @@
       font-manager
       libinput-gestures
       libnotify
+      libcamera
       lm_sensors
       nixpkgs-fmt
       ntfsprogs
@@ -44,6 +45,7 @@
       xorg.xset
       xorg.xmodmap
       v4l-utils
+      cheese
     ];
   };
 

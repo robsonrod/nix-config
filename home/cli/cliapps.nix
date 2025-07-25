@@ -41,6 +41,9 @@ in {
       fastfetch.enable = true;
       man.enable = true;
       tealdeer.enable = true;
+      bash.enableCompletion = true;
     };
+    #environment.pathsToLink = [ "/share/bash-completion" ];
+
   };
 }

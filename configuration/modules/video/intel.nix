@@ -15,5 +15,13 @@ in {
     hardware.graphics = {
       enable = true;
     };
+
+    services.xserver = {
+      videoDrivers = [ "intel" ];
+      deviceSection = ''
+         Option "DRI" "2"
+         Option "TearFree" "true"
+      '';
+    };
   };
 }
