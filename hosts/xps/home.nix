@@ -22,6 +22,7 @@
   nerdFonts.enable = true;
   xresources.enable = true;
   stumpwm.enable = true;
+  nyxt.enable = true;
 
   programs.home-manager.enable = true;
 

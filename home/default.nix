@@ -5,6 +5,7 @@
     ./browsers/chrome.nix
     ./browsers/chromium.nix
     ./browsers/firefox.nix
+    ./browsers/nyxt.nix
     ./cli/git.nix
     ./cli/cliapps.nix
     ./games/wine.nix
