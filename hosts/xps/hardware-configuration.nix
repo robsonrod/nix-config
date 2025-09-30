@@ -17,6 +17,7 @@
   boot.tmp.cleanOnBoot = true;
   boot.kernelParams = [
     "i915.enable_psr=0"
+    "i915.force_probe=46a6"
   ];
 
   fileSystems."/" =
@@ -50,9 +51,4 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  hardware.ipu6 = {
-     enable = true;
-     platform = "ipu6ep";
-  };
 }

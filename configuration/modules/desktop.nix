@@ -117,6 +117,11 @@
       };
 
     };
+
+    logind.settings.Login = {
+      HandleLidSwitch = "ignore";
+    };
+
   };
 }
 

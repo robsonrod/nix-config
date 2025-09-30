@@ -14,7 +14,6 @@ xrdb -merge ~/.Xresources
 # change keyboard layout
 xmodmap ~/.Xmodmap
 
-
 # enables power saving
 xset dpms 240 300 360 &
 
