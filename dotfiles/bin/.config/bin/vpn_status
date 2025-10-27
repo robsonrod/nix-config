@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-status=$(ps aux | grep CShell.jar | head -1 | awk '{ print $NF }' | cut -d '/' -f 3)
+status=$(snxctl status)
 
-if [[ "$status" == "cshell.fifo" ]]; then
-    echo "%{F#a6e3a1}"
+if [[ "$status" == "Disconnected" ]]; then
+    printf '{"text": "󰦝"}'
 else
-    echo "%{F#cdd6f4}"
+    printf '{"text": "󰕥", "class":"enabled"}'
 fi

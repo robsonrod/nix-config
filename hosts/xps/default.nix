@@ -15,4 +15,5 @@
     kbdConsole = "br-abnt2";
   };
   nh.enable = true;
+  vpn.enable = true;
 }

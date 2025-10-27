@@ -4,7 +4,6 @@
     localBinInPath = true;
 
     systemPackages = with pkgs; [
-      betterlockscreen
       alsa-utils
       arandr
       cacert
@@ -18,6 +17,7 @@
       lm_sensors
       nixpkgs-fmt
       ntfsprogs
+      pulseaudio
       pavucontrol
       picom
       playerctl
@@ -46,6 +46,12 @@
       xorg.xmodmap
       v4l-utils
       cheese
+      # hyprland
+      swaybg
+      hyprlock
+      grim
+      slurp
+      wl-clipboard
     ];
   };
 
@@ -58,6 +64,14 @@
         thunar-media-tags-plugin
       ];
     };
+
+    hyprland = {
+      enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      xwayland.enable = true;
+    };
+
+    waybar = { enable = true; };
 
     dconf = { enable = true; };
   };
@@ -81,7 +95,11 @@
     };
 
     displayManager = {
-      defaultSession = "xfce";
+      defaultSession = "hyprland";
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
 
     xserver = {
@@ -89,37 +107,18 @@
       autorun = false;
       dpi = 200;
 
-      displayManager = {
-        #lightdm = {
-        #  enable = true;
-        #  greeters.gtk.enable = true;
-        #};
-        startx.enable = true;
-      };
-
       desktopManager = {
-        xfce = { enable = true; };
-      };
-
-      windowManager = {
-        bspwm = {
-          enable = true;
-        };
-      };
-
-      xautolock = {
-        enable = true;
-        time = 5;
-        locker = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
-        killtime = 10;
-        killer = "/run/current-system/systemd/bin/systemctl suspend";
-        extraOptions = [ "-detectsleep" ];
+        xterm = { enable = true; };
       };
 
     };
 
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
+    };
+
+    hypridle = {
+      enable = true;
     };
 
   };

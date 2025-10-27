@@ -7,6 +7,7 @@ export COMPUTER_NAME=$(uname -a | cut -d ' ' -f2)
 export NETWORK_WIRELESS_INTERFACE=$(ip -o -4 route show to default | awk '{print $5}' | grep -Ei "w" | head -1)
 export NETWORK_WIRED_INTERFACE=$(ip -o -4 route show to default | awk '{print $5}' | grep -Ei "e" | head -1)
 export XINITRC="${HOME}/.xinitrc"
+export NIXOS_OZONE_WL="1"
 
 if [ -n "$DISPLAY" ]; then
 	export MONITOR=$(xrandr -q | grep " connected primary" | cut -d ' ' -f1)

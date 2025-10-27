@@ -12,15 +12,18 @@ in {
   };
 
   config = mkIf cfg.enable {
-    hardware.graphics = {
-      enable = true;
+    hardware = {
+      graphics = {
+        enable = true;
+      };
+
     };
 
     services.xserver = {
       videoDrivers = [ "intel" ];
       deviceSection = ''
-         Option "DRI" "2"
-         Option "TearFree" "true"
+        Option "DRI" "2"
+        Option "TearFree" "true"
       '';
     };
   };

@@ -13,6 +13,7 @@
         pkgs = import nixpkgs { inherit system; };
         inputs = with pkgs; [
           cargo
+          clippy
           rust-analyzer
           rustc
           rustfmt

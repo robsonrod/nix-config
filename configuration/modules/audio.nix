@@ -3,7 +3,6 @@
   services = {
     pulseaudio = { enable = false; };
     pipewire = {
-      package = stable.pipewire;
       audio.enable = true;
       enable = true;
       alsa.enable = true;
