@@ -9,7 +9,7 @@ in
   options.keyboard = {
     kbdLayout = mkOption {
       type = str;
-      default = "us";
+      default = "br";
     };
 
     kbdVariant = mkOption {

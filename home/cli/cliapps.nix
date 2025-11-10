@@ -20,7 +20,6 @@ in {
       lshw
       vivid
       xdg-utils
-      pinentry
       dysk
       betterlockscreen
       macchina
