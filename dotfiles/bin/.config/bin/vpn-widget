@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+_get_status() {
+    local status
+    status=$(snxctl status 2>/dev/null | xargs)
+    
+    if [[ "$status" == "Disconnected" ]]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+_status() {
+    if _get_status; then
+        printf '{"text": " ", "class": "enabled", "tooltip": "SNX: Connected"}'
+    else
+        printf '{"text": " ", "tooltip": "SNX: Disconnected"}'
+    fi
+}
+
+_toggle() {
+    if _get_status; then
+        snxctl disconnect
+    else
+        snxctl connect
+    fi
+}
+
+case "$1" in
+    status)
+        _status
+        ;;
+    toggle)
+        _toggle
+        ;;
+    *)
+        echo "Usage: $0 {status|toggle}"
+        exit 1
+        ;;
+esac

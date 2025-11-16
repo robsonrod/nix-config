@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-status=$(snxctl status)
-
-if [[ "$status" == "Disconnected" ]]; then
-    printf '{"text": "󰦝"}'
-else
-    printf '{"text": "󰕥", "class":"enabled"}'
-fi

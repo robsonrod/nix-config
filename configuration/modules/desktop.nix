@@ -47,8 +47,9 @@
       v4l-utils
       cheese
       # hyprland
-      swaybg
+      hyprpaper
       hyprlock
+      hyprpicker
       grim
       slurp
       wl-clipboard

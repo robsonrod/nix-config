@@ -23,6 +23,7 @@ in {
       dysk
       betterlockscreen
       macchina
+      vips
     ];
 
     programs = {
