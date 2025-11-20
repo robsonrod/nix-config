@@ -14,6 +14,8 @@
   gpg.enable = true;
   zathura.enable = true;
   peek.enable = true;
+  google-chrome.enable = true;
+  chromium.enable = true;
   firefox.enable = true;
   librewolf.enable = true;
   kitty.enable = true;
