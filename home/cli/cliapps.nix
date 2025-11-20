@@ -42,6 +42,7 @@ in {
       man.enable = true;
       tealdeer.enable = true;
       bash.enableCompletion = true;
+      direnv.enable = true;
     };
     #environment.pathsToLink = [ "/share/bash-completion" ];
 
