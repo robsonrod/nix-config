@@ -46,6 +46,9 @@
       xorg.xmodmap
       v4l-utils
       cheese
+      thunar-volman
+      thunar-archive-plugin
+      thunar-media-tags-plugin
       # hyprland
       hyprpaper
       hyprlock
@@ -59,11 +62,6 @@
   programs = {
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-volman
-        thunar-archive-plugin
-        thunar-media-tags-plugin
-      ];
     };
 
     hyprland = {
