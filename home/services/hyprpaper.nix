@@ -14,6 +14,23 @@ in {
   config = mkIf cfg.enable {
     services.hyprpaper = {
       enable = true;
+
+      importantPrefixes = [ "monitor" ];
+
+      settings = {
+        splash = false;
+        ipc = "on";
+
+        wallpaper = [
+          {
+            monitor = "eDP-1";
+            path = config.wallpaper;
+            fit_mode = "fill";
+          }
+        ];
+      };
+
     };
+
   };
 }

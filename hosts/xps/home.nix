@@ -22,6 +22,8 @@
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;
+  hyprpaper.enable = true;
+  hypridle.enable = true;
 
   programs.home-manager.enable = true;
 

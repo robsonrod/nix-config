@@ -75,10 +75,25 @@
     dconf = { enable = true; };
   };
 
+   xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
+    };
+
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   services = {
     printing = { enable = true; };
     gvfs = { enable = true; };
     tumbler = { enable = true; };
+    dbus = {enable = true; };
     gnome = {
       gnome-keyring = {
         enable = true;
@@ -114,10 +129,7 @@
 
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
-    };
-
-    hypridle = {
-      enable = true;
+      HandlePowerKey = "ignore";
     };
 
   };

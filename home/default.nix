@@ -15,6 +15,7 @@
     ./gui/theme.nix
     ./gui/xresources.nix
     ./gui/stumpwm.nix
+    ./gui/wallpaper.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix
@@ -23,6 +24,8 @@
     ./terminals/tmux.nix
     ./terminals/tmuxinator.nix
     ./services/gpg.nix
+    ./services/hyprpaper.nix
+    ./services/hypridle.nix
 
     ../dotfiles
     ./fonts
