@@ -13,7 +13,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "usbhid" "sd_mod" "i915" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ ipu6-drivers ];
   boot.tmp.cleanOnBoot = true;
   boot.kernelParams = [
     "i915.enable_psr=0"
@@ -51,4 +51,14 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.firmware = with pkgs; [
+    ipu6-camera-bins
+    ivsc-firmware
+  ];
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="intel-ipu6-psys", MODE="0660", GROUP="video"
+  '';
+  
 }

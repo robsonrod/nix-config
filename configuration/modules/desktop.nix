@@ -55,7 +55,8 @@
       hyprpicker
       grim
       slurp
-      wl-clipboard
+      wl-clip-persist
+      cliphist
     ];
   };
 
