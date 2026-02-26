@@ -17,8 +17,8 @@ in
   config = {
     wallpaper =
       let
-        url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/refs/heads/main/misc/cat_pacman.png";
-        sha256 = "16n3azhmqqjgj4jmsf0g0v3v0zmgh8kll876c17an95pqah2hlsr";
+        url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/refs/heads/main/os/windows-black.png";
+        sha256 = "14qq1gwiyqz9pvasj9zz27fszvz8asq8jpk71lyml6lvinjgnhl1";
         ext = "png";
       in
       builtins.fetchurl {

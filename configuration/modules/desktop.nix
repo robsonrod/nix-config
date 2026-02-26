@@ -35,15 +35,15 @@
       zip
       procps
       xcape
-      xorg.xauth
-      xorg.xdpyinfo
-      xorg.xhost
-      xorg.xinit
-      xorg.xinput
-      xorg.xkill
-      xorg.xrandr
-      xorg.xset
-      xorg.xmodmap
+      xauth
+      xdpyinfo
+      xhost
+      xinit
+      xinput
+      xkill
+      xrandr
+      xset
+      xmodmap
       v4l-utils
       cheese
       thunar-volman
