@@ -9,6 +9,7 @@
     ./browsers/librewolf.nix
     ./cli/git.nix
     ./cli/cliapps.nix
+    ./cli/fish.nix
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix

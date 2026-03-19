@@ -2,11 +2,6 @@
 {
   home.file = {
 
-    ".config/kitty" = {
-      source = kitty/.config/kitty;
-      recursive = true;
-    };
-
     ".bashrc" = {
       source = ./bash/.bashrc;
     };
@@ -38,11 +33,6 @@
 
     ".config/zathura" = {
       source = zathura/.config/zathura;
-      recursive = true;
-    };
-
-    ".config/starship" = {
-      source = starship/.config/starship;
       recursive = true;
     };
 

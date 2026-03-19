@@ -25,10 +25,17 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, ... }:
     let
-      vars = {
+      vars = rec {
         user = "robson";
         terminal = "kitty";
         editor = "emacs";
+
+        home = {
+          username = "${user}";
+          homeDirectory = "/home/${user}";
+          stateVersion = "26.05";
+        };
+
       };
       home-modules = ./home;
     in

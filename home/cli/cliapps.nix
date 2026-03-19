@@ -44,7 +44,7 @@ in {
       bash.enableCompletion = true;
       direnv.enable = true;
     };
-    #environment.pathsToLink = [ "/share/bash-completion" ];
+
 
   };
 }

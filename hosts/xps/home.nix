@@ -1,16 +1,11 @@
 { config, pkgs, inputs, ... }:
 {
-  home = {
-    username = "robson";
-    homeDirectory = "/home/robson";
-    stateVersion = "25.05";
-  };
-
-
+  fish.enable = true;
   git.enable = true;
   cliapps.enable = true;
-
+   
   emacs.enable = true;
+  neovim.enable = true;
   gpg.enable = true;
   zathura.enable = true;
   peek.enable = true;

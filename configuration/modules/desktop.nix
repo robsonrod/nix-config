@@ -74,6 +74,8 @@
     waybar = { enable = true; };
 
     dconf = { enable = true; };
+
+    fish = { enable = true; };
   };
 
    xdg.portal = {

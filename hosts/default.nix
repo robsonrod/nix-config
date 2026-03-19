@@ -57,6 +57,7 @@ in
           useUserPackages = true;
           extraSpecialArgs = inputs;
           users.robson = {
+            home = vars.home;
             imports = [
               ./xps/home.nix
               home-modules
