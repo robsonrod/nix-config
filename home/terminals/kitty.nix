@@ -20,32 +20,34 @@ in
         shellIntegration.enableFishIntegration = true;
         font = {
           name = "JetBrainsMono Nerd Font";
+          package = pkgs.nerd-fonts.jetbrains-mono;
           size = 10;
         };
-        
+
         settings = {
+          font_family = "JetBrainsMono Nerd Font";
           bold_font = "auto";
           italic_font = "auto";
           bold_italic_font = "auto";
-          cursor_shape = "block";
-          enable_audio_bell = false;
-          scrollback_lines = -1;
+          enable_audio_bell = "false";
+          scrollback_lines = "-1";
           tab_bar_edge = "top";
           allow_remote_control = "yes";
-          shell_integration = "no-cursor";
+          #          shell_integration = "no-cursor";
+          cursor_shape = "block";
           macos_option_as_alt = "yes";
           background_opacity = "1";
           adjust_line_height = "110%";
           select_by_word_characters = "@-./_~?&=%+#";
-          repaint_delay = 10;
+          repaint_delay = "10";
           term = "xterm-kitty";
           open_url_with = "default";
-          cursor_blink_interval = 1;
+          cursor_blink_interval = "1";
           disable_ligatures = "always";
-          window_border_width = 0;
-          window_margin_width = 8;
-          visual_bell_duration = 0.0;          
-#          shell = "fish";
+          window_border_width = "0";
+          window_margin_width = "8";
+          visual_bell_duration = "0.0";
+          #          shell = "fish";
           tab_bar_background = "none";
           tab_bar_style = "powerline";
           tab_powerline_style = "slanted";
@@ -84,7 +86,7 @@ in
         };
 
         themeFile = "Catppuccin-Macchiato";
-        
+
       };
     };
   };

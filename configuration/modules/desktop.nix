@@ -78,7 +78,7 @@
     fish = { enable = true; };
   };
 
-   xdg.portal = {
+  xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
     config = {
@@ -96,7 +96,7 @@
     printing = { enable = true; };
     gvfs = { enable = true; };
     tumbler = { enable = true; };
-    dbus = {enable = true; };
+    dbus = { enable = true; };
     gnome = {
       gnome-keyring = {
         enable = true;

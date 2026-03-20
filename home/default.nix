@@ -9,7 +9,7 @@
     ./browsers/librewolf.nix
     ./cli/git.nix
     ./cli/cliapps.nix
-    ./cli/fish.nix
+    ./cli/zsh.nix
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix
@@ -21,6 +21,7 @@
     ./editors/neovim.nix
     ./editors/vscode.nix
     ./terminals/kitty.nix
+    ./terminals/alacritty.nix
     ./terminals/urxvt.nix
     ./terminals/tmux.nix
     ./terminals/tmuxinator.nix

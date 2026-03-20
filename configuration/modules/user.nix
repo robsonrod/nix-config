@@ -3,6 +3,7 @@
   users.users.robson = {
     isNormalUser = true;
     description = "robson";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"

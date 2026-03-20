@@ -2,20 +2,6 @@
 {
   home.file = {
 
-    ".bashrc" = {
-      source = ./bash/.bashrc;
-    };
-
-    ".bash_profile" = {
-      source = bash/.bash_profile;
-    };
-
-    ".config/bash" = {
-      source = bash/.config/bash;
-      recursive = true;
-    };
-
-
     ".config/bin" = {
       source = bin/.config/bin;
       recursive = true;

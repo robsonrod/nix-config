@@ -31,7 +31,6 @@ in {
       jq.enable = true;
       eza.enable = true;
       ripgrep.enable = true;
-      starship.enable = true;
       zoxide.enable = true;
       bat.enable = true;
       bottom.enable = true;
@@ -41,7 +40,6 @@ in {
       fastfetch.enable = true;
       man.enable = true;
       tealdeer.enable = true;
-      bash.enableCompletion = true;
       direnv.enable = true;
     };
 

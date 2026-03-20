@@ -1,9 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
-  fish.enable = true;
   git.enable = true;
   cliapps.enable = true;
-   
+  zsh.enable = true;
+
   emacs.enable = true;
   neovim.enable = true;
   gpg.enable = true;
@@ -14,6 +14,7 @@
   firefox.enable = true;
   librewolf.enable = true;
   kitty.enable = true;
+  alacritty.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;

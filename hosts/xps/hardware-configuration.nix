@@ -60,5 +60,5 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="intel-ipu6-psys", MODE="0660", GROUP="video"
   '';
-  
+
 }
