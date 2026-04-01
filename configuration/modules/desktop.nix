@@ -49,6 +49,7 @@
       thunar-volman
       thunar-archive-plugin
       thunar-media-tags-plugin
+      gcc
       # hyprland
       hyprpaper
       hyprlock
