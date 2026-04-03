@@ -3,6 +3,7 @@
   git.enable = true;
   cliapps.enable = true;
   zsh.enable = true;
+  starship.enable = true;
 
   emacs.enable = true;
   neovim.enable = true;
@@ -21,6 +22,6 @@
   hyprpaper.enable = true;
   hypridle.enable = true;
 
-  programs.home-manager.enable = true;
+    #  programs.home-manager.enable = true;
 
 }

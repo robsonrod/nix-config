@@ -15,16 +15,23 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      lua51Packages.lua
-      lua51Packages.fennel
-      lua51Packages.luarocks
-      lua51Packages.luafilesystem
+      lua-language-server
+      stylua
+      nixd
+      nil
+      gopls
     ];
+
     programs = {
       neovim = {
         enable = true;
         vimAlias = true;
-	vimdiffAlias = true;
+        vimdiffAlias = true;
+        extraPackages = with pkgs; [
+          pkgs.lua5_1
+          pkgs.luajit
+          pkgs.luarocks
+        ];
       };
     };
 

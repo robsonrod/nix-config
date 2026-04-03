@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./browsers/chrome.nix
@@ -10,6 +9,7 @@
     ./cli/git.nix
     ./cli/cliapps.nix
     ./cli/zsh.nix
+    ./cli/starship.nix
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix
@@ -32,5 +32,6 @@
     ../dotfiles
     ./fonts
   ];
-}
 
+  programs.home-manager.enable = true;
+}
