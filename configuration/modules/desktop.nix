@@ -49,6 +49,7 @@
       thunar-volman
       thunar-archive-plugin
       thunar-media-tags-plugin
+      gnumake
       gcc
       # hyprland
       hyprpaper
