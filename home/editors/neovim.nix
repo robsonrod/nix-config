@@ -31,6 +31,7 @@ in
           pkgs.lua5_1
           pkgs.luajit
           pkgs.luarocks
+          pkgs.nil
         ];
       };
     };

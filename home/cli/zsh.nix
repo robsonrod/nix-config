@@ -71,6 +71,15 @@ in {
         e = "emacs -nw";
         btw = "macchina";
         wget = "wget --hsts-file=$XDG_CACHE_HOME/wget-hsts";
+
+        clone = "git clone";
+        adda = "git add . --all";
+        addu = "git add -u";
+        status = "git status";
+        commit = "git commit -v -m";
+        gdiff = "git diff";
+        pull = "git pull";
+
       };
 
       localVariables = {
