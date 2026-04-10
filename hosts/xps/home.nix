@@ -5,6 +5,7 @@
   zsh.enable = true;
   starship.enable = true;
 
+  nmdmenu.enable = true;
   emacs.enable = true;
   neovim.enable = true;
   gpg.enable = true;

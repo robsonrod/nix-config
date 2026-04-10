@@ -6,10 +6,11 @@
     ./browsers/firefox.nix
     ./browsers/nyxt.nix
     ./browsers/librewolf.nix
-    ./cli/git.nix
     ./cli/cliapps.nix
-    ./cli/zsh.nix
-    ./cli/starship.nix
+    ./cli/git
+    ./cli/networkmanager-dmenu
+    ./cli/starship
+    ./cli/zsh
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix
