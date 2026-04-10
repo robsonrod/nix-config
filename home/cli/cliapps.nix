@@ -28,6 +28,7 @@ in {
 
     programs = {
       fzf.enable = true;
+      ghostty.enable = true;
       jq.enable = true;
       eza.enable = true;
       ripgrep.enable = true;
@@ -42,7 +43,6 @@ in {
       tealdeer.enable = true;
       direnv.enable = true;
     };
-
 
   };
 }

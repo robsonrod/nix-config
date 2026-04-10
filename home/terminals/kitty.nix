@@ -18,6 +18,8 @@ in
       kitty = {
         enable = true;
         shellIntegration.enableFishIntegration = true;
+        shellIntegration.enableZshIntegration = true;
+        shellIntegration.enableBashIntegration = true;
         font = {
           name = "JetBrainsMono Nerd Font";
           package = pkgs.nerd-fonts.jetbrains-mono;
@@ -33,7 +35,7 @@ in
           scrollback_lines = "-1";
           tab_bar_edge = "top";
           allow_remote_control = "yes";
-          #          shell_integration = "no-cursor";
+          shell_integration = "no-cursor";
           cursor_shape = "block";
           macos_option_as_alt = "yes";
           background_opacity = "1";
@@ -47,7 +49,6 @@ in
           window_border_width = "0";
           window_margin_width = "8";
           visual_bell_duration = "0.0";
-          #          shell = "fish";
           tab_bar_background = "none";
           tab_bar_style = "powerline";
           tab_powerline_style = "slanted";

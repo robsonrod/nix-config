@@ -25,6 +25,7 @@
     ./terminals/alacritty.nix
     ./terminals/urxvt.nix
     ./terminals/tmux.nix
+    ./terminals/ghostty.nix
     ./terminals/tmuxinator.nix
     ./services/gpg.nix
     ./services/hyprpaper.nix

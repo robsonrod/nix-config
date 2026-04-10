@@ -53,7 +53,6 @@ in {
         	--color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
         	--color=selected-bg:#494d64 --multi"
         	export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/,.git/,.venv/}"'
-
       '';
 
       shellAliases = {

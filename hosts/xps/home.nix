@@ -17,6 +17,7 @@
   librewolf.enable = true;
   kitty.enable = true;
   alacritty.enable = true;
+  ghostty.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;
