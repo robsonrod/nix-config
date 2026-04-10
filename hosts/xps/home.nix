@@ -4,9 +4,7 @@
   cliapps.enable = true;
   zsh.enable = true;
   starship.enable = true;
-
   nmdmenu.enable = true;
-  emacs.enable = true;
   neovim.enable = true;
   gpg.enable = true;
   zathura.enable = true;
@@ -14,16 +12,11 @@
   google-chrome.enable = true;
   chromium.enable = true;
   firefox.enable = true;
-  librewolf.enable = true;
-  kitty.enable = true;
-  alacritty.enable = true;
   ghostty.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;
   hyprpaper.enable = true;
   hypridle.enable = true;
-
-    #  programs.home-manager.enable = true;
 
 }
