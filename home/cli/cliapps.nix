@@ -21,8 +21,6 @@ in {
       vivid
       xdg-utils
       dysk
-      betterlockscreen
-      macchina
       vips
     ];
 
@@ -47,7 +45,7 @@ in {
       };
 
       bat.enable = true;
-      bottom.enable = true;
+      btop.enable = true;
       hstr.enable = true;
       yazi = {
         enable = true;

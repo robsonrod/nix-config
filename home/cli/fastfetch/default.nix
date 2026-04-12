@@ -34,7 +34,7 @@ in
         "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json";
 
         display = {
-          key.width = 10;
+          key.width = 15;
           separator = "";
           size.binaryPrefix = "jedec";
         };
@@ -54,6 +54,9 @@ in
         };
 
         modules = [
+          "break"
+          "break"
+          "break"
           "break"
 
           { type = "os"; key = "os"; keyColor = colors.blue; format = "{name}"; }
