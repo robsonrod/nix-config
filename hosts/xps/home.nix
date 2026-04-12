@@ -13,6 +13,7 @@
   chromium.enable = true;
   firefox.enable = true;
   ghostty.enable = true;
+  fastfetch.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;

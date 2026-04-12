@@ -11,6 +11,7 @@
     ./cli/networkmanager-dmenu
     ./cli/starship
     ./cli/zsh
+    ./cli/fastfetch
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/peek.nix

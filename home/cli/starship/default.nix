@@ -24,6 +24,7 @@ in {
         add_newline = false;
 
         format = lib.concatStrings [
+          "$os"
           "$hostname"
           "$sudo"
           "$jobs"
@@ -77,6 +78,12 @@ in {
           base = "#24273a";
           mantle = "#1e2030";
           crust = "#181926";
+        };
+
+        os = {
+          format = "[$symbol]($style)";
+          style = "bold green";
+          disabled = false;
         };
 
         hostname = {

@@ -27,18 +27,33 @@ in {
     ];
 
     programs = {
-      fzf.enable = true;
-      ghostty.enable = true;
+      fzf = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       jq.enable = true;
-      eza.enable = true;
+      eza = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       ripgrep.enable = true;
-      zoxide.enable = true;
+
+      zoxide = {
+        enable = true;
+        options = [ "--cmd cd" ];
+        enableZshIntegration = true;
+      };
+
       bat.enable = true;
       bottom.enable = true;
       hstr.enable = true;
-      yazi.enable = true;
+      yazi = {
+        enable = true;
+        enableZshIntegration = true;
+      };
       fd.enable = true;
-      fastfetch.enable = true;
       man.enable = true;
       tealdeer.enable = true;
       direnv.enable = true;
