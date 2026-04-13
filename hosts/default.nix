@@ -40,13 +40,13 @@ in
   };
 
 
-  xps = lib.nixosSystem {
+  acrux = lib.nixosSystem {
     inherit system;
     specialArgs = {
       inherit inputs system stable vars;
     };
     modules = [
-      ./xps
+      ./acrux
       nixos-hardware.nixosModules.common-pc-laptop
       nixos-hardware.nixosModules.common-pc-laptop-ssd
       nixos-hardware.nixosModules.common-cpu-intel
@@ -59,7 +59,7 @@ in
           users.robson = {
             home = vars.home;
             imports = [
-              ./xps/home.nix
+              ./acrux/home
               home-modules
             ];
           };

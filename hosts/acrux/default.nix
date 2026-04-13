@@ -7,7 +7,7 @@
       ../../configuration
     ];
 
-  hostname.hostname = "xps";
+  hostname.hostname = "acrux";
   fingerprint.enable = true;
   intel.enable = true;
   keyboard = {
