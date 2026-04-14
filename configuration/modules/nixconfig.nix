@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, inputs, ... }:
+{ config, options, lib, pkgs, inputs, vars, ... }:
 {
   nix = {
     package = pkgs.nixVersions.latest;
@@ -10,7 +10,7 @@
 
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      allowed-users = [ "robson" ];
+      allowed-users = [ "${vars.user}" ];
       trusted-users = [ "root" "@wheel" ];
       keep-outputs = true;
       auto-optimise-store = true;
@@ -22,10 +22,5 @@
 
   nixpkgs = {
     config = { allowUnfree = true; };
-    #      overlays = [
-    #        inputs.emacs-overlay.overlay
-    #        inputs.neovim-nightly-overlay.overlays.default
-    #        inputs.rust-overlay.overlays.default
-    #      ];
   };
 }

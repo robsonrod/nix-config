@@ -24,6 +24,12 @@ in {
       vips
     ];
 
+    catppuccin = {
+      bat = {
+        enable = true;
+        flavor = "macchiato";
+      };
+    };
     programs = {
       fzf = {
         enable = true;
@@ -36,7 +42,10 @@ in {
         enableZshIntegration = true;
       };
 
-      ripgrep.enable = true;
+      ripgrep = {
+        enable = true;
+        arguments = [ "--hidden" ];
+      };
 
       zoxide = {
         enable = true;
@@ -45,6 +54,7 @@ in {
       };
 
       bat.enable = true;
+
       btop.enable = true;
       hstr.enable = true;
       yazi = {
@@ -55,6 +65,7 @@ in {
       man.enable = true;
       tealdeer.enable = true;
       direnv.enable = true;
+
     };
 
   };

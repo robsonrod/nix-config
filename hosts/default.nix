@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, catppuccin, ... }:
 let
   system = "x86_64-linux";
 
@@ -61,6 +61,7 @@ in
             imports = [
               ./acrux/home
               home-modules
+              catppuccin.homeModules.catppuccin
             ];
           };
         };
