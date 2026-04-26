@@ -1,5 +1,9 @@
 { config, pkgs, inputs, vars, ... }:
 {
+  hyprland.enable = true;
+  hyprpaper.enable = true;
+  hypridle.enable = true;
+
   git.enable = true;
   cliapps.enable = true;
   zsh.enable = true;
@@ -18,7 +22,5 @@
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;
-  hyprpaper.enable = true;
-  hypridle.enable = true;
 
 }

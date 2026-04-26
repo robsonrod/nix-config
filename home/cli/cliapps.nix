@@ -30,6 +30,7 @@ in {
         flavor = "macchiato";
       };
     };
+
     programs = {
       fzf = {
         enable = true;
