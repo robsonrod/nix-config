@@ -23,11 +23,6 @@
       recursive = true;
     };
 
-    ".config/macchina" = {
-      source = macchina/.config/macchina;
-      recursive = true;
-    };
-
     ".config/dunst" = {
       source = dunst/.config/dunst;
       recursive = true;
@@ -43,28 +38,8 @@
       recursive = true;
     };
 
-    ".config/bspwm" = {
-      source = bspwm/.config/bspwm;
-      recursive = true;
-    };
-
-    ".config/polybar" = {
-      source = polybar/.config/polybar;
-      recursive = true;
-    };
-
-    ".config/sxhkd" = {
-      source = sxhkd/.config/sxhkd;
-      recursive = true;
-    };
-
     ".config/git" = {
       source = git/.config/git;
-      recursive = true;
-    };
-
-    ".config/stumpwm" = {
-      source = stumpwm/.config/stumpwm;
       recursive = true;
     };
 

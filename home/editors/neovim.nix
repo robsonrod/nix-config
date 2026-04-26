@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, ... }:
+{ config, options, lib, pkgs, vars, ... }:
 
 with lib;
 with lib.types;
@@ -35,6 +35,15 @@ in
         ];
       };
     };
+
+  home.file = {
+    ".config/nvim" = {
+      source = "${vars.dotfiles}/nvim/.config/nvim";
+      recursive = true;
+    };
+    };
+
+ 
 
   };
 

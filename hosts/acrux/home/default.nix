@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, vars, ... }:
 {
   git.enable = true;
   cliapps.enable = true;
