@@ -28,8 +28,9 @@
     let
       vars = rec {
         user = "robson";
-        terminal = "kitty";
-        editor = "emacs";
+        terminal = "ghostty";
+        editor = "nvim";
+	dotfiles = ./dotfiles;
 
         home = {
           username = "${user}";

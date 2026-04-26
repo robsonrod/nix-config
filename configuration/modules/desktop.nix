@@ -20,12 +20,10 @@
       pavucontrol
       picom
       playerctl
-      polybarFull
       pulsemixer
       rofi
       rofi-calc
       scrot
-      sxhkd
       wget
       killall
       openssl
@@ -97,7 +95,10 @@
     printing = { enable = true; };
     gvfs = { enable = true; };
     tumbler = { enable = true; };
-    dbus = { enable = true; };
+    dbus = {
+      enable = true;
+      implementation = "broker";
+    };
     gnome = {
       gnome-keyring = {
         enable = true;
