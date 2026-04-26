@@ -9,7 +9,6 @@
       cacert
       curl
       dunst
-      feh
       font-manager
       libinput-gestures
       libnotify

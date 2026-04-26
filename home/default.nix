@@ -14,6 +14,7 @@
     ./cli/fastfetch
     ./games/wine.nix
     ./gui/zathura.nix
+    ./gui/nsxiv.nix
     ./gui/peek.nix
     ./gui/theme.nix
     ./gui/xresources.nix

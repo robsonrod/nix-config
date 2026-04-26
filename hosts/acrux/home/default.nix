@@ -8,6 +8,7 @@
   neovim.enable = true;
   gpg.enable = true;
   zathura.enable = true;
+  nsxiv.enable = true;
   peek.enable = true;
   google-chrome.enable = true;
   chromium.enable = true;
