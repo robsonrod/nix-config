@@ -8,16 +8,6 @@
       recursive = true;
     };
 
-    ".config/bat" = {
-      source = bat/.config/bat;
-      recursive = true;
-    };
-
-    ".config/wallpaper" = {
-      source = wallpaper/.config/wallpaper;
-      recursive = true;
-    };
-
     ".config/dunst" = {
       source = dunst/.config/dunst;
       recursive = true;

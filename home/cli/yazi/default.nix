@@ -16,6 +16,7 @@ in {
       yazi = {
         enable = true;
         flavor = "macchiato";
+        accent = "blue";
       };
     };
 

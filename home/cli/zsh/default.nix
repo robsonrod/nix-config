@@ -75,7 +75,7 @@ in {
         h = "history";
         v = "nvim";
         e = "emacs -nw";
-        btw = "macchina";
+        btw = "fastfetch";
         wget = "wget --hsts-file=$XDG_CACHE_HOME/wget-hsts";
 
         clone = "git clone";

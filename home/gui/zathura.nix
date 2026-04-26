@@ -14,24 +14,28 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs = {
+      zathura = {
+        enable = true;
+        options = {
+          "window-title-home-tilde" = true;
+          "statusbar-home-tilde" = true;
+          "sandbox" = "none";
+          "statusbar-h-padding" = 0;
+          "statusbar-v-padding" = 0;
+          "page-padding" = 1;
+          "selection-clipboard" = "clipboard";
+        };
+      };
+    };
+
     catppuccin = {
       zathura = {
         enable = true;
-        flavor = "macchiato";
+        flavor = "latte";
       };
     };
 
-    programs = {
-      zathura.enable = true;
-    };
-
-    home.file = {
-      ".config/zathura" = {
-        source = "${vars.dotfiles}/zathura/.config/zathura";
-        recursive = true;
-      };
-
-    };
 
   };
 

@@ -3,6 +3,7 @@
   hyprland.enable = true;
   hyprpaper.enable = true;
   hypridle.enable = true;
+  hyprshot.enable = true;
 
   bat.enable = true;
   btop.enable = true;
