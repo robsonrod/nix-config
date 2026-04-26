@@ -21,7 +21,7 @@ in
 
     opacity = mkOption {
       type = types.float;
-      default = 1.0;
+      default = 0.95;
       description = "Background opacity";
     };
 
