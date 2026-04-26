@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, ... }:
+{ config, options, lib, pkgs, vars, ... }:
 
 with lib;
 with lib.types;
@@ -16,6 +16,14 @@ in
   config = mkIf cfg.enable {
     programs = {
       zathura.enable = true;
+    };
+
+    home.file = {
+      ".config/zathura" = {
+        source = "${vars.dotfiles}/zathura/.config/zathura";
+        recursive = true;
+      };
+
     };
 
   };

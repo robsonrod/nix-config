@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, ... }:
+{ config, options, lib, pkgs, vars, ... }:
 
 with lib;
 with lib.types;
@@ -18,6 +18,13 @@ in {
 
     programs.git = {
       enable = true;
+    };
+
+    home.file = {
+      ".config/git" = {
+        source = "${vars.dotfiles}/git/.config/git";
+        recursive = true;
+      };
     };
   };
 }

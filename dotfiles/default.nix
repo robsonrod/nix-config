@@ -18,11 +18,6 @@
       recursive = true;
     };
 
-    ".config/zathura" = {
-      source = zathura/.config/zathura;
-      recursive = true;
-    };
-
     ".config/dunst" = {
       source = dunst/.config/dunst;
       recursive = true;
@@ -35,11 +30,6 @@
 
     ".config/rofi" = {
       source = rofi/.config/rofi;
-      recursive = true;
-    };
-
-    ".config/git" = {
-      source = git/.config/git;
       recursive = true;
     };
 

@@ -36,15 +36,12 @@ in
       };
     };
 
-  home.file = {
-    ".config/nvim" = {
-      source = "${vars.dotfiles}/nvim/.config/nvim";
-      recursive = true;
+    home.file = {
+      ".config/nvim" = {
+        source = "${vars.dotfiles}/nvim/.config/nvim";
+        recursive = true;
+      };
     };
-    };
-
- 
-
   };
 
 }
