@@ -2,11 +2,9 @@
 
 with lib;
 with lib.types;
-let
-  cfg = config.zathura;
-in
-{
-  options.zathura = {
+let cfg = config.btop;
+in {
+  options.btop = {
     enable = mkOption {
       type = bool;
       default = false;
@@ -15,24 +13,15 @@ in
 
   config = mkIf cfg.enable {
     catppuccin = {
-      zathura = {
+      btop = {
         enable = true;
         flavor = "macchiato";
       };
     };
 
-    programs = {
-      zathura.enable = true;
-    };
-
-    home.file = {
-      ".config/zathura" = {
-        source = "${vars.dotfiles}/zathura/.config/zathura";
-        recursive = true;
-      };
-
+    programs.btop = {
+      enable = true;
     };
 
   };
-
 }

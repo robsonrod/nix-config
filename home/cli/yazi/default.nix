@@ -2,11 +2,9 @@
 
 with lib;
 with lib.types;
-let
-  cfg = config.zathura;
-in
-{
-  options.zathura = {
+let cfg = config.yazi;
+in {
+  options.yazi = {
     enable = mkOption {
       type = bool;
       default = false;
@@ -15,24 +13,16 @@ in
 
   config = mkIf cfg.enable {
     catppuccin = {
-      zathura = {
+      yazi = {
         enable = true;
         flavor = "macchiato";
       };
     };
 
-    programs = {
-      zathura.enable = true;
-    };
-
-    home.file = {
-      ".config/zathura" = {
-        source = "${vars.dotfiles}/zathura/.config/zathura";
-        recursive = true;
-      };
-
+    programs.yazi = {
+      enable = true;
+      enableZshIntegration = true;
     };
 
   };
-
 }

@@ -12,9 +12,16 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      delta
-    ];
+    catppuccin = {
+      delta = {
+        enable = true;
+        flavor = "macchiato";
+      };
+    };
+
+    programs.delta = {
+      enable = true;
+    };
 
     programs.git = {
       enable = true;

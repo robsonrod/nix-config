@@ -24,13 +24,6 @@ in {
       vips
     ];
 
-    catppuccin = {
-      bat = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs = {
       fzf = {
         enable = true;
@@ -38,35 +31,11 @@ in {
       };
 
       jq.enable = true;
-      eza = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
-      ripgrep = {
-        enable = true;
-        arguments = [ "--hidden" ];
-      };
-
-      zoxide = {
-        enable = true;
-        options = [ "--cmd cd" ];
-        enableZshIntegration = true;
-      };
-
-      bat.enable = true;
-
-      btop.enable = true;
       hstr.enable = true;
-      yazi = {
-        enable = true;
-        enableZshIntegration = true;
-      };
       fd.enable = true;
       man.enable = true;
       tealdeer.enable = true;
       direnv.enable = true;
-
     };
 
   };

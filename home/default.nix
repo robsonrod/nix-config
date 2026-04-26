@@ -6,13 +6,8 @@
     ./browsers/firefox.nix
     ./browsers/nyxt.nix
     ./browsers/librewolf.nix
-    ./cli/cliapps.nix
     ./hyprland
-    ./cli/git
-    ./cli/networkmanager-dmenu
-    ./cli/starship
-    ./cli/zsh
-    ./cli/fastfetch
+    ./cli
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/nsxiv.nix
