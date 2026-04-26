@@ -39,7 +39,7 @@
         };
 
       };
-      home-modules = ./home;
+      home-modules = ./home-manager;
     in
     {
       nixosConfigurations = (
