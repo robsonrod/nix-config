@@ -55,7 +55,7 @@ in
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = {inherit inputs vars; };
+          extraSpecialArgs = { inherit inputs vars; };
           users.robson = {
             home = vars.home;
             imports = [
