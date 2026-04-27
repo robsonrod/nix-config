@@ -17,6 +17,7 @@
     ./direnv
     ./hstr
     ./fd
+    ./vivid
     ./documentation
     ./cliapps.nix
   ];

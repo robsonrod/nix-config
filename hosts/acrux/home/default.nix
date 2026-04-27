@@ -17,11 +17,13 @@
   zsh.enable = true;
   neovim.enable = true;
   gpg.enable = true;
+  udiskie.enable = true;
   fzf.enable = true;
   jq.enable = true;
   fd.enable = true;
   documentation.enable = true;
   direnv.enable = true;
+  vivid.enable = true;
 
   zathura.enable = true;
   nsxiv.enable = true;

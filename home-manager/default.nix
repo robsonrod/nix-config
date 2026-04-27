@@ -25,6 +25,7 @@
     ./terminals/tmux.nix
     ./terminals/ghostty.nix
     ./services/gpg.nix
+    ./services/udiskie.nix
 
     ../dotfiles
     ./fonts

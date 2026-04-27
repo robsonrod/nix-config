@@ -18,7 +18,6 @@ in {
       hwinfo
       libnotify
       lshw
-      vivid
       xdg-utils
       dysk
       vips
