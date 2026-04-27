@@ -12,6 +12,12 @@
     ./yazi
     ./zoxide
     ./zsh
+    ./jq
+    ./fzf
+    ./direnv
+    ./hstr
+    ./fd
+    ./documentation
     ./cliapps.nix
   ];
 

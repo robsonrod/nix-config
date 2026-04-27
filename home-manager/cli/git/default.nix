@@ -20,6 +20,7 @@ in {
     };
 
     programs.delta = {
+      enableGitIntegration = true;
       enable = true;
     };
 

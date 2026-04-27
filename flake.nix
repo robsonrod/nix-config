@@ -26,20 +26,19 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, catppuccin, ... }:
     let
-      vars =
-        rec {
-          user = "robson";
-          terminal = "ghostty";
-          editor = "nvim";
-          dotfiles = ./dotfiles;
+      vars = rec {
+        user = "robson";
+        terminal = "ghostty";
+        editor = "nvim";
+        dotfiles = ./dotfiles;
 
-          home = {
-            username = "${user}";
-            homeDirectory = "/home/${user}";
-            stateVersion = "26.05";
-          };
-        }
-          home-modules = ./home-manager;
+        home = {
+          username = "${user}";
+          homeDirectory = "/home/${user}";
+          stateVersion = "26.05";
+        };
+      };
+      home-modules = ./home-manager;
     in
     {
       nixosConfigurations = (

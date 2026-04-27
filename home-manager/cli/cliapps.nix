@@ -24,19 +24,5 @@ in {
       vips
     ];
 
-    programs = {
-      fzf = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
-      jq.enable = true;
-      hstr.enable = true;
-      fd.enable = true;
-      man.enable = true;
-      tealdeer.enable = true;
-      direnv.enable = true;
-    };
-
   };
 }

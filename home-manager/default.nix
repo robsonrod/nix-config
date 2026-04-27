@@ -15,6 +15,8 @@
     ./gui/theme.nix
     ./gui/xresources.nix
     ./gui/wallpaper.nix
+    ./gui/calibre.nix
+    ./gui/mpv.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix

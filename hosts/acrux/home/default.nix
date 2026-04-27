@@ -17,6 +17,11 @@
   zsh.enable = true;
   neovim.enable = true;
   gpg.enable = true;
+  fzf.enable = true;
+  jq.enable = true;
+  fd.enable = true;
+  documentation.enable = true;
+  direnv.enable = true;
 
   zathura.enable = true;
   nsxiv.enable = true;
@@ -29,6 +34,8 @@
   theme.enable = true;
   nerdFonts.enable = true;
   xresources.enable = true;
+  mpv.enable = true;
+  calibre.enable = true;
 
   cliapps.enable = true;
 
