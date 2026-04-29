@@ -26,6 +26,7 @@
     ./terminals/ghostty.nix
     ./services/gpg.nix
     ./services/udiskie.nix
+    ./services/bluetooth.nix
 
     ../dotfiles
     ./fonts

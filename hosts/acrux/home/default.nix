@@ -18,12 +18,14 @@
   neovim.enable = true;
   gpg.enable = true;
   udiskie.enable = true;
+  bluetooth.enable = true;
   fzf.enable = true;
   jq.enable = true;
   fd.enable = true;
   documentation.enable = true;
   direnv.enable = true;
   vivid.enable = true;
+  hstr.enable = true;
 
   zathura.enable = true;
   nsxiv.enable = true;
