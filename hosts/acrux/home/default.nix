@@ -26,6 +26,10 @@
   direnv.enable = true;
   vivid.enable = true;
   hstr.enable = true;
+  grc.enable = true;
+  hwinfo.enable = true;
+  xdgconfig.enable = true;
+  cliapps.enable = true;
 
   zathura.enable = true;
   nsxiv.enable = true;
@@ -40,7 +44,5 @@
   xresources.enable = true;
   mpv.enable = true;
   calibre.enable = true;
-
-  cliapps.enable = true;
 
 }

@@ -5,7 +5,6 @@
 
     systemPackages = with pkgs; [
       alsa-utils
-      arandr
       cacert
       curl
       dunst
@@ -15,15 +14,12 @@
       libcamera
       lm_sensors
       nixpkgs-fmt
-      ntfsprogs
-      pulseaudio
       pavucontrol
       picom
       playerctl
       pulsemixer
       rofi
       rofi-calc
-      scrot
       wget
       killall
       openssl
@@ -31,18 +27,7 @@
       unzip
       zip
       procps
-      xcape
-      xauth
-      xdpyinfo
-      xhost
-      xinit
-      xinput
-      xkill
-      xrandr
-      xset
-      xmodmap
       v4l-utils
-      cheese
       thunar-volman
       thunar-archive-plugin
       thunar-media-tags-plugin
@@ -55,7 +40,13 @@
       grim
       slurp
       wl-clip-persist
+      wl-clipboard
+      wlr-randr
       cliphist
+      nwg-displays
+      nwg-look
+      wpaperd
+      wtype
     ];
   };
 
@@ -87,7 +78,10 @@
       ];
     };
 
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
   };
 
   services = {
@@ -118,17 +112,6 @@
         enable = true;
         wayland = true;
       };
-    };
-
-    xserver = {
-      enable = true;
-      autorun = false;
-      dpi = 200;
-
-      desktopManager = {
-        xterm = { enable = true; };
-      };
-
     };
 
     logind.settings.Login = {

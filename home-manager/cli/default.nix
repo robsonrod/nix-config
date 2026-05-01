@@ -19,7 +19,10 @@
     ./fd
     ./vivid
     ./documentation
-    ./cliapps.nix
+    ./grc
+    ./hwinfo
+    ./xdgconfig
+    ./others
   ];
 
 }

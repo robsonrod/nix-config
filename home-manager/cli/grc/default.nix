@@ -2,9 +2,9 @@
 
 with lib;
 with lib.types;
-let cfg = config.cliapps;
+let cfg = config.grc;
 in {
-  options.cliapps = {
+  options.grc = {
     enable = mkOption {
       type = bool;
       default = false;
@@ -13,14 +13,7 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      file
       grc
-      hwinfo
-      libnotify
-      lshw
-      xdg-utils
-      dysk
-      vips
     ];
 
   };
