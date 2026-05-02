@@ -27,7 +27,7 @@
     ./services/gpg.nix
     ./services/udiskie.nix
     ./services/bluetooth.nix
-
+    ./configs/xdg.nix
     ../dotfiles
     ./fonts
   ];

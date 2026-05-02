@@ -56,6 +56,7 @@ in
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
+          backupFileExtension = "bkp";
           extraSpecialArgs = { inherit inputs vars; };
           users.robson = {
             home = vars.home;

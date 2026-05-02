@@ -31,6 +31,10 @@
   xdgconfig.enable = true;
   cliapps.enable = true;
 
+  myconfig = {
+    xdg.enable = true;
+  };
+
   zathura.enable = true;
   nsxiv.enable = true;
   peek.enable = true;
