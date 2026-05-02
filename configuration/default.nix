@@ -3,6 +3,7 @@
   imports =
     [
       ./modules/boot.nix
+      ./modules/intel.nix
       ./modules/network.nix
       ./modules/locale.nix
       ./modules/user.nix
@@ -19,5 +20,6 @@
       ./modules/video/intel.nix
       ./modules/nh.nix
       ./modules/vpn.nix
+      ./modules/camera.nix
     ];
 }

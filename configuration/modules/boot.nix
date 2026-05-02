@@ -1,10 +1,11 @@
 { config, pkgs, inputs, ... }:
 {
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    tmp.cleanOnBoot = true;
     loader = {
       efi = {
         canTouchEfiVariables = true;
-        #efiSysMountPoint = "/boot";
       };
       grub = {
         enable = true;

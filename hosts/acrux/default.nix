@@ -16,4 +16,6 @@
   };
   nh.enable = true;
   vpn.enable = true;
+  cpu.intel.enable = true;
+  camera.enable = true;
 }

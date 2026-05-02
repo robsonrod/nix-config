@@ -9,56 +9,33 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "usbhid" "sd_mod" "i915" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ ipu6-drivers ];
-  boot.tmp.cleanOnBoot = true;
-  boot.kernelParams = [
-    "i915.enable_psr=0"
-    "i915.force_probe=46a6"
-  ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/5b3e393f-cb11-41fe-956a-e469f280756d";
+      device = "/dev/disk/by-uuid/e2eea64e-9ac0-4df5-9b88-6c7676c33df3";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/2B6F-36C2";
+      device = "/dev/disk/by-uuid/9329-43EC";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home" =
     {
-      device = "/dev/disk/by-uuid/40a1055b-df65-4a5a-823d-da830c744577";
+      device = "/dev/disk/by-uuid/e5e0678f-2e0e-4fa9-8850-5db1e5b15007";
       fsType = "ext4";
     };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/844d8417-1d66-4d26-8507-0b42d6a14da2"; }];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+    [{ device = "/dev/disk/by-uuid/5b89a438-bf8e-4dca-a161-88a7a7899590"; }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  hardware.firmware = with pkgs; [
-    ipu6-camera-bins
-    ivsc-firmware
-  ];
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="intel-ipu6-psys", MODE="0660", GROUP="video"
-  '';
-
 }
