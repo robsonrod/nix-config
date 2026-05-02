@@ -4,6 +4,7 @@
   hyprpaper.enable = true;
   hypridle.enable = true;
   hyprshot.enable = true;
+  wlogout.enable = true;
 
   bat.enable = true;
   btop.enable = true;
