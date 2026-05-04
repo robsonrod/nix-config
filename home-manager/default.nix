@@ -1,13 +1,14 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./hyprland
+    ./cli
+    ./configs
     ./browsers/chrome.nix
     ./browsers/chromium.nix
     ./browsers/firefox.nix
     ./browsers/nyxt.nix
     ./browsers/librewolf.nix
-    ./hyprland
-    ./cli
     ./games/wine.nix
     ./gui/zathura.nix
     ./gui/nsxiv.nix
@@ -27,7 +28,6 @@
     ./services/gpg.nix
     ./services/udiskie.nix
     ./services/bluetooth.nix
-    ./configs/xdg.nix
     ../dotfiles
     ./fonts
   ];
