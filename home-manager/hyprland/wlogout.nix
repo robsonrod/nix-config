@@ -20,32 +20,6 @@ in
   config = mkIf cfg.enable {
     programs.wlogout = {
       enable = true;
-      layout = [
-        {
-          label = "lock";
-          action = "swaylock";
-          text = "Lock";
-          keybind = "l";
-        }
-        {
-          label = "logout";
-          action = "hyprshutdown";
-          text = "Logout";
-          keybind = "e";
-        }
-        {
-          label = "shutdown";
-          action = "systemctl poweroff";
-          text = "Shutdown";
-          keybind = "s";
-        }
-        {
-          label = "reboot";
-          action = "systemctl reboot";
-          text = "Reboot";
-          keybind = "r";
-        }
-      ];
 
       style = ''
           * {
@@ -85,6 +59,12 @@ in
         }
         #reboot {
           background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+        }
+        #suspend {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.svg");
+        }
+        #hibernate {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.svg");
         }
       '';
     };
