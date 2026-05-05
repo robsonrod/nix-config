@@ -20,39 +20,72 @@ in
   config = mkIf cfg.enable {
     programs.wlogout = {
       enable = true;
+      layout = [
+        {
+          label = "lock";
+          action = "swaylock";
+          text = "Lock";
+          keybind = "l";
+        }
+        {
+          label = "logout";
+          action = "hyprshutdown";
+          text = "Logout";
+          keybind = "e";
+        }
+        {
+          label = "shutdown";
+          action = "systemctl poweroff";
+          text = "Shutdown";
+          keybind = "s";
+        }
+        {
+          label = "reboot";
+          action = "systemctl reboot";
+          text = "Reboot";
+          keybind = "r";
+        }
+      ];
 
       style = ''
-        * {
-          background: none;
-        }
+          * {
+          background-image: none;
+          box-shadow: none;
+          }
 
-        window {
-        	background-color: rgba(0, 0, 0, .5);
-        }
+            window {
+            	background-color: rgba(36, 39, 58, 0.90);
+            }
 
-        button {
-          background: rgba(0, 0, 0, .05);
-          border-radius: 8px;
-          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 0 rgba(0, 0, 0, .5);
-          margin: 1rem;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 25%;
-        }
+            button {
+            	border-radius: 0;
+            	border-color: #8aadf4;
+            	text-decoration-color: #cad3f5;
+            	color: #cad3f5;
+            	background-color: #1e2030;
+            	border-style: solid;
+            	border-width: 1px;
+            	background-repeat: no-repeat;
+            	background-position: center;
+            	background-size: 25%;
+            }
 
-        button:focus, button:active, button:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-          outline-style: none;
+            button:focus, button:active, button:hover {
+            	background-color: rgb(53, 57, 75);
+            	outline-style: none;
+            }
+        #lock {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
         }
-
-        ${lib.concatMapStringsSep "\n" bgImageSection [
-          "lock"
-          "logout"
-          "suspend"
-          "hibernate"
-          "shutdown"
-          "reboot"
-        ]}
+        #logout {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+        }
+        #shutdown {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+        }
+        #reboot {
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+        }
       '';
     };
   };

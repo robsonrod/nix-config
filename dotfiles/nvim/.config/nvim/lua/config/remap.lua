@@ -27,3 +27,5 @@ set("i", "<C-q>", "<C-o>:q<CR>")
 set("n", "<leader>rst", ":restart<CR>")
 set("i", "<leader>rst", "<C-o>:restart<CR>")
 
+-- copy to system clipboard
+set("n", "<leader>cc", '"+yy')

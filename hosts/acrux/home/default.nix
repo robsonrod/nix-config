@@ -1,5 +1,11 @@
 { config, pkgs, inputs, vars, ... }:
 {
+
+
+  home.sessionPath = [
+    "$HOME/.config/bin"
+  ];
+
   hyprland.enable = true;
   hyprpaper.enable = true;
   hypridle.enable = true;
