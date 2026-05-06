@@ -26,6 +26,7 @@
   gpg.enable = true;
   udiskie.enable = true;
   bluetooth.enable = true;
+  mpd.enable = true;
   fzf.enable = true;
   jq.enable = true;
   fd.enable = true;

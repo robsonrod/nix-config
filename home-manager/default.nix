@@ -28,6 +28,7 @@
     ./services/gpg.nix
     ./services/udiskie.nix
     ./services/bluetooth.nix
+    ./services/mpd.nix
     ../dotfiles
     ./fonts
   ];

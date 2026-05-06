@@ -18,5 +18,8 @@ in {
       dysk
       vips
     ];
+    programs.rmpc = {
+      enable = true;
+    };
   };
 }

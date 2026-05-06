@@ -86,6 +86,9 @@ in {
         gdiff = "git diff";
         pull = "git pull";
 
+        vpnc = "snxctl connect";
+        vpnd = "snxctl disconnect";
+
       };
 
       localVariables = {
