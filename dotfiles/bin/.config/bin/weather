@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
 main() {
+	city=${1}
 	if [ $# -lt 1 ]; then
 		local selected
-		selected=$(echo Brasilia$'\n'Sao Paulo$'\n'Sao Luis | awk '{print}' | fzf)
-		local city
-		city="${selected//\s/_/}"
+		selected=$(echo bsb$'\n'slz$'\n'gru | awk '{print}' | fzf)
+		city="${selected}"
 	fi
 
-	city=${1}
-	local url="http://v2.wttr.in/$city"
+	local url="http://v3.wttr.in/$city"
 	curl "${url}"
 }
 

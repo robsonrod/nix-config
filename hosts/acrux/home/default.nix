@@ -50,6 +50,7 @@
   google-chrome.enable = true;
   chromium.enable = true;
   firefox.enable = true;
+    librewolf.enable = true;
   ghostty.enable = true;
   fastfetch.enable = true;
   theme.enable = true;

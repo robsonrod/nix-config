@@ -89,6 +89,13 @@ in {
         vpnc = "snxctl connect";
         vpnd = "snxctl disconnect";
 
+        nixup = "nix flake update";
+        nhrs = "nh os switch";
+        nhrb = "nh os boot";
+        nhca = "nh clean all";
+        nhin = "nh os info";
+
+
       };
 
       localVariables = {
