@@ -4,7 +4,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
-		branch = "master",
+		branch = "main",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				-- A list of parser names, or "all"
@@ -18,7 +18,7 @@ return {
 					"jsdoc",
 					"bash",
 					"go",
-                    "nix",
+					"nix",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -66,7 +66,7 @@ return {
 				install_info = {
 					url = "https://github.com/vrischmann/tree-sitter-templ.git",
 					files = { "src/parser.c", "src/scanner.c" },
-					branch = "master",
+					branch = "main",
 				},
 			}
 

@@ -17,6 +17,7 @@ in {
       libnotify
       dysk
       vips
+      brightnessctl
     ];
     programs.rmpc = {
       enable = true;

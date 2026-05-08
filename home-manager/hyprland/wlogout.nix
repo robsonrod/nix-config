@@ -3,11 +3,6 @@ with lib;
 with lib.types;
 let
   cfg = config.wlogout;
-  bgImageSection = name: ''
-    #${name} {
-      background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/${name}.png"));
-    }
-  '';
 in
 {
   options.wlogout = {
@@ -18,36 +13,15 @@ in
   };
 
   config = mkIf cfg.enable {
+    catppuccin.wlogout = {
+      enable = true;
+      flavor = "macchiato";
+      accent = "pink";
+    };
     programs.wlogout = {
       enable = true;
 
       style = ''
-          * {
-          background-image: none;
-          box-shadow: none;
-          }
-
-            window {
-            	background-color: rgba(36, 39, 58, 0.90);
-            }
-
-            button {
-            	border-radius: 0;
-            	border-color: #8aadf4;
-            	text-decoration-color: #cad3f5;
-            	color: #cad3f5;
-            	background-color: #1e2030;
-            	border-style: solid;
-            	border-width: 1px;
-            	background-repeat: no-repeat;
-            	background-position: center;
-            	background-size: 25%;
-            }
-
-            button:focus, button:active, button:hover {
-            	background-color: rgb(53, 57, 75);
-            	outline-style: none;
-            }
         #lock {
           background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
         }
@@ -61,10 +35,10 @@ in
           background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
         }
         #suspend {
-          background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.svg");
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
         }
         #hibernate {
-          background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.svg");
+          background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png");
         }
       '';
     };
