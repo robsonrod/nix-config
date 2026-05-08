@@ -38,7 +38,7 @@ in
 
     home.file = {
       ".config/nvim" = {
-        source = "${vars.dotfiles}/nvim/.config/nvim";
+        source = config.lib.file.mkOutOfStoreSymlink "${vars.dotfiles}/nvim/.config/nvim";
         recursive = true;
       };
     };
