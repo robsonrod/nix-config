@@ -7,7 +7,6 @@
       alsa-utils
       cacert
       curl
-      dunst
       font-manager
       libinput-gestures
       libnotify
@@ -15,11 +14,8 @@
       lm_sensors
       nixpkgs-fmt
       pavucontrol
-      picom
       playerctl
       pulsemixer
-      rofi
-      rofi-calc
       wget
       killall
       openssl

@@ -18,6 +18,7 @@
     ./gui/wallpaper.nix
     ./gui/calibre.nix
     ./gui/mpv.nix
+    ./gui/wofi.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix
@@ -29,6 +30,8 @@
     ./services/udiskie.nix
     ./services/bluetooth.nix
     ./services/mpd.nix
+    ./services/dunst.nix
+    ./services/picom.nix
     ../dotfiles
     ./fonts
   ];
