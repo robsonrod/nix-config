@@ -8,11 +8,6 @@
       recursive = true;
     };
 
-    ".config/rofi" = {
-      source = rofi/.config/rofi;
-      recursive = true;
-    };
-
   };
 
 }
