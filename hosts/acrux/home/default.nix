@@ -45,6 +45,7 @@
   myconfig = {
     xdg.enable = true;
     ssh.enable = true;
+    thunar.enable = true;
   };
 
   zathura.enable = true;

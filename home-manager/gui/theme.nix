@@ -10,98 +10,93 @@ in {
       default = false;
     };
 
-    cursor.size = mkOption {
-      type = int;
-      default = 48;
+    cursor = {
+      size = mkOption {
+        type = int;
+        default = 24;
+      };
+
+      theme = mkOption {
+        type = str;
+        default = "Adwaita";
+      };
     };
 
-    cursor.theme = mkOption {
-      type = str;
-      default = "Adwaita";
-    };
-
-    theme = mkOption {
-      type = str;
-      default = "Arc-Dark";
-    };
-
-    iconTheme = mkOption {
-      type = str;
-      default = "Papirus-Dark";
-    };
   };
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      arc-theme
-      (papirus-icon-theme.override { color = "blue"; })
-      lxappearance
+      dconf
+      dconf-editor
     ];
 
-    home.file.".config/gtk-3.0/settings.ini" = {
-      text = ''
-                [Settings]
-                  gtk-theme-name=${cfg.theme}
-        	  gtk-icon-theme-name=${cfg.iconTheme}
-                  gtk-font-name=Roboto 11
-                  gtk-cursor-theme-name=${cfg.cursor.theme}
-                  gtk-cursor-theme-size=${toString cfg.cursor.size}
-                  gtk-toolbar-style=GTK_TOOLBAR_BOTH
-                  gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-                  gtk-button-images=1
-                  gtk-menu-images=1
-                  gtk-enable-event-sounds=1
-                  gtk-enable-input-feedback-sounds=1
-                  gtk-xft-antialias=1
-                  gtk-xft-hinting=1
-                  gtk-xft-hintstyle=hintslight
-                  gtk-application-prefer-dark-theme=true
-                  gtk-xft-rgba=rgb
-                  gtk-key-theme-name = Emacs
-      '';
+    catppuccin.gtk = {
+      icon = {
+        enable = true;
+        accent = "lavender";
+        flavor = "macchiato";
+      };
     };
 
-    home.file.".config/gtk-3.0/gtk.css" = {
-      text = ''
-        VteTerminal,
-        vte-terminal,
-        TerminalScreen {
-            padding: 0px;
-            margin: 0px;
-            -VteTerminal-inner-border: 0px;
-          }
-      '';
+    gtk = {
+      enable = true;
+
+      cursorTheme = {
+        name = cfg.cursor.theme;
+        size = cfg.cursor.size;
+      };
+
+      font = {
+        name = "Roboto 11";
+        package = pkgs.nerd-fonts.roboto-mono;
+      };
+
+      gtk3.extraConfig = {
+        gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
+        gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+        gtk-button-images = 1;
+        gtk-menu-images = 1;
+        gtk-enable-event-sounds = 1;
+        gtk-enable-input-feedback-sounds = 1;
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintslight";
+        gtk-application-prefer-dark-theme = true;
+        gtk-xft-rgba = "rgb";
+      };
+
+      gtk4.extraConfig = {
+        gtk-menu-images = 1;
+        gtk-enable-event-sounds = 1;
+        gtk-enable-input-feedback-sounds = 1;
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintfull";
+        gtk-xft-rgba = "rgb";
+        gtk-application-prefer-dark-theme = true;
+        gtk-decoration-layout = ":menu,appmenu";
+      };
+
+      gtk3.bookmarks = [
+        "file://${config.home.homeDirectory}/Documents"
+        "file://${config.home.homeDirectory}/Downloads"
+        "file://${config.home.homeDirectory}/Music"
+        "file://${config.home.homeDirectory}/Pictures"
+        "file://${config.home.homeDirectory}/Videos"
+      ];
+
     };
 
-
-    home.file.".config/gtk-3.0/bookmarks" = {
-      text = ''
-        file:///home/robson/Documents
-        file:///home/robson/Music
-        file:///home/robson/Pictures
-        file:///home/robson/Videos
-        file:///home/robson/Downloads
-      '';
+    qt = {
+      enable = true;
+      platformTheme = "gtk";
     };
 
-    home.file.".config/gtk-4.0/settings.ini" = {
-      text = ''
-        [Settings]
-        gtk-theme-name=${cfg.theme}
-        gtk-iconTheme-name=${cfg.iconTheme}
-        gtk-font-name=Roboto 11
-        gtk-cursor-theme-name=${cfg.cursor.theme}
-        gtk-cursor-theme-size=${toString cfg.cursor.size}
-        gtk-menu-images=1
-        gtk-enable-event-sounds=1
-        gtk-enable-input-feedback-sounds=1
-        gtk-xft-antialias=1
-        gtk-xft-hinting=1
-        gtk-xft-hintstyle=hintfull
-        gtk-xft-rgba=rgb
-        gtk-application-prefer-dark-theme=true
-        gtk-decoration-layout=:menu,appmenu
-      '';
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
     };
+
   };
 }

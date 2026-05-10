@@ -58,7 +58,7 @@ in
         "*color15" = "#a5adcb";
 
         "Xcursor.size" = 48;
-        "Xcursor.theme" = "Adwaita";
+        "Xcursor.theme" = config.theme.cursor.theme;
         "Xft.dpi" = cfg.dpi;
         "rofi.dpi" = cfg.rofiDpi;
 
