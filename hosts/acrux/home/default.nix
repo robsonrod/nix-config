@@ -59,7 +59,6 @@
   fastfetch.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
-  xresources.enable = true;
   mpv.enable = true;
   calibre.enable = true;
 
