@@ -22,7 +22,7 @@ in
           <name>Open Terminal Here</name>
           <submenu></submenu>
           <unique-id>1234567890123456-1</unique-id>
-          <command>ghostty --working-directory %f</command>
+          <command>ghostty --working-directory=%f</command>
           <description>Open terminal in selected directory</description>
           <patterns>*</patterns>
           <directories/>

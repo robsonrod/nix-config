@@ -20,7 +20,7 @@ in {
       ".config/networkmanager-dmenu/config.ini" = {
         text = ''
           [dmenu]
-          dmenu_command = rofi
+          dmenu_command = wofi
           active_chars = ==
           highlight = True
           highlight_fg =
