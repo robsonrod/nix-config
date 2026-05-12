@@ -11,6 +11,7 @@
   hypridle.enable = true;
   hyprshot.enable = true;
   wlogout.enable = true;
+  waybar.enable = true;
 
   bat.enable = true;
   btop.enable = true;

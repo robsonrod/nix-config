@@ -6,5 +6,6 @@
     ./hypridle.nix
     ./hyprshot.nix
     ./wlogout.nix
+    ./waybar.nix
   ];
 }

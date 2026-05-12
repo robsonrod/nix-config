@@ -1,0 +1,149 @@
+@define-color base00 #24273a; /* base */
+@define-color base01 #1e2030; /* mantle */
+@define-color base02 #363a4f; /* surface0 */
+@define-color base03 #494d64; /* surface1 */
+@define-color base04 #5b6078; /* surface2 */
+@define-color base05 #cad3f5; /* text */
+@define-color base06 #f4dbd6; /* rosewater */
+@define-color base07 #b7bdf8; /* lavender */
+@define-color base08 #ed8796; /* red */
+@define-color base09 #f5a97f; /* peach */
+@define-color base0A #eed49f; /* yellow */
+@define-color base0B #a6da95; /* green */
+@define-color base0C #8bd5ca; /* teal */
+@define-color base0D #8aadf4; /* blue */
+@define-color base0E #c6a0f6; /* mauve */
+@define-color base0F #f0c6c6; /* flamingo */
+
+* {
+  transition: none;
+  box-shadow: none;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+}
+
+#waybar {
+  font-size: 12px;
+  font-weight: 400;
+  color: @base05;
+  background: @base01;
+  border: 2px solid @base04; 
+  border-radius: 10px;
+}
+
+#custom-nixicon {
+  font-size: 14px;
+  margin-left: 10px;
+  color: @base0D;
+  margin-right: 0px;
+}
+
+#workspaces {
+  margin: 0 4px;
+}
+
+#workspaces button {
+  margin: 4px 0;
+  padding: 0 6px;
+  color: @base05;
+}
+
+#workspaces button.active {
+  border-radius: 6px;
+  background-color: @base02;
+  color: @base0B;
+}
+
+#workspaces button.urgent {
+  color: @base08;
+}
+
+#tray {
+  margin: 4px;
+  border-radius: 6px;
+  background-color: @base02;
+}
+
+#tray * {
+  padding: 0 6px;
+  border-left: 1px solid @base03;
+}
+
+#tray *:first-child {
+  border-left: none;
+}
+
+#mode,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#clock,
+#temperature,
+#custom-vpn,
+#language {
+  margin: 4px 2px;
+  padding: 0 8px;
+  background-color: @base02;
+  border-radius: 6px;
+  min-width: 20px;
+}
+
+/* Semantic coloring */
+#cpu {
+  color: @base09;
+}
+
+#memory {
+  color: @base0E;
+}
+
+#network {
+  color: @base0D;
+}
+
+#battery {
+  color: @base0B;
+}
+
+#pulseaudio {
+  color: @base0C;
+}
+
+#pulseaudio.muted {
+  color: @base0F;
+}
+
+#pulseaudio.bluetooth {
+  color: @base0C;
+}
+
+#temperature.critical {
+  color: @base08;
+}
+
+#clock {
+  margin-left: 0;
+  margin-right: 4px;
+  background-color: transparent;
+  color: @base07;
+}
+
+#window {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+#language {
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+#custom-vpn.enabled {
+  color: @base0B;
+}
+
