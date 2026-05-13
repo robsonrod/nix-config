@@ -28,7 +28,7 @@
   color: @base05;
   background: @base01;
   border: 2px solid @base04; 
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #custom-nixicon {
