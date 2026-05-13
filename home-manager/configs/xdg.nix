@@ -100,6 +100,7 @@ in {
           "text/markdown" = [ "nvim.desktop" ];
           "application/json" = [ "nvim.desktop" ];
           "application/xml" = [ "nvim.desktop" ];
+          "application/html" = [ "nvim.desktop" ];
           "text/x-shellscript" = [ "nvim.desktop" ];
 
           # Images
