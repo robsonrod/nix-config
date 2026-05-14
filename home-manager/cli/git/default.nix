@@ -139,6 +139,9 @@ in {
           # https://gist.github.com/Kovrinic/ea5e7123ab5c97d451804ea222ecd78a
           [url "git@github.com:"]
           insteadOf = https://github.com/
+
+          [url "git@codeberg.org:"]
+          insteadOf = https://codeberg.org/
         '';
       };
     };

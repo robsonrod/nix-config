@@ -43,6 +43,14 @@ in
 
           forwardX11 = false;
         };
+
+        "codeberg.org" = {
+          hostname = "codeberg.org";
+          user = "git";
+          identityFile = "~/.ssh/github_ed25519";
+          identitiesOnly = true;
+          forwardX11 = false;
+        };
       };
     };
   };
