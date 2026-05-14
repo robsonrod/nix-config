@@ -16,6 +16,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       lua-language-server
+      lua51Packages.tree-sitter-cli
       stylua
       nixd
       nil
