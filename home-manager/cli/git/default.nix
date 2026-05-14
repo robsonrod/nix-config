@@ -129,6 +129,19 @@ in {
       ];
 
     };
+
+    home.file = {
+      ".config/git/gituser-personal" = {
+        text = ''
+          #[commit]
+          # gpgsign = true
+
+          # https://gist.github.com/Kovrinic/ea5e7123ab5c97d451804ea222ecd78a
+          [url "git@github.com:"]
+          insteadOf = https://github.com/
+        '';
+      };
+    };
   };
 }
 
