@@ -37,4 +37,6 @@
   ];
 
   programs.home-manager.enable = true;
+  home.packages =
+    import ../scripts { inherit pkgs; };
 }

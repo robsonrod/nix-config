@@ -1,0 +1,105 @@
+{ pkgs }:
+
+pkgs.writeShellApplication {
+  name = "brightness-ctl";
+
+  runtimeInputs = with pkgs; [
+    snx-rs
+  ];
+
+  text = ''
+    set -euo pipefail
+
+    BACKLIGHT_DIR=""
+
+    # Auto-detect backlight device
+    for d in /sys/class/backlight/*; do
+        [[ -d "$d" ]] || continue
+        BACKLIGHT_DIR="$d"
+        break
+    done
+
+    if [[ -z "$BACKLIGHT_DIR" ]]; then
+        echo "No backlight device found."
+        exit 1
+    fi
+
+    BRIGHTNESS_FILE="$BACKLIGHT_DIR/brightness"
+    MAX_FILE="$BACKLIGHT_DIR/max_brightness"
+
+    CURRENT=$(cat "$BRIGHTNESS_FILE")
+    MAX=$(cat "$MAX_FILE")
+
+    STEP="''${STEP:-5}"
+
+    percent_to_raw() {
+        local percent=$1
+        echo $(( percent * MAX / 100 ))
+    }
+
+    raw_to_percent() {
+        local raw=$1
+        echo $(( raw * 100 / MAX ))
+    }
+
+    set_brightness_percent() {
+        local percent=$1
+
+        if (( percent < 1 )); then
+            percent=1
+        fi
+
+        if (( percent > 100 )); then
+            percent=100
+        fi
+
+        local raw
+        raw=$(percent_to_raw "$percent")
+
+        echo "$raw" | sudo tee "$BRIGHTNESS_FILE" >/dev/null
+
+        echo "Brightness set to ''${percent}%"
+    }
+
+    current_percent=$(raw_to_percent "$CURRENT")
+
+    case "''${1:-}" in
+        up)
+            new=$(( current_percent + STEP ))
+            set_brightness_percent "$new"
+            ;;
+
+        down)
+            new=$(( current_percent - STEP ))
+            set_brightness_percent "$new"
+            ;;
+
+        set)
+            if [[ -z "''${2:-}" ]]; then
+                echo "Usage: $0 set <percent>"
+                exit 1
+            fi
+
+            set_brightness_percent "$2"
+            ;;
+
+        get)
+            echo "''${current_percent}%"
+            ;;
+
+        *)
+            cat <<EOF
+    Usage:
+      $0 up
+      $0 down
+      $0 set <percent>
+      $0 get
+
+    Environment:
+      STEP=5   Brightness increment/decrement percentage
+    EOF
+            exit 1
+            ;;
+    esac
+  '';
+}

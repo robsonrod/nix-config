@@ -295,7 +295,7 @@ in
 
             interval = 5;
 
-            exec = "~/.config/bin/vpn-widget status";
+            exec = "vpn-widget status";
           };
         }
       ];
