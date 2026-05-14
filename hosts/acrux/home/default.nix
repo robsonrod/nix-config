@@ -43,6 +43,7 @@
   xdgconfig.enable = true;
   cliapps.enable = true;
   wofi.enable = true;
+  tmux.enable = true;
 
   myconfig = {
     ssh.enable = true;
