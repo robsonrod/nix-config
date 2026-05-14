@@ -27,6 +27,7 @@ in
         enable = true;
         vimAlias = true;
         vimdiffAlias = true;
+        sideloadInitLua = true;
         extraPackages = with pkgs; [
           pkgs.lua5_1
           pkgs.luajit
@@ -36,12 +37,6 @@ in
       };
     };
 
-    home.file = {
-      ".config/nvim" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${vars.dotfiles}/nvim/.config/nvim";
-        recursive = true;
-      };
-    };
   };
 
 }

@@ -12,6 +12,7 @@
   hyprshot.enable = true;
   wlogout.enable = true;
   waybar.enable = true;
+  dotfiles.enable = true;
 
   bat.enable = true;
   btop.enable = true;

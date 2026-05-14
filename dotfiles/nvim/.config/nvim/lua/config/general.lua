@@ -1,5 +1,0 @@
-vim.g.lazyvim_json = "~/.local/state/nvim"
-vim.opt.path:append("**")
-local cwd = vim.fn.getcwd()
-vim.opt.path:append(cwd .. "/**")
-vim.api.nvim_set_option("clipboard", "unnamed")
