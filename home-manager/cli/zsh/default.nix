@@ -86,8 +86,8 @@ in {
         gdiff = "git diff";
         pull = "git pull";
 
-        vpnc = "snxctl connect";
-        vpnd = "snxctl disconnect";
+        vpn-up = "snxctl connect";
+        vpn-down = "snxctl disconnect";
 
         nixup = "nix flake update";
         nhrs = "nh os switch";
