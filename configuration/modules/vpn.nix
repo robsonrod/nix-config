@@ -29,7 +29,7 @@ in
       wants = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.snx-rs}/bin/snx-rs -m command -l debug";
+        ExecStart = "${pkgs.snx-rs}/bin/snx-rs -X true -m command -l debug";
         Type = "simple";
       };
     };

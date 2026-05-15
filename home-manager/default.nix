@@ -32,7 +32,6 @@
     ./services/mpd.nix
     ./services/dunst.nix
     ./services/picom.nix
-    ./dotfiles
     ./fonts
   ];
 

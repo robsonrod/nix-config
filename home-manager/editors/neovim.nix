@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, vars, ... }:
+{ config, inputs, options, lib, pkgs, vars, ... }:
 
 with lib;
 with lib.types;
@@ -37,6 +37,8 @@ in
         ];
       };
     };
+
+    home.file.".config/nvim".source = inputs.neovim-config; 
 
   };
 

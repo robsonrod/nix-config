@@ -80,6 +80,22 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778882388,
+        "narHash": "sha256-pimcBoaQpkVeC6+EhWFQVyPcs8gXdf4z/w/f4lH+d9Y=",
+        "ref": "refs/heads/main",
+        "rev": "2b2965edac0ff87ee18dae3150bd18cbe2e5f149",
+        "revCount": 6,
+        "type": "git",
+        "url": "https://codeberg.org/robsonrod/nvim"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/robsonrod/nvim"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1778143761,
@@ -166,6 +182,7 @@
         "emacs": "emacs",
         "home-manager": "home-manager",
         "home-manager-stable": "home-manager-stable",
+        "neovim-config": "neovim-config",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable_2"
