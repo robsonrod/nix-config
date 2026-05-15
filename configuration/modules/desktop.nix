@@ -39,6 +39,7 @@
       wl-clipboard
       wlr-randr
       cliphist
+      wf-recorder
       nwg-displays
       nwg-look
       wpaperd
