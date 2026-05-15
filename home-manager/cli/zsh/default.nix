@@ -69,7 +69,6 @@ in {
         ll = "eza -l --color=always --octal-permissions --group-directories-first";
         tree = "eza --tree";
         edit = "sudo -e";
-        update = "sudo nixos-rebuild switch";
         c = "clear";
         xx = "exit";
         h = "history";
@@ -89,13 +88,13 @@ in {
         vpn-up = "snxctl connect";
         vpn-down = "snxctl disconnect";
 
-        nixup = "nix flake update";
-        nhrs = "nh os switch";
-        nhrb = "nh os boot";
-        nhca = "nh clean all";
-        nhin = "nh os info";
-
-
+        nr = "nh os switch";
+        nt = "nh os test";
+        nb = "nh os boot";
+        nu = "nix flake update && nh os switch";
+        nc = "nh clean all -y";
+        ns = "nix search nixpkgs";
+        ni = "nh os info";
       };
 
       localVariables = {
@@ -150,6 +149,12 @@ in {
           "fancy-ctrl-z"
           "history-substring-search"
         ];
+      };
+
+      siteFunctions = {
+        backupthis = '' 
+        	cp -r "$1" "$1.bak.$(date +%Y%m%d%H%M%S)"
+        '';
       };
 
       plugins = [
