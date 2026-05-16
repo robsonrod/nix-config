@@ -51,7 +51,6 @@
 
   zathura.enable = true;
   nsxiv.enable = true;
-  peek.enable = true;
   google-chrome.enable = true;
   chromium.enable = true;
   firefox.enable = true;
@@ -62,5 +61,4 @@
   nerdFonts.enable = true;
   mpv.enable = true;
   calibre.enable = true;
-
 }

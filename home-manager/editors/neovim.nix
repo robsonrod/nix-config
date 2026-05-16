@@ -28,7 +28,6 @@ in
         enable = true;
         vimAlias = true;
         vimdiffAlias = true;
-        sideloadInitLua = true;
         extraPackages = with pkgs; [
           pkgs.lua5_1
           pkgs.luajit
@@ -38,7 +37,7 @@ in
       };
     };
 
-    home.file.".config/nvim".source = inputs.neovim-config; 
+    home.file.".config/nvim".source = inputs.neovim-config;
 
   };
 
