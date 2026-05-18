@@ -59,7 +59,7 @@ in
           "break"
           "break"
 
-          { type = "os"; key = "os"; keyColor = colors.blue; format = "{name}"; }
+          { type = "os"; key = "os"; keyColor = colors.blue; format = "{name} ({codename})"; }
           { type = "kernel"; key = "kernel"; keyColor = colors.green; }
           { type = "packages"; key = "pkgs"; keyColor = colors.yellow; }
           { type = "shell"; key = "shell"; keyColor = colors.mauve; format = "{pretty-name}"; }
