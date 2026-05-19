@@ -155,6 +155,9 @@ in {
         backupthis = '' 
         	cp -r "$1" "$1.bak.$(date +%Y%m%d%H%M%S)"
         '';
+        getmac = ''
+          ip a show enp0s13f0u3u1 | grep link/ether | awk '{print $2}'
+        '';
       };
 
       plugins = [
