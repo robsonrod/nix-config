@@ -69,7 +69,7 @@ in
             disable-scroll = true;
             all-outputs = false;
 
-            format = "{icon}";
+            format = "{name}";
             on-click = "activate";
 
             on-scroll-up = "hyprctl dispatch workspace e-1";
