@@ -79,7 +79,9 @@ hl.config({
 		sensitivity = 0,
 
 		touchpad = {
+			tap_to_click = true,
 			natural_scroll = true,
+			disable_while_typing = true,
 		},
 	},
 
@@ -152,7 +154,7 @@ hl.bind(mod .. " + E", hl.dsp.exec_cmd(terminal .. " -e nvim"))
 --------------------------------------------------
 -- WINDOW MANAGEMENT
 --------------------------------------------------
-hl.bind("ALT + F4", hl.dsp.exec_cmd("killactive"))
+hl.bind("ALT + F4", hl.dsp.window.close())
 hl.bind("CONTROL + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + B", hl.dsp.window.pseudo())
 

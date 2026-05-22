@@ -16,8 +16,8 @@ in
 
   config = mkIf cfg.enable {
     home.file = {
-      ".config/hypr/hyprland.conf" = {
-        source = "${vars.dotfiles}/hypr/.config/hypr/hyprland.conf";
+      ".config/hypr/hyprland.lua" = {
+        source = "${vars.dotfiles}/hypr/.config/hypr/hyprland.lua";
       };
     };
   };
