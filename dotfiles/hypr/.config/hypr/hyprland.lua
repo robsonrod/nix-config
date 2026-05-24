@@ -45,14 +45,14 @@ hl.config({
 		inactive_opacity = 1.0,
 
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 4,
 			render_power = 3,
 			color = "rgba(1a1a1aee)",
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 6,
 			passes = 1,
 			new_optimizations = true,
@@ -135,6 +135,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("thunar --daemon")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("battery-notifier")
 end)
 
 --------------------------------------------------
@@ -148,6 +149,7 @@ hl.bind(mod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mod .. " + M", hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + ALT + R", hl.dsp.exec_cmd(run_app))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(terminal .. " -e nvim"))
+hl.bind(mod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
 
 --------------------------------------------------
 -- WINDOW MANAGEMENT
@@ -181,7 +183,7 @@ end)
 --------------------------------------------------
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.exit())
-hl.bind(mod .. " + CONTROL + L", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 && hyprlock"))
+hl.bind(mod .. " + CONTROL + L", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && hyprlock"))
 
 --------------------------------------------------
 -- WORKSPACE BINDS
@@ -219,8 +221,8 @@ hl.bind(mod .. " + F11", hl.dsp.exec_cmd("regionrec"))
 --------------------------------------------------
 -- SCREENSHOTS
 --------------------------------------------------
-hl.bind(mod .. " + PRINT", hl.dsp.exec_cmd("grimblast copy area"))
-hl.bind(mod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("grimblast save area ~/Pictures/Screenshots"))
+hl.bind(mod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind(mod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
 
 --------------------------------------------------
 -- AUDIO
@@ -253,15 +255,17 @@ hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
 --------------------------------------------------
 -- WINDOW RULES
 --------------------------------------------------
+local function float_center(name, match)
+	hl.window_rule({ name = name .. "-float", match = match, float = true })
+	hl.window_rule({ name = name .. "-center", match = match, center = true })
+end
+
 hl.window_rule({ name = "ws-firefox", match = { class = "firefox" }, workspace = "1 silent" })
 hl.window_rule({ name = "ws-terminal", match = { class = "com.mitchellh.ghostty" }, workspace = "2 silent" })
 hl.window_rule({ name = "ws-brave", match = { class = "brave-browser" }, workspace = "4 silent" })
 
-hl.window_rule({ name = "pavucontrol-center", match = { class = "pavucontrol" }, center = true })
-hl.window_rule({ name = "pavucontrol-float", match = { class = "pavucontrol" }, float = true })
-
-hl.window_rule({ name = "blueman-manager-center", match = { class = "blueman-manager" }, center = true })
-hl.window_rule({ name = "blueman-manager-float", match = { class = "blueman-manager" }, float = true })
+float_center("pavucontrol", { class = "pavucontrol" })
+float_center("blueman", { class = "blueman-manager" })
 
 hl.window_rule({ name = "file-roller-float", match = { class = "^(file-roller)$" }, float = true })
 hl.window_rule({ name = "file-roller-center", match = { class = "^(file-roller)$" }, center = true })
