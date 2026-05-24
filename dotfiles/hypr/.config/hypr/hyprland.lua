@@ -38,6 +38,7 @@ hl.config({
 	},
 
 	decoration = {
+		dim_inactive = false,
 		rounding = 6,
 
 		active_opacity = 1.0,
@@ -52,8 +53,8 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 8,
-			passes = 2,
+			size = 6,
+			passes = 1,
 			new_optimizations = true,
 		},
 	},
@@ -64,6 +65,7 @@ hl.config({
 
 	dwindle = {
 		preserve_split = true,
+		smart_split = true,
 	},
 
 	master = {
@@ -107,16 +109,12 @@ hl.config({
 -- MONITORS
 --------------------------------------------------
 hl.monitor({ output = "eDP-1", mode = "3840x2400@60", position = "0x0", scale = "2" })
-hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "3840x0", scale = "1" })
+hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "1920x0", scale = "1" })
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 
 --------------------------------------------------
 -- DEVICE
 --------------------------------------------------
-hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = -0.5,
-})
 
 --------------------------------------------------
 -- GESTURES
@@ -182,8 +180,8 @@ end)
 -- SESSION
 --------------------------------------------------
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd("wlogout"))
-hl.bind(mod .. " + SHIFT + Q", hl.dsp.exec_cmd("exit"))
-hl.bind(mod .. " + L", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 && hyprlock"))
+hl.bind(mod .. " + SHIFT + Q", hl.dsp.exit())
+hl.bind(mod .. " + CONTROL + L", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 && hyprlock"))
 
 --------------------------------------------------
 -- WORKSPACE BINDS
@@ -209,8 +207,8 @@ hl.bind(mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" 
 --------------------------------------------------
 -- MOUSE
 --------------------------------------------------
-hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(mod .. " + ALT + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mod .. " + ALT + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 --------------------------------------------------
 -- SCREEN RECORDING
