@@ -24,6 +24,7 @@
   zoxide.enable = true;
   zsh.enable = true;
   neovim.enable = true;
+  emacs.enable = true;
   gpg.enable = true;
   udiskie.enable = true;
   bluetooth.enable = true;
