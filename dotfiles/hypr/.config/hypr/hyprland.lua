@@ -1,6 +1,6 @@
 local mod = "SUPER"
 
-local terminal = "ghostty"
+local terminal = "alacritty"
 local fileManager = "thunar"
 local browser = "brave"
 local menu = "wofi"
@@ -261,7 +261,7 @@ local function float_center(name, match)
 end
 
 hl.window_rule({ name = "ws-firefox", match = { class = "firefox" }, workspace = "1 silent" })
-hl.window_rule({ name = "ws-terminal", match = { class = "com.mitchellh.ghostty" }, workspace = "2 silent" })
+hl.window_rule({ name = "ws-terminal", match = { class = "Alacritty" }, workspace = "2 silent" })
 hl.window_rule({ name = "ws-brave", match = { class = "brave-browser" }, workspace = "4 silent" })
 
 float_center("pavucontrol", { class = "pavucontrol" })

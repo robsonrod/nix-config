@@ -56,7 +56,7 @@
   chromium.enable = true;
   firefox.enable = true;
   librewolf.enable = true;
-  ghostty.enable = true;
+  alacritty.enable = true;
   fastfetch.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;
