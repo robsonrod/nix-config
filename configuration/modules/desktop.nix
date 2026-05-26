@@ -55,6 +55,7 @@
     hyprland = {
       enable = true;
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      withUWSM = true;
       xwayland.enable = true;
     };
 
@@ -103,11 +104,29 @@
       };
     };
 
-    displayManager = {
-      defaultSession = "hyprland";
-      gdm = {
-        enable = true;
-        wayland = true;
+    greetd = {
+      enable = true;
+      useTextGreeter = true;
+
+      settings = {
+        #     initial_session = {
+        #       command = "start-hyprland";
+        #       user = "robson";
+        #     };
+
+        # Login screen after logout
+        default_session = {
+          user = "greeter";
+
+          command = ''
+            ${pkgs.tuigreet}/bin/tuigreet \
+              --time \
+              --asterisks \
+              --remember \
+              --remember-session \
+              --cmd start-hyprland
+          '';
+        };
       };
     };
 

@@ -28,6 +28,7 @@ in {
     home.packages = with pkgs; [
       dconf
       dconf-editor
+      adwaita-icon-theme
     ];
 
     catppuccin.gtk = {
@@ -44,6 +45,7 @@ in {
       cursorTheme = {
         name = cfg.cursor.theme;
         size = cfg.cursor.size;
+        package = pkgs.adwaita-icon-theme;
       };
 
       font = {

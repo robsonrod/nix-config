@@ -9,7 +9,12 @@ local run_app = 'wofi --show run --prompt "run:"'
 --------------------------------------------------
 -- ENVIRONMENT
 --------------------------------------------------
-hl.env("HYPRCURSOR_SIZE", "24")
+local cursor_theme = "Adwaita"
+local cursor_size = 24
+hl.env("HYPRCURSOR_SIZE", cursor_size)
+hl.env("HYPRCURSOR_THEME", cursor_theme)
+hl.env("XCURSOR_SIZE", cursor_size)
+hl.env("XCURSOR_THEME", cursor_theme)
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
@@ -131,7 +136,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hypridle.service")
-	hl.exec_cmd("hyprctl setcursor Adwaita 24")
+    --hl.exec_cmd("hyprctl setcursor Adwaita 24")
 	hl.exec_cmd("thunar --daemon")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
