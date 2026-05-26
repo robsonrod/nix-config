@@ -80,7 +80,7 @@ in {
         os = {
           format = "[$symbol]($style)";
           style = "bold green";
-          disabled = false;
+          disabled = true;
         };
 
         hostname = {
