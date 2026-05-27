@@ -136,7 +136,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hypridle.service")
-    --hl.exec_cmd("hyprctl setcursor Adwaita 24")
+        hl.exec_cmd("hyprctl setcursor Adwaita 24")
 	hl.exec_cmd("thunar --daemon")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -160,8 +160,8 @@ hl.bind(mod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist 
 --------------------------------------------------
 -- WINDOW MANAGEMENT
 --------------------------------------------------
-hl.bind("ALT + F4", hl.dsp.window.close())
-hl.bind("CONTROL + Space", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + Q", hl.dsp.window.close())
+hl.bind(mod .. " + CONTROL + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + B", hl.dsp.window.pseudo())
 
 hl.bind(mod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -187,7 +187,7 @@ end)
 --------------------------------------------------
 -- SESSION
 --------------------------------------------------
-hl.bind(mod .. " + Q", hl.dsp.exec_cmd("wlogout"))
+hl.bind(mod .. " + ALT + Q", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mod .. " + CONTROL + L", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && hyprlock"))
 
