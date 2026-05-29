@@ -17,7 +17,7 @@ in
       enable = true;
       enableDefaultConfig = false;
 
-      matchBlocks = {
+      settings = {
         dev = {
           hostname = "10.30.33.204";
           user = "robson";

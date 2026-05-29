@@ -92,7 +92,7 @@ in {
         nt = "nh os test";
         nb = "nh os boot";
         nu = "nix flake update && nh os switch";
-        nc = "nh clean all -y";
+        nc = "nh clean all";
         ns = "nix search nixpkgs";
         ni = "nh os info";
       };
