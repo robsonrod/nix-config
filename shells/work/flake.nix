@@ -16,9 +16,9 @@
           packages = with pkgs; [
             openssh
             git
-            jq
             snx-rs
             direnv
+            rsync
           ];
 
           shellHook = ''
@@ -29,10 +29,6 @@
               echo "🔑 ssh-agent iniciado"
             fi
 
-            alias vpn-up="snx"
-            alias vpn-down="snx -d"
-
-            echo "👉 VPN: vpn-up / vpn-down"
             echo "👉 Direnv ativo neste shell"
           '';
         };
