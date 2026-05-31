@@ -17,6 +17,9 @@ in {
       nix-direnv.enable = true;
       enableZshIntegration = true;
       silent = true;
+      config = {
+        warn_timeout = "1m";
+      };
     };
 
   };

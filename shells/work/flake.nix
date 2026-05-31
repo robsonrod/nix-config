@@ -1,36 +1,53 @@
 {
-  description = "Work dev environment";
+  description = "A Nix-flake-based to my work environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            openssh
-            git
-            snx-rs
-            direnv
-            rsync
-          ];
+  outputs = { self, ... }@inputs:
+    let
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forEachSupportedSystem =
+        f: inputs.nixpkgs.lib.genAttrs supportedSystems (
+          system:
+          f {
+            inherit system;
+            pkgs = import inputs.nixpkgs { inherit system; };
+          }
+        );
+    in
+    {
+      devShells = forEachSupportedSystem (
+        { pkgs, system }:
+        {
+          default = pkgs.mkShellNoCC {
+            packages = with pkgs; [
+              self.formatter.${system}
+              openssh
+              git
+              snx-rs
+              direnv
+              rsync
+            ];
 
-          shellHook = ''
-            echo "🚀 Ambiente de trabalho ativo"
+            shellHook = ''
+              echo "  Direnv ativo neste shell"
+              echo "  Ambiente de trabalho ativo"
 
-            if [ -z "$SSH_AUTH_SOCK" ]; then
-              eval "$(ssh-agent -s)" > /dev/null
-              echo "🔑 ssh-agent iniciado"
-            fi
-
-            echo "👉 Direnv ativo neste shell"
+                if [ -z "$SSH_AUTH_SOCK" ]; then
+                  eval "$(ssh-agent -s)" > /dev/null
+                  echo "🔑 ssh-agent iniciado"
+               fi
           '';
-        };
-      });
+
+          };
+        }
+      );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
+    };
 }
