@@ -42,6 +42,7 @@
                   eval "$(ssh-agent -s)" > /dev/null
                   echo "🔑 ssh-agent iniciado"
                fi
+               trap 'echo " Faxina do ambiente de trabalho agendada" && rm -rf /tmp/workspace/*' EXIT
           '';
 
           };
