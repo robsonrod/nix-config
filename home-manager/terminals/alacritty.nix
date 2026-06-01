@@ -4,6 +4,34 @@ with lib;
 with lib.types;
 let
   cfg = config.alacritty;
+
+  catppuccinMacchiato = {
+    primary = {
+      background = "#24273A";
+      foreground = "#CAD3F5";
+    };
+    normal = {
+      black = "#24273A";
+      red = "#F28FAD";
+      green = "#ABE9B3";
+      yellow = "#FAE3B0";
+      blue = "#96CDFB";
+      magenta = "#DDB6F2";
+      cyan = "#B5E8E0";
+      white = "#CAD3F5";
+    };
+    bright = {
+      black = "#6E6C7E";
+      red = "#F28FAD";
+      green = "#ABE9B3";
+      yellow = "#FAE3B0";
+      blue = "#96CDFB";
+      magenta = "#DDB6F2";
+      cyan = "#B5E8E0";
+      white = "#FFFFFF";
+    };
+  };
+
 in
 {
   options.alacritty = {
@@ -14,11 +42,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    catppuccin.alacritty = {
-      enable = true;
-      flavor = "macchiato";
-    };
-
     programs = {
       alacritty = {
         enable = true;
@@ -39,6 +62,8 @@ in
             };
             size = 10.0;
           };
+
+          colors = catppuccinMacchiato;
 
           cursor = {
             style = {

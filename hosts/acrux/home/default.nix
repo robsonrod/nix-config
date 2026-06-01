@@ -36,7 +36,6 @@
   fd.enable = true;
   documentation.enable = true;
   direnv.enable = true;
-  vivid.enable = true;
   hstr.enable = true;
   grc.enable = true;
   hwinfo.enable = true;
@@ -52,11 +51,9 @@
 
   zathura.enable = true;
   nsxiv.enable = true;
-  google-chrome.enable = true;
-  chromium.enable = true;
   firefox.enable = true;
-  librewolf.enable = true;
   alacritty.enable = true;
+  foot.enable = true;
   fastfetch.enable = true;
   theme.enable = true;
   nerdFonts.enable = true;

@@ -26,6 +26,7 @@
     ./terminals/alacritty.nix
     ./terminals/tmux.nix
     ./terminals/ghostty.nix
+    ./terminals/foot.nix
     ./services/gpg.nix
     ./services/udiskie.nix
     ./services/bluetooth.nix

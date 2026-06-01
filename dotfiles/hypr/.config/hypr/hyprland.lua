@@ -1,6 +1,6 @@
 local mod = "SUPER"
 
-local terminal = "alacritty"
+local terminal = "foot"
 local fileManager = "thunar"
 local browser = "brave"
 local menu = "wofi"
@@ -136,7 +136,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hypridle.service")
-        hl.exec_cmd("hyprctl setcursor Adwaita 24")
+	hl.exec_cmd("hyprctl setcursor Adwaita 24")
 	hl.exec_cmd("thunar --daemon")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -267,7 +267,7 @@ local function float_center(name, match)
 end
 
 hl.window_rule({ name = "ws-firefox", match = { class = "firefox" }, workspace = "1 silent" })
-hl.window_rule({ name = "ws-terminal", match = { class = "Alacritty" }, workspace = "2 silent" })
+hl.window_rule({ name = "ws-terminal", match = { class = "foot" }, workspace = "2 silent" })
 hl.window_rule({ name = "ws-brave", match = { class = "brave-browser" }, workspace = "4 silent" })
 
 float_center("pavucontrol", { class = "pavucontrol" })
