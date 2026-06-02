@@ -20,6 +20,9 @@ in
         package = pkgs.brave;
         extensions = [
           { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+          { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # Dark Reader
+          { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # SponsorBlock
+          { id = "kceglpglilklghkgofolieongaolnaob"; } # Cookie AutoDelete
         ];
         commandLineArgs = [
           "--disable-features=WebRtcAllowInputVolumeAdjustment"

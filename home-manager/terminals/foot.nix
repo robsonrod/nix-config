@@ -65,7 +65,6 @@ in
           };
 
           cursor = {
-            #color = "24273A F4DBD6";
             blink = "yes";
             style = "block";
           };
@@ -73,6 +72,16 @@ in
           scrollback = {
             lines = 100000;
           };
+
+          key-bindings = {
+            show-urls-launch = "Control+Shift+o";
+          };
+
+          url-bindings = {
+            cancel = "Control+g Control+c Control+d Escape";
+            toggle-url-visible = "t";
+          };
+
         };
       };
 

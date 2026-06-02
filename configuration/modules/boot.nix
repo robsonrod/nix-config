@@ -18,8 +18,4 @@
     };
   };
 
-  catppuccin.grub = {
-    enable = true;
-    flavor = "macchiato";
-  };
 }
