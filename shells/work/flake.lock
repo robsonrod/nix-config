@@ -18,7 +18,25 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "snx-rs-5": "snx-rs-5"
+      }
+    },
+    "snx-rs-5": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762968641,
+        "narHash": "sha256-LJBLa5SpSaQH/OopkqHPay5AXpeQD6pmvU+2+yeG53I=",
+        "owner": "ancwrd1",
+        "repo": "snx-rs",
+        "rev": "12811be02053f9d1b6fe4d31fd61706d1a765d6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ancwrd1",
+        "ref": "v4.9.0",
+        "repo": "snx-rs",
+        "type": "github"
       }
     }
   },
