@@ -59,27 +59,12 @@
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               self.formatter.${system}
-
-              openssh
-              git
-
               snx-rs-v4
-
-              direnv
-              rsync
             ];
 
             shellHook = ''
               echo "  Direnv ativo neste shell"
               echo "  Ambiente de trabalho ativo"
-
-              if [ -z "$SSH_AUTH_SOCK" ]; then
-                eval "$(ssh-agent -s)" > /dev/null
-                echo "🔑 ssh-agent iniciado"
-              fi
-
-              mkdir -p workspace/part{1,2,3,4}
-              mkdir -p workspace/isoimages
             '';
           };
         });
