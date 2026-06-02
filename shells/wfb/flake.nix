@@ -40,7 +40,7 @@
 
               export PROJECT_ROOT="$PWD"
               export WORKSPACE_DIR="$PWD/.workspace"
-              mkdir -p "$WORKSPACE_DIR"
+              mkdir -vp "$WORKSPACE_DIR"
 
               echo "  Direnv ativo neste shell"
               echo "  Ambiente de trabalho ativo: $WORKSPACE_DIR"
@@ -50,7 +50,6 @@
                 echo "🔑 ssh-agent iniciado"
               fi
 
-              trap cleanup EXIT
 
             '';
 
