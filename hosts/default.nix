@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, catppuccin, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, vars, home-modules, ... }:
 let
   system = "x86_64-linux";
 
@@ -51,7 +51,6 @@ in
       nixos-hardware.nixosModules.common-pc-laptop-ssd
       nixos-hardware.nixosModules.common-cpu-intel
       home-manager.nixosModules.home-manager
-      catppuccin.nixosModules.catppuccin
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -63,7 +62,6 @@ in
             imports = [
               ./acrux/home
               home-modules
-              catppuccin.homeModules.catppuccin
             ];
           };
         };

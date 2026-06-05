@@ -3,7 +3,8 @@
 with lib;
 with lib.types;
 let cfg = config.zsh;
-in {
+in
+{
   options.zsh = {
     enable = mkOption {
       type = bool;
@@ -12,69 +13,99 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      zsh-syntax-highlighting = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs.zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
-      syntaxHighlighting = {
-        enable = true;
-        styles.cursor = "fg=#cdd6f4";
-      };
       historySubstringSearch.enable = true;
       zsh-abbr.enable = true;
 
+      syntaxHighlighting = {
+        enable = true;
+
+        styles = {
+          default = "fg=#ebdbb2";
+          comment = "fg=#928374";
+
+          command = "fg=#8ec07c";
+          alias = "fg=#b8bb26";
+          suffix-alias = "fg=#b8bb26";
+          builtin = "fg=#fabd2f";
+          function = "fg=#b8bb26";
+          precommand = "fg=#83a598";
+
+          reserved-word = "fg=#fe8019";
+
+          single-hyphen-option = "fg=#fe8019";
+          double-hyphen-option = "fg=#fe8019";
+
+          path = "fg=#83a598,underline";
+          globbing = "fg=#d3869b";
+
+          history-expansion = "fg=#fb4934";
+          unknown-token = "fg=#fb4934,bold";
+
+          commandseparator = "fg=#d3869b";
+          cursor = "fg=#ebdbb2";
+        };
+      };
+
       initContent = ''
-                autoload -Uz add-zsh-hook
+        autoload -Uz add-zsh-hook
 
-                # blank line between prompts
-                my_precmd() {
-                [[ -n "$_blank_line_shown" ]] && print ""
-                _blank_line_shown=1
-                }
+        export GPG_TTY=$(tty)
 
-                add-zsh-hook precmd my_precmd
-                PROMPT='%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~ %F{cyan}$(git_prompt_info)$(git_prompt_status)%F{red}]%f%b%(?.%F{white} $.%F{red}✖ %? $ )%f '
+        my_precmd() {
+          [[ -n "$_blank_line_shown" ]] && print ""
+          _blank_line_shown=1
+        }
 
-                source ${pkgs.grc}/etc/grc.zsh
+        add-zsh-hook precmd my_precmd
 
-        	export LESS_TERMCAP_mb=$'\e[1;38;5;203m'
-        	export LESS_TERMCAP_md=$'\e[1;38;5;111m'
-        	export LESS_TERMCAP_me=$'\e[0m'
-        	export LESS_TERMCAP_so=$'\e[48;5;236;38;5;223m'
-        	export LESS_TERMCAP_se=$'\e[0m'
-        	export LESS_TERMCAP_us=$'\e[4;38;5;150m'
-        	export LESS_TERMCAP_ue=$'\e[0m'
-        	export LESS='-R --use-color -Dd+r$Du+b'
-        	export GROFF_NO_SGR=1		
+        PROMPT='%B%F{yellow}[%F{green}%n%F{yellow}@%F{blue}%m %F{aqua}%~ %F{purple}$(git_prompt_info)$(git_prompt_status)%F{yellow}]%f%b%(?.%F{white} λ.%F{red} ✗ %? λ)%f '
 
-        	export FZF_DEFAULT_OPTS=" \
-        	--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
-        	--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
-        	--color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
-        	--color=selected-bg:#494d64 --multi"
-        	export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/,.git/,.venv/}"'
+        source ${pkgs.grc}/etc/grc.zsh
+
+        export LESS_TERMCAP_mb=$'\e[1;38;5;203m'
+        export LESS_TERMCAP_md=$'\e[1;38;5;214m'
+        export LESS_TERMCAP_me=$'\e[0m'
+        export LESS_TERMCAP_so=$'\e[48;5;237;38;5;223m'
+        export LESS_TERMCAP_se=$'\e[0m'
+        export LESS_TERMCAP_us=$'\e[4;38;5;142m'
+        export LESS_TERMCAP_ue=$'\e[0m'
+
+        export LESS='-R --use-color -Dd+r$Du+b'
+        export GROFF_NO_SGR=1
+
+        export FZF_DEFAULT_OPTS="
+          --color=bg+:#3c3836,bg:#282828,spinner:#fabd2f,hl:#fb4934
+          --color=fg:#ebdbb2,header:#fb4934,info:#d3869b,pointer:#fabd2f
+          --color=marker:#b8bb26,fg+:#ebdbb2,prompt:#83a598,hl+:#fb4934
+          --color=selected-bg:#504945
+          --multi
+        "
+
+        export FZF_DEFAULT_COMMAND='
+          rg --files \
+            --follow \
+            --hidden \
+            --glob "!**/.git/*" \
+            --glob "!**/node_modules/*" \
+            --glob "!**/.venv/*"
+        '
       '';
 
       shellAliases = {
-        l = "eza -l --color=always --group-directories-first";
-        ls = "eza --color=always --group-directories-first";
-        la = "eza -la --color=always --octal-permissions --group-directories-first -g --icons";
-        ll = "eza -l --color=always --octal-permissions --group-directories-first";
-        tree = "eza --tree";
-        edit = "sudo -e";
         c = "clear";
         xx = "exit";
         h = "history";
+
         v = "nvim";
         e = "emacs -nw";
+        edit = "sudo -e";
+
         btw = "fastfetch";
+
         wget = "wget --hsts-file=$XDG_CACHE_HOME/wget-hsts";
 
         clone = "git clone";
@@ -100,42 +131,49 @@ in {
       localVariables = {
         ZSH_THEME_GIT_PROMPT_PREFIX = "(";
         ZSH_THEME_GIT_PROMPT_SUFFIX = ")";
-        ZSH_THEME_GIT_PROMPT_DIRTY = " %F{red}✗";
-        ZSH_THEME_GIT_PROMPT_CLEAN = " %F{green}✓";
-        ZSH_THEME_GIT_PROMPT_STAGED = " %F{yellow}●";
-        ZSH_THEME_GIT_PROMPT_UNTRACKED = " %F{cyan}✚";
-        ZSH_THEME_GIT_PROMPT_UNMERGED = " %F{red}✖";
-        ZSH_THEME_GIT_PROMPT_AHEAD = " ⇡";
-        ZSH_THEME_GIT_PROMPT_BEHIND = " ⇣";
+
+        ZSH_THEME_GIT_PROMPT_DIRTY = " %F{red}●";
+        ZSH_THEME_GIT_PROMPT_CLEAN = " %F{green}●";
+
+        ZSH_THEME_GIT_PROMPT_STAGED = " %F{yellow}+";
+        ZSH_THEME_GIT_PROMPT_UNTRACKED = " %F{blue}?";
+        ZSH_THEME_GIT_PROMPT_UNMERGED = " %F{red}!";
+
+        ZSH_THEME_GIT_PROMPT_AHEAD = " ↑";
+        ZSH_THEME_GIT_PROMPT_BEHIND = " ↓";
       };
 
       sessionVariables = {
         ZOXIDE_CMD_OVERRIDE = "cd";
 
-        OPENER = "xdg-open";
-        GPG_TTY = "$(tty)";
         TERM = "xterm-256color";
         COLORTERM = "truecolor";
+
         VISUAL = "nvim";
-        EDITOR = "$VISUAL";
+        EDITOR = "nvim";
+
+        PAGER = "less";
         MANPAGER = "less";
-        PAGER = "bat -P --style=grid --wrap=never";
-        BROWSER = "firefox";
-        FILE = "thunar";
-        TERMINAL = "kitty";
-        LSP_USE_PLISTS = "true";
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=white";
+
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#928374";
       };
 
-      history.size = 100000;
-      history.ignoreAllDups = true;
-      history.path = "$HOME/.zsh_history";
-      history.ignorePatterns = [ "rm *" "pkill *" "cp *" ];
+      history = {
+        size = 100000;
+        path = "$HOME/.zsh_history";
+
+        ignoreAllDups = true;
+        ignorePatterns = [
+          "rm *"
+          "pkill *"
+        ];
+      };
 
       oh-my-zsh = {
         enable = true;
+
         plugins = [
-          "git" # also requires `programs.git.enable = true;`
+          "git"
           "eza"
           "rust"
           "zoxide"
@@ -152,27 +190,25 @@ in {
       };
 
       siteFunctions = {
-        backupthis = '' 
-        	cp -r "$1" "$1.bak.$(date +%Y%m%d%H%M%S)"
+        backupthis = ''
+          cp -r -- "$1" "$1.bak.$(date +%Y%m%d%H%M%S)"
         '';
+
         getmac = ''
-          ip a show enp0s13f0u3u1 | grep link/ether | awk '{print $2}'
+          ip -brief link \
+          | awk '$1 != "lo" && $3 != "" { print $3; exit }'
         '';
       };
 
-      plugins = [
-        {
-          name = "catppuccin/zsh-syntax-highlighting";
-          file = "catppuccin_macchiato-zsh-syntax-highlighting.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "zsh-syntax-highlighting";
-            rev = "7926c3d3e17d26b3779851a2255b95ee650bd928";
-            sha256 = "sha256-l6tztApzYpQ2/CiKuLBf8vI2imM6vPJuFdNDSEi7T/o=";
-          };
-        }
-      ];
+      plugins = [ ];
+    };
 
+    home.sessionVariables = {
+      OPENER = "xdg-open";
+      BROWSER = "firefox";
+      FILE = "thunar";
+      TERMINAL = "foot";
+      LSP_USE_PLISTS = "true";
     };
   };
 }

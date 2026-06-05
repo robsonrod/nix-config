@@ -12,17 +12,24 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      yazi = {
-        enable = true;
-        flavor = "macchiato";
-        accent = "blue";
-      };
-    };
-
     programs.yazi = {
       enable = true;
       enableZshIntegration = true;
+
+      flavors = {
+        gruvbox = pkgs.fetchFromGitHub {
+          owner = "bennyyip";
+          repo = "gruvbox-dark.yazi";
+          rev = "main";
+          sha256 = "sha256-Y/i+eS04T2+Sg/Z7/CGbuQHo5jxewXIgORTQm25uQb4=";
+        };
+      };
+
+      theme = {
+        flavor = {
+          dark = "gruvbox";
+        };
+      };
     };
 
   };

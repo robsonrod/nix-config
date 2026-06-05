@@ -31,16 +31,18 @@ in {
       adwaita-icon-theme
     ];
 
-    catppuccin.gtk = {
-      icon = {
-        enable = true;
-        accent = "lavender";
-        flavor = "macchiato";
-      };
-    };
-
     gtk = {
       enable = true;
+
+      theme = {
+        name = "Gruvbox-Dark";
+        package = pkgs.gruvbox-gtk-theme;
+      };
+
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
+      };
 
       cursorTheme = {
         name = cfg.cursor.theme;

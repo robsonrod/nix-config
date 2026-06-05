@@ -46,35 +46,39 @@ in {
           "$character"
         ];
 
-        palette = "catppuccin_macchiato";
+        palette = "gruvbox_dark";
 
-        palettes.catppuccin_macchiato = {
-          rosewater = "#f4dbd6";
-          flamingo = "#f0c6c6";
-          pink = "#f5bde6";
-          mauve = "#c6a0f6";
-          red = "#ed8796";
-          maroon = "#ee99a0";
-          peach = "#f5a97f";
-          yellow = "#eed49f";
-          green = "#a6da95";
-          teal = "#8bd5ca";
-          sky = "#91d7e3";
-          sapphire = "#7dc4e4";
-          blue = "#8aadf4";
-          lavender = "#b7bdf8";
-          text = "#cad3f5";
-          subtext1 = "#b8c0e0";
-          subtext0 = "#a5adcb";
-          overlay2 = "#939ab7";
-          overlay1 = "#8087a2";
-          overlay0 = "#6e738d";
-          surface2 = "#5b6078";
-          surface1 = "#494d64";
-          surface0 = "#363a4f";
-          base = "#24273a";
-          mantle = "#1e2030";
-          crust = "#181926";
+        palettes.gruvbox_dark = {
+          rosewater = "#ebdbb2";
+          flamingo = "#d5c4a1";
+          pink = "#d3869b";
+          mauve = "#b16286";
+          red = "#fb4934";
+          maroon = "#cc241d";
+          peach = "#fe8019";
+          yellow = "#fabd2f";
+          green = "#b8bb26";
+          teal = "#8ec07c";
+          sky = "#83c07c";
+          sapphire = "#689d6a";
+          blue = "#83a598";
+          lavender = "#bdae93";
+
+          text = "#ebdbb2";
+          subtext1 = "#d5c4a1";
+          subtext0 = "#bdae93";
+
+          overlay2 = "#a89984";
+          overlay1 = "#928374";
+          overlay0 = "#7c6f64";
+
+          surface2 = "#504945";
+          surface1 = "#3c3836";
+          surface0 = "#32302f";
+
+          base = "#282828";
+          mantle = "#1d2021";
+          crust = "#141617";
         };
 
         os = {
