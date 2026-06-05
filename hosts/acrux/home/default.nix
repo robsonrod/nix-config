@@ -10,6 +10,7 @@
   hyprpaper.enable = true;
   hypridle.enable = true;
   hyprshot.enable = true;
+  hyprlock.enable = true;
   wlogout.enable = true;
   waybar.enable = true;
 
