@@ -33,35 +33,36 @@ in
           };
 
           colors-dark = {
-            foreground = "CAD3F5";
-            background = "24273A";
+            alpha = 0.9;
+            foreground = "ebdbb2";
+            background = "282828";
 
-            regular0 = "494D64"; # surface1
-            regular1 = "ED8796"; # red
-            regular2 = "A6DA95"; # green
-            regular3 = "EED49F"; # yellow
-            regular4 = "8AADF4"; # blue
-            regular5 = "F5BDE6"; # pink
-            regular6 = "8BD5CA"; # teal
-            regular7 = "B8C0E0"; # subtext1
+            regular0 = "282828";
+            regular1 = "cc241d";
+            regular2 = "98971a";
+            regular3 = "d79921";
+            regular4 = "458588";
+            regular5 = "b16286";
+            regular6 = "689d6a";
+            regular7 = "a89984";
 
-            bright0 = "5B6078"; # surface2
-            bright1 = "ED8796";
-            bright2 = "A6DA95";
-            bright3 = "EED49F";
-            bright4 = "8AADF4";
-            bright5 = "F5BDE6";
-            bright6 = "8BD5CA";
-            bright7 = "A5ADCB"; # subtext0
+            bright0 = "928374";
+            bright1 = "fb4934";
+            bright2 = "b8bb26";
+            bright3 = "fabd2f";
+            bright4 = "83a598";
+            bright5 = "d3869b";
+            bright6 = "8ec07c";
+            bright7 = "ebdbb2";
 
-            selection-foreground = "CAD3F5";
-            selection-background = "363A4F";
+            selection-foreground = "282828";
+            selection-background = "ebdbb2";
 
-            search-box-no-match = "24273A F38BA8";
-            search-box-match = "CAD3F5 363A4F";
+            search-box-no-match = "282828 cc241d";
+            search-box-match = "ebdbb2 928374";
 
-            jump-labels = "24273A F5BDE6";
-            urls = "8AADF4";
+            jump-labels = "282828 fabd2f";
+            urls = "83a598";
           };
 
           cursor = {

@@ -17,8 +17,8 @@ in
   config = {
     wallpaper =
       let
-        url = "https://raw.githubusercontent.com/robsonrod/nix-config/refs/heads/main/dotfiles/wallpaper/.config/wallpaper/nature-valley-2.jpg";
-        sha256 = "0rm065ag2mqaqlxdf78b94dhqw24xpq2ica8kvf7jd821p6aa7kx";
+        url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/refs/heads/main/wallpapers/photography/forest-2.jpg";
+        sha256 = "0lihk9kc1givn4fl3bhrjwizssplfpqnh826xha9jvzqg45c5b26";
         ext = "jpg";
       in
       builtins.fetchurl {

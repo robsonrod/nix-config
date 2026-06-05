@@ -35,8 +35,8 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(f5c2e7cc)", "rgba(cba6f7cc)" }, angle = 45 },
-			inactive_border = "rgba(585b70aa)",
+			active_border = { colors = { "rgba(ebdbb2ff)", "rgba(ebdbb2ff)" }, angle = 45 },
+			inactive_border = "rgba(928374ff)",
 		},
 
 		resize_on_border = true,
@@ -255,8 +255,8 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 --------------------------------------------------
 -- LID SWITCH
 --------------------------------------------------
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms off"))
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
+hl.bind("switch:on:Lid Switch", hl.dsp.dpms({ action = "off", monitor = "eDP-1" }))
+hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ action = "on", monitor = "eDP-1" }))
 
 --------------------------------------------------
 -- WINDOW RULES
@@ -267,7 +267,6 @@ local function float_center(name, match)
 end
 
 hl.window_rule({ name = "ws-firefox", match = { class = "firefox" }, workspace = "1 silent" })
-hl.window_rule({ name = "ws-terminal", match = { class = "foot" }, workspace = "2 silent" })
 hl.window_rule({ name = "ws-brave", match = { class = "brave-browser" }, workspace = "4 silent" })
 
 float_center("pavucontrol", { class = "pavucontrol" })

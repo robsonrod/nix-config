@@ -12,16 +12,21 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      delta = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs.delta = {
       enableGitIntegration = true;
       enable = true;
+      options = {
+        navigate = true;
+        side-by-side = true;
+        line-numbers = true;
+        syntax-theme = "gruvbox-dark";
+        plus-style = "syntax #283B2D";
+        minus-style = "syntax #3C1F1E";
+        hunk-header-style = "syntax bold";
+        file-style = "bold yellow";
+        file-decoration-style = "yellow ul";
+        commit-decoration-style = "yellow box";
+      };
     };
 
     programs.git = {

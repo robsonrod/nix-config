@@ -28,15 +28,6 @@ in
         };
       };
     };
-
-    catppuccin = {
-      zathura = {
-        enable = true;
-        flavor = "latte";
-      };
-    };
-
-
   };
 
 }

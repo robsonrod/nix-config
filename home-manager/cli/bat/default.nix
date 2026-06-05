@@ -12,15 +12,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      bat = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs.bat = {
       enable = true;
+      config = {
+        theme = "gruvbox-dark";
+      };
     };
 
   };

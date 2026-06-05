@@ -12,15 +12,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      btop = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs.btop = {
       enable = true;
+      settings = {
+        color_theme = "gruvbox_dark";
+      };
     };
 
   };

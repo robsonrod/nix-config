@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    catppuccin.url = "github:catppuccin/nix/release-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,7 +29,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, catppuccin, neovim-config, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, neovim-config, ... }:
     let
       vars = rec {
         user = "robson";
@@ -50,14 +49,14 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules catppuccin neovim-config;
+          inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules neovim-config;
         }
       );
 
       homeConfigurations = (
         import ./nix {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable home-manager vars home-modules catppuccin;
+          inherit inputs nixpkgs nixpkgs-stable home-manager vars home-modules;
         }
       );
     };

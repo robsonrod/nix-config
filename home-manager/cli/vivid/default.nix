@@ -12,17 +12,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin = {
-      vivid = {
-        enable = true;
-        flavor = "macchiato";
-      };
-    };
-
     programs.vivid = {
       enable = true;
       enableZshIntegration = true;
     };
-
   };
 }

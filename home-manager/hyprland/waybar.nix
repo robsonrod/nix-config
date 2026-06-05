@@ -21,7 +21,7 @@ in
       settings = [
         {
           layer = "top";
-          position = "bottom";
+          position = "top";
           height = 34;
           spacing = 4;
 
@@ -39,7 +39,6 @@ in
 
           modules-right = [
             "hyprland/submap"
-            "custom/vpn"
             "network"
             "pulseaudio"
             "backlight"
@@ -285,226 +284,205 @@ in
               "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
 
-          # -------------------------------------------------
-          # VPN
-          # -------------------------------------------------
-
-          "custom/vpn" = {
-            format = "{}";
-            return-type = "json";
-
-            interval = 5;
-
-            exec = "vpn-widget status";
-          };
         }
       ];
 
       style = ''
-        @define-color base00 #24273a;
-        @define-color base01 #1e2030;
-        @define-color base02 #363a4f;
-        @define-color base03 #494d64;
-        @define-color base04 #5b6078;
-        @define-color base05 #cad3f5;
-        @define-color base06 #f4dbd6;
-        @define-color base07 #b7bdf8;
-        @define-color base08 #ed8796;
-        @define-color base09 #f5a97f;
-        @define-color base0A #eed49f;
-        @define-color base0B #a6da95;
-        @define-color base0C #8bd5ca;
-        @define-color base0D #8aadf4;
-        @define-color base0E #c6a0f6;
-        @define-color base0F #f0c6c6;
+        @define-color base00 #282828;
+        @define-color base01 #32302f;
+        @define-color base02 #504945;
+        @define-color base03 #665c54;
+        @define-color base04 #bdae93;
+        @define-color base05 #d4be98;
+        @define-color base06 #ddc7a1;
+        @define-color base07 #ebdbb2;
+        @define-color base08 #ea6962;
+        @define-color base09 #e78a4e;
+        @define-color base0A #d8a657;
+        @define-color base0B #a9b665;
+        @define-color base0C #89b482;
+        @define-color base0D #7daea3;
+        @define-color base0E #d3869b;
+        @define-color base0F #bd6f3e;
 
-        * {
-          border: none;
-          border-radius: 0;
-          min-height: 0;
+                * {
+                  border: none;
+                  border-radius: 0;
+                  min-height: 0;
 
-          font-family: "JetBrainsMono Nerd Font", monospace;
-          font-size: 12px;
-          font-weight: 500;
+                  font-family: "JetBrainsMono Nerd Font", monospace;
+                  font-size: 12px;
+                  font-weight: 500;
 
-          transition:
-            background-color 120ms ease,
-            color 120ms ease,
-            border-color 120ms ease;
-        }
+                  transition:
+                    background-color 120ms ease,
+                    color 120ms ease,
+                    border-color 120ms ease;
+                }
 
-        window#waybar {
-          background: alpha(@base01, 0.92);
-          color: @base05;
+                window#waybar {
+                  background: alpha(@base01, 0.92);
+                  color: @base05;
 
-          border: 2px solid @base03;
-          border-radius: 10px;
-        }
+                  border: 2px solid @base03;
+                  border-radius: 10px;
+                }
 
-        #battery,
-        #cpu,
-        #memory,
-        #network,
-        #pulseaudio,
-        #backlight,
-        #clock,
-        #temperature,
-        #language,
-        #idle_inhibitor,
-        #custom-vpn,
-        #tray {
-          background: @base02;
+                #battery,
+                #cpu,
+                #memory,
+                #network,
+                #pulseaudio,
+                #backlight,
+                #clock,
+                #temperature,
+                #language,
+                #idle_inhibitor,
+                #tray {
+                  background: @base02;
 
-          margin: 4px 3px;
-          padding: 0 10px;
+                  margin: 4px 3px;
+                  padding: 0 10px;
 
-          border-radius: 8px;
-        }
+                  border-radius: 8px;
+                }
 
-        #custom-nixicon {
-          color: @base0D;
+                #custom-nixicon {
+                  color: @base0D;
 
-          margin-left: 10px;
-          margin-right: 4px;
+                  margin-left: 10px;
+                  margin-right: 4px;
 
-          font-size: 15px;
-        }
+                  font-size: 15px;
+                }
 
-        #workspaces {
-          margin: 0 4px;
-        }
+                #workspaces {
+                  margin: 0 4px;
+                }
 
-        #workspaces button {
-          color: @base04;
+                #workspaces button {
+                  color: @base04;
 
-          margin: 4px 2px;
-          padding: 0 8px;
+                  margin: 4px 2px;
+                  padding: 0 8px;
 
-          border-radius: 8px;
+                  border-radius: 8px;
 
-          background: transparent;
-        }
+                  background: transparent;
+                }
 
-        #workspaces button:hover {
-          background: @base02;
-          color: @base05;
-        }
+                #workspaces button:hover {
+                  background: @base02;
+                  color: @base05;
+                }
 
-        #workspaces button.active {
-          background: @base03;
-          color: @base0B;
-        }
+                #workspaces button.active {
+                  background: @base03;
+                  color: @base0B;
+                }
 
-        #workspaces button.urgent {
-          background: @base08;
-          color: @base01;
-        }
+                #workspaces button.urgent {
+                  background: @base08;
+                  color: @base01;
+                }
 
-        #window {
-          color: @base05;
+                #window {
+                  color: @base05;
 
-          font-size: 12px;
-          font-weight: 500;
-        }
+                  font-size: 12px;
+                  font-weight: 500;
+                }
 
-        #cpu {
-          color: @base09;
-        }
+                #cpu {
+                  color: @base05;
+                }
 
-        #memory {
-          color: @base0E;
-        }
+                #memory {
+                  color: @base05;
+                }
 
-        #network {
-          color: @base0D;
-        }
+                #network {
+                  color: @base05;
+                }
 
-        #network.disconnected {
-          color: @base08;
-        }
+                #network.disconnected {
+                  color: @base08;
+                }
 
-        #battery {
-          color: @base0B;
-        }
+                #battery {
+                  color: @base05;
+                }
 
-        #battery.warning {
-          color: @base0A;
-        }
+                #battery.warning {
+                  color: @base0A;
+                }
 
-        #battery.critical {
-          color: @base08;
-        }
+                #battery.critical {
+                  color: @base08;
+                }
 
-        #battery.charging {
-          color: @base0C;
-        }
+                #battery.charging {
+                  color: @base0C;
+                }
 
-        #pulseaudio {
-          color: @base0C;
-        }
+                #pulseaudio {
+                  color: @base05;
+                }
 
-        #pulseaudio.muted {
-          color: @base04;
-        }
+                #pulseaudio.muted {
+                  color: @base04;
+                }
 
-        #temperature {
-          color: @base09;
-        }
+                #temperature {
+                  color: @base05;
+                }
 
-        #temperature.critical {
-          color: @base08;
-        }
+                #temperature.critical {
+                  color: @base08;
+                }
 
-        #idle_inhibitor.activated {
-          color: @base0A;
-        }
+                #idle_inhibitor.activated {
+                  color: @base0A;
+                }
 
-        #idle_inhibitor.deactivated {
-          color: @base04;
-        }
+                #idle_inhibitor.deactivated {
+                  color: @base04;
+                }
 
-        #tray {
-          padding: 0 6px;
-        }
+                #tray {
+                  padding: 0 6px;
+                }
 
-        #tray > .passive {
-          -gtk-icon-effect: dim;
-        }
+                #tray > .passive {
+                  -gtk-icon-effect: dim;
+                }
 
-        #tray > .needs-attention {
-          background: @base08;
-          border-radius: 6px;
-        }
+                #tray > .needs-attention {
+                  background: @base08;
+                  border-radius: 6px;
+                }
 
-        #clock {
-          color: @base07;
+                #clock {
+                  color: @base07;
 
-          margin-right: 6px;
-        }
+                  margin-right: 6px;
+                }
 
-        #language {
-          color: @base06;
+                #language {
+                  color: @base06;
 
-          letter-spacing: -0.5px;
-        }
+                  letter-spacing: -0.5px;
+                }
 
-        #custom-vpn {
-          color: @base08;
-        }
+                tooltip {
+                  background: @base01;
+                  border: 1px solid @base03;
+                  border-radius: 8px;
+                }
 
-        #custom-vpn.enabled {
-          color: @base0B;
-        }
-
-        tooltip {
-          background: @base01;
-          border: 1px solid @base03;
-          border-radius: 8px;
-        }
-
-        tooltip label {
-          color: @base05;
-        }
+                tooltip label {
+                  color: @base05;
+                }
       '';
     };
   };

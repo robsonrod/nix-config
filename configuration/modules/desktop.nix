@@ -109,11 +109,6 @@
       useTextGreeter = true;
 
       settings = {
-        #     initial_session = {
-        #       command = "start-hyprland";
-        #       user = "robson";
-        #     };
-
         # Login screen after logout
         default_session = {
           user = "greeter";
@@ -131,8 +126,11 @@
     };
 
     logind.settings.Login = {
+      HandleLidSwitchExternalPower = "ignore";
+      HandleLidSwitchDocked = "ignore";
       HandleLidSwitch = "ignore";
       HandlePowerKey = "ignore";
+
     };
 
   };
