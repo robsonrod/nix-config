@@ -14,6 +14,7 @@ in {
   config = mkIf cfg.enable {
     services.hyprpaper = {
       enable = true;
+      package = pkgs.hyprpaper;
 
       importantPrefixes = [ "monitor" ];
 

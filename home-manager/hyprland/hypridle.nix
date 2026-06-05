@@ -17,6 +17,7 @@ in
   config = mkIf cfg.enable {
     services.hypridle = {
       enable = true;
+      package = pkgs.hypridle;
 
       settings = {
 
