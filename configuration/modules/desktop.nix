@@ -30,8 +30,6 @@
       gnumake
       gcc
       # hyprland
-      hyprpaper
-      hyprlock
       hyprpicker
       grim
       slurp
