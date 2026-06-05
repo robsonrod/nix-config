@@ -33,36 +33,35 @@ in
           };
 
           colors-dark = {
-            alpha = 0.9;
-            foreground = "ebdbb2";
-            background = "282828";
+            foreground = "d4be98";
+            background = "1d2021";
 
-            regular0 = "282828";
-            regular1 = "cc241d";
-            regular2 = "98971a";
-            regular3 = "d79921";
-            regular4 = "458588";
-            regular5 = "b16286";
-            regular6 = "689d6a";
-            regular7 = "a89984";
+            regular0 = "1d2021";
+            regular1 = "ea6962";
+            regular2 = "a9b665";
+            regular3 = "d8a657";
+            regular4 = "7daea3";
+            regular5 = "d3869b";
+            regular6 = "89b482";
+            regular7 = "d4be98";
 
             bright0 = "928374";
-            bright1 = "fb4934";
-            bright2 = "b8bb26";
-            bright3 = "fabd2f";
-            bright4 = "83a598";
+            bright1 = "ea6962";
+            bright2 = "a9b665";
+            bright3 = "d8a657";
+            bright4 = "7daea3";
             bright5 = "d3869b";
-            bright6 = "8ec07c";
-            bright7 = "ebdbb2";
+            bright6 = "89b482";
+            bright7 = "ddc7a1";
 
-            selection-foreground = "282828";
-            selection-background = "ebdbb2";
+            selection-foreground = "1d2021";
+            selection-background = "d4be98";
 
-            search-box-no-match = "282828 cc241d";
-            search-box-match = "ebdbb2 928374";
+            search-box-no-match = "1d2021 ea6962";
+            search-box-match = "d4be98 928374";
 
-            jump-labels = "282828 fabd2f";
-            urls = "83a598";
+            jump-labels = "1d2021 d8a657";
+            urls = "7daea3";
           };
 
           cursor = {

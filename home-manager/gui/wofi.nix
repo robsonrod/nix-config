@@ -39,115 +39,125 @@ in
         };
 
         style = ''
-          @define-color bg0     #282828;
-          @define-color bg1     #3c3836;
-          @define-color bg2     #504945;
-          @define-color bg3     #665c54;
+            @define-color bg0     #1d2021;
+          @define-color bg1     #282828;
+          @define-color bg2     #32302f;
+          @define-color bg3     #3c3836;
 
-          @define-color fg0     #fbf1c7;
-          @define-color fg1     #ebdbb2;
-          @define-color fg2     #d5c4a1;
+          @define-color fg0     #d4be98;
+          @define-color fg1     #ddc7a1;
+          @define-color fg2     #bdae93;
 
-          @define-color red     #fb4934;
-          @define-color green   #b8bb26;
-          @define-color yellow  #fabd2f;
-          @define-color blue    #83a598;
+          @define-color red     #ea6962;
+          @define-color green   #a9b665;
+          @define-color yellow  #d8a657;
+          @define-color blue    #7daea3;
           @define-color purple  #d3869b;
-          @define-color aqua    #8ec07c;
-          @define-color orange  #fe8019;
+          @define-color aqua    #89b482;
+          @define-color orange  #e78a4e;
           @define-color gray    #928374;
 
-          * {
-            font-family: "Inconsolata Nerd Font", monospace;
-            font-size: 14px;
-          }
+          @define-color bg_red      #ea6962;
+          @define-color bg_green    #a9b665;
+          @define-color bg_yellow   #d8a657;
+          @define-color bg_blue     #7daea3;
+          @define-color bg_purple   #d3869b;
+          @define-color bg_aqua     #89b482;
+          @define-color bg_orange   #e78a4e;
 
-          window {
-            margin: 0;
-            padding: 12px;
-            border: 2px solid @yellow;
-            border-radius: 10px;
-            background-color: @bg0;
-            animation: fadeIn 0.2s ease-in-out;
-          }
+          @define-color bg_dim      #141617;
 
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
+            * {
+              font-family: "Inconsolata Nerd Font", monospace;
+              font-size: 14px;
             }
 
-            to {
-              opacity: 1;
+            window {
+              margin: 0;
+              padding: 12px;
+              border: 2px solid @yellow;
+              border-radius: 10px;
+              background-color: @bg0;
+              animation: fadeIn 0.2s ease-in-out;
             }
-          }
 
-          #outer-box {
-            margin: 0;
-            padding: 8px;
-            background-color: @bg0;
-          }
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
 
-          #inner-box {
-            margin: 0;
-            padding: 8px;
-            background-color: @bg0;
-          }
+              to {
+                opacity: 1;
+              }
+            }
 
-          #scroll {
-            margin: 0;
-            padding: 0;
-            border: none;
-          }
+            #outer-box {
+              margin: 0;
+              padding: 8px;
+              background-color: @bg0;
+            }
 
-          #input {
-            margin: 0 0 12px 0;
-            padding: 12px;
-            border: 2px solid @bg3;
-            border-radius: 8px;
-            background-color: @bg1;
-            color: @fg1;
-          }
+            #inner-box {
+              margin: 0;
+              padding: 8px;
+              background-color: @bg0;
+            }
 
-          #input:focus {
-            border-color: @yellow;
-          }
+            #scroll {
+              margin: 0;
+              padding: 0;
+              border: none;
+            }
 
-          #input image {
-            color: @yellow;
-          }
+            #input {
+              margin: 0 0 12px 0;
+              padding: 12px;
+              border: 2px solid @bg3;
+              border-radius: 8px;
+              background-color: @bg1;
+              color: @fg1;
+            }
 
-          #text {
-            margin: 0;
-            color: @fg1;
-          }
+            #input:focus {
+              border-color: @yellow;
+            }
 
-          #entry {
-            margin: 4px;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: transparent;
-          }
+            #input image {
+              color: @yellow;
+            }
 
-          #entry:hover {
-            background-color: @bg1;
-          }
+            #text {
+              margin: 0;
+              color: @fg1;
+            }
 
-          #entry:selected {
-            background-color: @bg2;
-            border: 2px solid @yellow;
-          }
+            #entry {
+              margin: 4px;
+              padding: 10px;
+              border-radius: 8px;
+              background-color: transparent;
+            }
 
-          #entry:selected #text {
-            color: @fg0;
-          }
+            #entry:hover {
+              background-color: @bg1;
+            }
 
-          #entry arrow {
-            color: @orange;
-          }
+            #entry:selected {
+              background-color: @bg2;
+              border: 2px solid @yellow;
+            }
 
-          #entry:drop(active) {
-            background-color: @aqua;
-          }
+            #entry:selected #text {
+              color: @fg0;
+            }
+
+            #entry arrow {
+              color: @orange;
+            }
+
+            #entry:drop(active) {
+              background-color: @aqua;
+            }
         '';
       };
     };
