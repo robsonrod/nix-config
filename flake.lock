@@ -65,11 +65,11 @@
     "neovim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1778929168,
-        "narHash": "sha256-+l0R6v9geE1rEJPuFL1UUCj/jphh5v3PmxFjWesU588=",
+        "lastModified": 1780757479,
+        "narHash": "sha256-r2rD6wcFVRwFBSXUPlfwVMLeWKDByU9EONIl5FVB7nA=",
         "ref": "refs/heads/main",
-        "rev": "9a2ac60d86dac0a70b2af42e3b43423f00055c56",
-        "revCount": 7,
+        "rev": "d2feebc559b3c99743a3013dab4c40563c026107",
+        "revCount": 8,
         "type": "git",
         "url": "https://codeberg.org/robsonrod/nvim"
       },
