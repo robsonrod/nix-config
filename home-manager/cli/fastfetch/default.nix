@@ -4,17 +4,24 @@ with lib;
 
 let
   cfg = config.fastfetch;
-
   colors = {
-    blue = "#8aadf4";
-    green = "#a6da95";
-    yellow = "#eed49f";
-    mauve = "#c6a0f6";
-    pink = "#f5bde6";
-    teal = "#8bd5ca";
-    sky = "#91d7e3";
-    red = "#ed8796";
-    peach = "#f5a97f";
+    bg = "#282828";
+    bg_alt = "#32302f";
+    fg = "#d4be98";
+
+    red = "#ea6962";
+    orange = "#e78a4e";
+    yellow = "#d8a657";
+    green = "#a9b665";
+    aqua = "#89b482";
+    blue = "#7daea3";
+    purple = "#d3869b";
+
+    peach = "#e78a4e";
+    teal = "#89b482";
+    sky = "#7daea3";
+    mauve = "#d3869b";
+    pink = "#ea6962";
   };
 
 in
@@ -44,11 +51,11 @@ in
           type = "file";
           color = {
             "1" = colors.red;
-            "2" = colors.peach;
+            "2" = colors.orange;
             "3" = colors.yellow;
             "4" = colors.green;
             "5" = colors.blue;
-            "6" = colors.pink;
+            "6" = colors.mauve;
           };
           padding.right = 4;
         };
