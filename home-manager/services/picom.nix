@@ -32,7 +32,6 @@ in
         shadow-offset-y = -4;
 
         shadow-exclude = [
-          "_GTK_FRAME_EXTENTS@:c"
           "class_g = 'Dunst'"
           "window_type = 'dock'"
           "window_type = 'desktop'"
@@ -52,7 +51,6 @@ in
         blurExclude = [
           "window_type = 'dock'"
           "window_type = 'desktop'"
-          "_GTK_FRAME_EXTENTS@:c"
         ];
 
         # ======================
@@ -77,6 +75,7 @@ in
           "88:class_g = 'rofi'"
           "90:class_g = 'kitty'"
           "90:class_g = 'Alacritty'"
+          "90:class_g = 'foot'"
         ];
 
         # ======================
