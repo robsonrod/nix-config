@@ -30,7 +30,6 @@
   udiskie.enable = true;
   bluetooth.enable = true;
   dunst.enable = true;
-  picom.enable = true;
   mpd.enable = true;
   fzf.enable = true;
   jq.enable = true;

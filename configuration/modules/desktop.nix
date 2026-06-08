@@ -102,25 +102,9 @@
       };
     };
 
-    greetd = {
+    displayManager.sddm = {
       enable = true;
-      useTextGreeter = true;
-
-      settings = {
-        # Login screen after logout
-        default_session = {
-          user = "greeter";
-
-          command = ''
-            ${pkgs.tuigreet}/bin/tuigreet \
-              --time \
-              --asterisks \
-              --remember \
-              --remember-session \
-              --cmd start-hyprland
-          '';
-        };
-      };
+      wayland.enable = true;
     };
 
     logind.settings.Login = {

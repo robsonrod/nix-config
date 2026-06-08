@@ -4,7 +4,7 @@
     polkit.enable = true;
     rtkit.enable = true;
     pam.services = {
-      greetd.enableGnomeKeyring = true;
+      sddm.enableGnomeKeyring = true;
       hyprlock.enableGnomeKeyring = true;
     };
 
