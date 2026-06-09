@@ -43,7 +43,7 @@ in
           {
             #monitor = "eDP-1";
 
-            size = "300, 50";
+            size = "450, 60";
             valign = "bottom";
             position = "0%, 10%";
 
