@@ -49,8 +49,6 @@
                 eval "$(ssh-agent -s)" > /dev/null
                 echo "🔑 ssh-agent iniciado"
               fi
-
-
             '';
 
           };

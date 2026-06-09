@@ -26,7 +26,6 @@ in {
           {
             monitor = "eDP-1";
             path = config.wallpaper;
-            fit_mode = "fill";
           }
         ];
       };
