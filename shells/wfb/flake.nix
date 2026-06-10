@@ -31,6 +31,7 @@
               git
               direnv
               rsync
+              tmux
             ];
 
             shellHook = ''
@@ -49,6 +50,7 @@
                 eval "$(ssh-agent -s)" > /dev/null
                 echo "🔑 ssh-agent iniciado"
               fi
+
             '';
 
           };
