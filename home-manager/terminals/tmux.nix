@@ -40,15 +40,13 @@ in
             plugin = minimal-tmux-status;
 
             extraConfig = ''
-              set -g @minimal-tmux-fg "#24273a"
-              set -g @minimal-tmux-bg "#8aadf4"
+              set -g @minimal-tmux-fg "#141617"
+              set -g @minimal-tmux-bg "#e78a4e"
               set -g @minimal-tmux-justify "left"
-              set -g @minimal-tmux-indicator-str "   "
+              set -g @minimal-tmux-indicator-str " tmux "
               set -g @minimal-tmux-right false
               set -g @minimal-tmux-status "bottom"
-              set -g @minimal-tmux-use-arrow true
-              set -g @minimal-tmux-right-arrow ""
-              set -g @minimal-tmux-left-arrow ""
+              set -g @minimal-tmux-use-arrow false
             '';
           }
         ];
@@ -56,7 +54,7 @@ in
         extraConfig = ''
           #### STATUS BAR ####
           set -g status on
-          set -g status-position top
+          set -g status-position bottom
 
           set -g default-terminal "xterm-256color"
           set -sa terminal-overrides ",xterm-256color:Tc"
@@ -71,7 +69,7 @@ in
           bind c new-window -c "#{pane_current_path}"
 
           #### POPUP / SCRATCH ####
-          bind -n M-g display-popup -E "tmux new-session -A -s scratch"
+          bind g display-popup -E "tmux new-session -A -s scratch"
 
           #### UNBIND DEFAULTS ####
           unbind '"'
@@ -107,6 +105,8 @@ in
 
           #### RELOAD ####
           bind r refresh-client
+
+          set -g status-style bg='#141617',fg='#d4be98'
         '';
       };
     };
