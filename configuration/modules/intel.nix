@@ -36,11 +36,11 @@ in
       enable = true;
       settings = {
         # --- CPU Performance & Core Scheduling ---
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_AC = "ondemand";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
         # Intel Energy Performance Hints (Balances P/E-cores aggressively on battery)
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "ondemand";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "power"; # Pushes more tasks to E-cores to save power
 
         # Prevent thermal spikes on your lap, allow boost when plugged in
