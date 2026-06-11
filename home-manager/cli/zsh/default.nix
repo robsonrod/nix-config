@@ -116,9 +116,6 @@ in
         gdiff = "git diff";
         pull = "git pull";
 
-        vpn-up = "snxctl connect";
-        vpn-down = "snxctl disconnect";
-
         nr = "nh os switch";
         nt = "nh os test";
         nb = "nh os boot";
@@ -126,6 +123,8 @@ in
         nc = "nh clean all";
         ns = "nix search nixpkgs";
         ni = "nh os info";
+
+        dev = "ssh dev";
       };
 
       localVariables = {
