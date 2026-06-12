@@ -18,6 +18,7 @@ in {
       dysk
       vips
       brightnessctl
+      ripdrag
     ];
     programs.rmpc = {
       enable = true;
