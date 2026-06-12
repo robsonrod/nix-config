@@ -19,8 +19,8 @@ in
       hostName = "${cfg.hostname}";
       networkmanager = {
         enable = true;
-        dns = "dnsmasq";
-        dhcp = "internal";
+        #dns = "dnsmasq";
+        #dhcp = "internal";
       };
 
       firewall = {
@@ -29,7 +29,6 @@ in
         allowedTCPPortRanges = [{ from = 4000; to = 4010; }];
       };
     };
-
 
     programs = {
       nm-applet.enable = true;
