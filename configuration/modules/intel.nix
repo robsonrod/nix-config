@@ -39,7 +39,7 @@ in
         enable = true; # dynamically switches governor based on load
         settings = {
           charger = {
-            governor = "performance";
+            governor = "powersave";
             turbo = "auto";
           };
           battery = {
