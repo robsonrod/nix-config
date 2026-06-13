@@ -34,6 +34,7 @@ in
         thermald.enable = true;
       };
 
+      services.tlp.enable = false;
       services.auto-cpufreq = {
         enable = true; # dynamically switches governor based on load
         settings = {

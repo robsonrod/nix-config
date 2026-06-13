@@ -123,11 +123,6 @@ in {
         }
 
         {
-          condition = "gitdir:~/nix-config/**";
-          path = "~/.config/git/gituser-personal";
-        }
-
-        {
           condition = "gitdir:~/dev/work/**";
           path = "~/.config/git/gituser-work";
         }

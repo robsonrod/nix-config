@@ -155,6 +155,7 @@ in
         MANPAGER = "less";
 
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#928374";
+        NH_OS_FLAKE = "$HOME/dev/personal/nix-config";
       };
 
       history = {

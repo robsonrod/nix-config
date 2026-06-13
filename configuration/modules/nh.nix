@@ -19,7 +19,7 @@ in
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
-      flake = "/home/${vars.user}/nix-config";
+      flake = "/home/${vars.user}/dev/personal/nix-config";
     };
 
   };
