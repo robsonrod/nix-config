@@ -5,30 +5,32 @@ with lib.types;
 let
   cfg = config.alacritty;
 
-  catppuccinMacchiato = {
+  gruvboxMaterialHard = {
     primary = {
-      background = "#24273A";
-      foreground = "#CAD3F5";
+      background = "#1D2021";
+      foreground = "#D4BE98";
     };
+
     normal = {
-      black = "#24273A";
-      red = "#F28FAD";
-      green = "#ABE9B3";
-      yellow = "#FAE3B0";
-      blue = "#96CDFB";
-      magenta = "#DDB6F2";
-      cyan = "#B5E8E0";
-      white = "#CAD3F5";
+      black = "#1D2021";
+      red = "#EA6962";
+      green = "#A9B665";
+      yellow = "#D8A657";
+      blue = "#7DAEA3";
+      magenta = "#D3869B";
+      cyan = "#89B482";
+      white = "#D4BE98";
     };
+
     bright = {
-      black = "#6E6C7E";
-      red = "#F28FAD";
-      green = "#ABE9B3";
-      yellow = "#FAE3B0";
-      blue = "#96CDFB";
-      magenta = "#DDB6F2";
-      cyan = "#B5E8E0";
-      white = "#FFFFFF";
+      black = "#665C54";
+      red = "#EA6962";
+      green = "#A9B665";
+      yellow = "#D8A657";
+      blue = "#7DAEA3";
+      magenta = "#D3869B";
+      cyan = "#89B482";
+      white = "#F2E5BC";
     };
   };
 
@@ -63,7 +65,7 @@ in
             size = 10.0;
           };
 
-          colors = catppuccinMacchiato;
+          colors = gruvboxMaterialHard;
 
           cursor = {
             style = {
