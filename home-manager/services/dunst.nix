@@ -42,21 +42,21 @@ in
         };
 
         urgency_low = {
-          background = "#24273a";
-          foreground = "#a5adcb";
+          background = "#1d2021";
+          foreground = "#a89984";
           timeout = 5;
         };
 
         urgency_normal = {
-          background = "#24273a";
-          foreground = "#cad3f5";
+          background = "#1d2021";
+          foreground = "#ebdbb2";
           timeout = 10;
         };
 
         urgency_critical = {
-          background = "#24273a";
-          foreground = "#cad3f5";
-          frame_color = "#f5a97f";
+          background = "#1d2021";
+          foreground = "#ebdbb2";
+          frame_color = "#cc241d";
           timeout = 0;
         };
       };
