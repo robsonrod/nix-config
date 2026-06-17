@@ -49,11 +49,10 @@
     thunar.enable = true;
   };
 
-  zathura.enable = true;
+  sioyek.enable = true;
   nsxiv.enable = true;
   firefox.enable = true;
   chromium.enable = true;
-  alacritty.enable = true;
   foot.enable = true;
   fastfetch.enable = true;
   theme.enable = true;

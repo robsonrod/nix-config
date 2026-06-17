@@ -19,6 +19,7 @@
     ./gui/calibre.nix
     ./gui/mpv.nix
     ./gui/wofi.nix
+    ./gui/sioyek.nix
     ./editors/emacs.nix
     ./editors/neovim.nix
     ./editors/vscode.nix
