@@ -32,6 +32,7 @@
               direnv
               rsync
               tmux
+              tigervnc
             ];
 
             shellHook = ''
