@@ -34,7 +34,6 @@ in
         plugins = with pkgs.tmuxPlugins; [
           sensible
           yank
-          vim-tmux-navigator
 
           {
             plugin = minimal-tmux-status;
@@ -43,7 +42,7 @@ in
               set -g @minimal-tmux-fg "#141617"
               set -g @minimal-tmux-bg "#e78a4e"
               set -g @minimal-tmux-justify "left"
-              set -g @minimal-tmux-indicator-str " tmux "
+              set -g @minimal-tmux-indicator-str "  #S"
               set -g @minimal-tmux-right false
               set -g @minimal-tmux-status "bottom"
               set -g @minimal-tmux-use-arrow false
@@ -59,8 +58,8 @@ in
           set -g default-terminal "xterm-256color"
           set -sa terminal-overrides ",xterm-256color:Tc"
 
-          setw -g mode-keys vi
-          set -g status-keys vi
+          #setw -g mode-keys vi
+          #set -g status-keys vi
 
           #### SPLITS ####
           bind | split-window -h -c "#{pane_current_path}"
@@ -107,6 +106,7 @@ in
           bind r refresh-client
 
           set -g status-style bg='#141617',fg='#d4be98'
+          set -g status-right "  #[fg=#D8A657]%Y-%m-%d #[fg=#D8A657]%H:%M "
         '';
       };
     };
