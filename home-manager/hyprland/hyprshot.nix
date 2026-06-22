@@ -4,7 +4,6 @@ with lib;
 with lib.types;
 let
   cfg = config.hyprshot;
-  timeout = 300;
 in
 {
   options.hyprshot = {

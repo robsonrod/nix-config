@@ -4,7 +4,6 @@ with lib;
 with lib.types;
 let
   cfg = config.hyprlock;
-  timeout = 300;
 in
 {
   options.hyprlock = {
