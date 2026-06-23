@@ -37,7 +37,7 @@ in
       };
     };
 
-    home.file.".config/nvim".source = inputs.neovim-config;
+    #home.file.".config/nvim".source = inputs.neovim-config;
 
   };
 

@@ -21,15 +21,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-config = {
-      url = "git+https://codeberg.org/robsonrod/nvim";
-      flake = false;
-    };
-
+    #    neovim-config = {
+    #      url = "git+https://codeberg.org/robsonrod/nvim";
+    #      flake = false;
+    #    };
 
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, neovim-config, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, home-manager-stable, ... }:
     let
       vars = rec {
         user = "robson";
@@ -49,7 +48,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules neovim-config;
+          inherit inputs nixpkgs nixpkgs-stable nixos-hardware home-manager home-manager-stable vars home-modules;
         }
       );
 
