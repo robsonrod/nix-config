@@ -147,13 +147,12 @@ end)
 --------------------------------------------------
 
 -- Apps
-hl.bind(mod .. " + T", hl.dsp.exec_cmd("GTK_IM_MODULE=simple " .. terminal))
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd("GTK_IM_MODULE=simple " .. terminal))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(browser))
-hl.bind(mod .. " + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(mod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mod .. " + M", hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + ALT + R", hl.dsp.exec_cmd(run_app))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd(terminal .. " -e nvim"))
-hl.bind(mod .. " + E", hl.dsp.exec_cmd("emacs"))
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
 hl.bind(mod .. " + P", hl.dsp.exec_cmd("wofi-projects"))
 
