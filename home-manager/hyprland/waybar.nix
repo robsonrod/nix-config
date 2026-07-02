@@ -20,7 +20,7 @@ in
       settings = [
         {
           layer = "top";
-          position = "top";
+          position = "bottom";
           height = 34;
           spacing = 4;
 
