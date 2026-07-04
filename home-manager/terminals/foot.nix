@@ -37,9 +37,9 @@ in
           colors-dark = {
             inherit alpha blur;
             foreground = "d4be98";
-            background = "1d2021";
+            background = "141617";
 
-            regular0 = "1d2021";
+            regular0 = "141617";
             regular1 = "ea6962";
             regular2 = "a9b665";
             regular3 = "d8a657";
@@ -48,7 +48,7 @@ in
             regular6 = "89b482";
             regular7 = "d4be98";
 
-            bright0 = "928374";
+            bright0 = "5a524c";
             bright1 = "ea6962";
             bright2 = "a9b665";
             bright3 = "d8a657";
@@ -57,13 +57,13 @@ in
             bright6 = "89b482";
             bright7 = "ddc7a1";
 
-            selection-foreground = "1d2021";
+            selection-foreground = "141617";
             selection-background = "d4be98";
 
-            search-box-no-match = "1d2021 ea6962";
+            search-box-no-match = "141617 ea6962";
             search-box-match = "d4be98 928374";
 
-            jump-labels = "1d2021 d8a657";
+            jump-labels = "141617 d8a657";
             urls = "7daea3";
           };
 
