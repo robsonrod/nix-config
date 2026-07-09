@@ -22,7 +22,7 @@ in
           <name>Open Terminal Here</name>
           <submenu></submenu>
           <unique-id>1234567890123456-1</unique-id>
-          <command>ghostty --working-directory=%f</command>
+          <command>foot --working-directory=%f</command>
           <description>Open terminal in selected directory</description>
           <patterns>*</patterns>
           <directories/>
@@ -33,7 +33,7 @@ in
           <name>Edit with Neovim</name>
           <submenu></submenu>
           <unique-id>1234567890123456-2</unique-id>
-          <command>ghostty nvim %f</command>
+          <command>foot nvim %f</command>
           <description>Edit file with Neovim</description>
           <patterns>*</patterns>
           <text-files/>

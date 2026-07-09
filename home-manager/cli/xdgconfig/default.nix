@@ -50,7 +50,7 @@ in {
       desktopEntries.nvim = {
         name = "nvim";
         genericName = "TextEditor";
-        exec = "ghostty -e nvim %u";
+        exec = "foot -e nvim %u";
         terminal = false;
         type = "Application";
         categories = [ "Development" ];
@@ -104,7 +104,7 @@ in {
           "x-scheme-handler/https" = [ "firefox.desktop" ];
 
           # Terminal apps
-          "application/x-terminal-emulator" = [ "com.mitchellh.ghostty.desktop" ];
+          "application/x-terminal-emulator" = [ "foot" ];
 
           # Documents
           "application/pdf" = [ "pdf.desktop" ];

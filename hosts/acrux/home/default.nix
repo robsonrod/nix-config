@@ -50,6 +50,7 @@
   };
 
   sioyek.enable = true;
+  zathura.enable = true;
   nsxiv.enable = true;
   firefox.enable = true;
   chromium.enable = true;
