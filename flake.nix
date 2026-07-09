@@ -32,7 +32,7 @@
     let
       vars = rec {
         user = "robson";
-        terminal = "ghostty";
+        terminal = "foot";
         editor = "nvim";
         dotfiles = ./dotfiles;
 
