@@ -4,7 +4,7 @@ with lib;
 with lib.types;
 let
   cfg = config.foot;
-  alpha = 0.9;
+  alpha = 1;
   blur = "yes";
 in
 {
@@ -35,7 +35,7 @@ in
           };
 
           colors-dark = {
-            inherit alpha blur;
+            #inherit alpha blur;
             foreground = "d4be98";
             background = "141617";
 
