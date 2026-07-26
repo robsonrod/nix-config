@@ -93,6 +93,8 @@ in
             --glob "!**/node_modules/*" \
             --glob "!**/.venv/*"
         '
+
+	eval "$(envocado init zsh)"
       '';
 
       shellAliases = {
