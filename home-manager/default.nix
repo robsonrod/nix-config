@@ -6,6 +6,7 @@
     ./configs
     ./browsers/chrome.nix
     ./browsers/chromium.nix
+    ./browsers/brave.nix
     ./browsers/firefox.nix
     ./browsers/nyxt.nix
     ./browsers/librewolf.nix

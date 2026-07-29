@@ -54,6 +54,7 @@
   nsxiv.enable = true;
   firefox.enable = true;
   chromium.enable = true;
+  brave-origin.enable = true;
   foot.enable = true;
   fastfetch.enable = true;
   theme.enable = true;

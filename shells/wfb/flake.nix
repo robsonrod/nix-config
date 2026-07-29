@@ -33,6 +33,7 @@
               rsync
               tmux
               tigervnc
+	      snx-rs
             ];
 
             shellHook = ''

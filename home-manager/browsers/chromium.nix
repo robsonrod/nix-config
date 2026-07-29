@@ -24,9 +24,6 @@ in
           { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # SponsorBlock
           { id = "kceglpglilklghkgofolieongaolnaob"; } # Cookie AutoDelete
         ];
-        commandLineArgs = [
-          "--disable-features=WebRtcAllowInputVolumeAdjustment"
-        ];
       };
     };
 
