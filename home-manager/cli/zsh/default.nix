@@ -202,7 +202,18 @@ in
         '';
       };
 
-      plugins = [ ];
+      plugins = [ 
+      {
+          name = "robsonrod/git-worktree-zsh-plugin";
+          file = "git-worktree.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "robsonrod";
+	    repo = "git-worktree-zsh-plugin";
+            rev = "1f2a711355e12eec67ba119b817b4f82efca8715";
+            sha256 = "sha256-oFilifJUoqXujkJ+03op4Izf9B8R+oVtwRIrvZIahWw=";
+          };
+        }
+      ];
     };
 
     home.sessionVariables = {
