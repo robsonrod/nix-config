@@ -23,6 +23,7 @@
     ./hwinfo
     ./xdgconfig
     ./others
+    ./envocado
   ];
 
 }
