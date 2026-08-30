@@ -44,7 +44,7 @@ in
     };
 
     services.interception-tools = {
-      enable = true;
+      enable = false;
       plugins = [
         pkgs.interception-tools-plugins.caps2esc
       ];
