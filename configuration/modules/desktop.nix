@@ -7,7 +7,6 @@
       alsa-utils
       cacert
       curl
-      font-manager
       libinput-gestures
       libnotify
       libcamera

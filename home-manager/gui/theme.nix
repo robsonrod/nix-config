@@ -29,20 +29,21 @@ in {
       dconf
       dconf-editor
       adwaita-icon-theme
-      gruvbox-material-gtk-theme
+      gruvbox-dark-gtk
+      gruvbox-dark-icons-gtk
     ];
 
     gtk = {
       enable = true;
 
       theme = {
-        name = "Gruvbox-Material-Dark-HIDPI";
-        package = pkgs.gruvbox-material-gtk-theme;
+        name = "gruvbox-dark";
+        package = pkgs.gruvbox-dark-gtk;
       };
 
       iconTheme = {
-        name = "Gruvbox-Material-Dark";
-        package = pkgs.gruvbox-material-gtk-theme;
+        name = "oomox-gruvbox-dark";
+        package = pkgs.gruvbox-dark-icons-gtk;
       };
 
       cursorTheme = {
