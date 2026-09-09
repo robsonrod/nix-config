@@ -43,6 +43,10 @@ in
       ];
     };
 
+    services.udev.extraRules = ''
+	    KERNEL=="hidraw*", ATTRS{idVendor}=="fc32", ATTRS{idProduct}=="0287", GROUP="input", MODE="0660"
+  '';
+
     services.interception-tools = {
       enable = false;
       plugins = [

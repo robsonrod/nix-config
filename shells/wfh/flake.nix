@@ -1,74 +1,69 @@
 {
-  description = "A Nix-flake-based work environment";
+  description = "Ambiente VS Code + Markdown + PDF";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    snx-rs-5 = {
-      url = "github:ancwrd1/snx-rs/v4.9.0";
-      flake = false;
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, snx-rs-5 }@inputs:
+  outputs = { self, nixpkgs }:
     let
-      supportedSystems = [
+      systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
 
-      forEachSupportedSystem = f:
-        nixpkgs.lib.genAttrs supportedSystems (system:
-          f {
-            inherit system;
-            pkgs = import nixpkgs {
-              inherit system;
-            };
-          });
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs, system }:
+      devShells = forAllSystems (system:
         let
-          snx-rs-v4 = pkgs.rustPlatform.buildRustPackage {
-            pname = "snx-rs";
-            version = "4.9.0";
+          pkgs = import nixpkgs {
+            inherit system;
 
-            src = snx-rs-5;
-
-            cargoLock = {
-              lockFile = "${snx-rs-5}/Cargo.lock";
-              outputHashes = {
-                "isakmp-0.1.0" = "sha256-ucF1D1frzZ3By8kn1yj+SBFfwiLvpTUKXf/sl3dt564=";
-              };
+            config = {
+              allowUnfree = true;
             };
+          };
 
-            nativeBuildInputs = with pkgs; [
-              pkg-config
-              rustc
-              cargo
-            ];
-
-            buildInputs = with pkgs; [
-              openssl
-              dbus
-              gtk4
+          vscode = pkgs.vscode-with-extensions.override {
+            vscodeExtensions = with pkgs.vscode-extensions; [
+	      yzane.markdown-pdf
+              yzhang.markdown-all-in-one
             ];
           };
+
+          python = pkgs.python3.withPackages (ps: [
+            ps.weasyprint
+          ]);
+
+          fonts = [
+            pkgs.noto-fonts
+            pkgs.noto-fonts-cjk-sans
+            pkgs.noto-fonts-color-emoji
+          ];
         in
         {
-          default = pkgs.mkShellNoCC {
-            packages = with pkgs; [
-              self.formatter.${system}
-              snx-rs-v4
-            ];
+          default = pkgs.mkShell {
+            packages = [
+              vscode
+              pkgs.chromium
+              pkgs.pandoc
+              python
+            ] ++ fonts;
 
             shellHook = ''
-              echo "  Direnv ativo neste shell"
-              echo "  Ambiente de trabalho ativo"
+              export MARKDOWN_PDF_CHROMIUM="${pkgs.chromium}/bin/chromium"
+
+              echo
+              echo "Markdown PDF Environment"
+              echo "────────────────────────"
+              echo "VS Code:    $(code --version | head -n1)"
+              echo "Chromium:   $(chromium --version)"
+              echo "Pandoc:     $(pandoc --version | head -n1)"
+              echo "WeasyPrint: $(weasyprint --version)"
+              echo
             '';
           };
         });
-
-      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }
