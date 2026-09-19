@@ -9,6 +9,7 @@
       ./modules/user.nix
       ./modules/basecli.nix
       ./modules/desktop.nix
+      ./modules/docker.nix
       ./modules/audio.nix
       ./modules/bluetooth.nix
       ./modules/fingerprint.nix

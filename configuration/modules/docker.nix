@@ -1,39 +1,41 @@
-{ config, options, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
-with lib.types;
-let
-  cfg = config.modules.docker;
 
-  myDockerNuke = pkgs.writeShellScriptBin "docker-nuke" ''
-    docker stop $(docker ps -aq)
-    docker rm $(docker ps -aq)
+let
+  cfg = config.docker;
+
+  docker-nuke = pkgs.writeShellScriptBin "docker-nuke" ''
+    set -e
+
+    containers=$(docker ps -aq)
+
+    if [ -n "$containers" ]; then
+      docker stop $containers
+      docker rm $containers
+    fi
+
     docker network prune -f
-    docker rmi -f $(docker images --filter dangling=true -qa)
-    docker volume rm $(docker volume ls --filter dangling=true -q)
-    docker rmi -f $(docker images -qa)
+    docker volume prune -f
+    docker image prune -af
   '';
 
 in
 {
-  options.modules.docker = {
-    enable = mkOption {
-      type = bool;
-      default = false;
-    };
-  };
+  options.docker.enable = mkEnableOption "Docker";
 
   config = mkIf cfg.enable {
     virtualisation.docker = {
       enable = true;
       enableOnBoot = true;
-      autoPrune.enable = true;
+
+      autoPrune = {
+        enable = true;
+      };
     };
 
-    # Add docker extensions.
     environment.systemPackages = [
-      myDockerNuke
-      pkgs.docker-compose
+      docker-nuke
     ];
   };
 }

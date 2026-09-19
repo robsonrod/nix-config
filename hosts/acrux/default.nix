@@ -17,4 +17,5 @@
   nh.enable = true;
   cpu.intel.enable = true;
   camera.enable = true;
+  docker.enable = true;
 }
