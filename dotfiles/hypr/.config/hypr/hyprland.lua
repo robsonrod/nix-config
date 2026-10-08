@@ -1,5 +1,8 @@
 local mod = "SUPER"
 
+local monitor1 =  "eDP-1"
+local monitor2 =  "DP-3"
+
 local terminal = "foot"
 local fileManager = "thunar"
 local browser = "brave"
@@ -113,8 +116,8 @@ hl.config({
 --------------------------------------------------
 -- MONITORS
 --------------------------------------------------
-hl.monitor({ output = "eDP-1", mode = "3840x2400@60", position = "0x0", scale = "2" })
-hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "1920x0", scale = "1" })
+hl.monitor({ output = monitor1, mode = "3840x2400@60", position = "0x0", scale = "2" })
+hl.monitor({ output = monitor2, mode = "1920x1080@60", position = "1920x0", scale = "1" })
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 
 --------------------------------------------------
@@ -205,6 +208,29 @@ hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind("CONTROL + ALT + right", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind("CONTROL + ALT + left", hl.dsp.focus({ workspace = "m-1" }))
+
+--------------------------------------------------
+-- WORKSPACES 
+--------------------------------------------------
+--  workspaces 1 a 5
+for i = 1, 5 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = monitor1,
+	persistent = false,
+	default = (i == 1),
+    })
+end
+
+--  workspaces 6 a 10
+for i = 6, 10 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = monitor2,
+	persistent = false,
+	default = (i == 6),
+    })
+end
 
 --------------------------------------------------
 -- SPECIAL WORKSPACE
