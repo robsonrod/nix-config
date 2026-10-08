@@ -29,6 +29,7 @@ in
       xkb = {
         layout = "${cfg.kbdLayout}";
         variant = "${cfg.kbdVariant}";
+	options = "grp:win_space_toggle";
       };
     };
 

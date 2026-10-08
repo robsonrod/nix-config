@@ -11,7 +11,7 @@
   fingerprint.enable = true;
   intel.enable = true;
   keyboard = {
-    kbdLayout = "br";
+    kbdLayout = "pt,us";
     kbdConsole = "br-abnt2";
   };
   nh.enable = true;
