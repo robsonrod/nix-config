@@ -3,16 +3,16 @@
 let
   envocado = pkgs.rustPlatform.buildRustPackage (finalAttrs: {
     pname = "envocado";
-    version = "0.1.0";
+    version = "2.0.0";
 
     src = pkgs.fetchFromCodeberg {
       owner = "robsonrod";
       repo = "envocado";
-      sha256 = "sha256-vv8ZCqfTcqaUeU8gl3RhHy6SMgQpHgWv6jH7yUzxVD8=";
-      rev = "main";
+      sha256 = "sha256-9PxA2AKuQE04Ij3GNbggYGa+2QLtn0M8E73Pq9f8U78=";
+      rev = "v2.0.0";
     };
 
-    cargoHash = "sha256-6qkA9VsPQIWEwA/PWiXaILw0ZjV4Is7Uo5h44oolnrs=";
+    cargoHash = "sha256-79vUGgzARHB5V0isGvBo1RwLHBDiZ1OgqKaUrRzFPxY=";
     doCheck = false;
 
     nativeBuildInputs = [
