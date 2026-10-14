@@ -13,9 +13,8 @@ in
       home-modules
       {
         home = {
-          username = "${vars.user}";
-          homeDirectory = "/home/${vars.user}";
-          packages = [ pkgs.home-manager ];
+          username = vars.user;
+          homeDirectory = vars.home;
           stateVersion = "25.05";
         };
       }

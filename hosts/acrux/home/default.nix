@@ -1,7 +1,6 @@
 { config, pkgs, inputs, vars, ... }:
 {
 
-
   home.sessionPath = [
     "$HOME/.config/bin"
   ];

@@ -7,6 +7,7 @@ let
     { system
     , host
     , home
+    , homeStateVersion
     , hardware ? [ ]
     ,
     }:
@@ -38,8 +39,7 @@ let
               };
 
               users.robson = {
-                home = vars.home;
-
+                home.stateVersion = homeStateVersion;
                 imports = [
                   home
                   home-modules
@@ -56,14 +56,14 @@ in
     system = "x86_64-linux";
     host = ./vm;
     home = ./vm/home.nix;
+    homeStateVersion = "26.05";
   };
 
   acrux = mkHost {
     system = "x86_64-linux";
     host = ./acrux;
-
     home = ./acrux/home;
-
+    homeStateVersion = "26.05";
     hardware = [
       nixos-hardware.nixosModules.common-pc-laptop
       nixos-hardware.nixosModules.common-pc-laptop-ssd
@@ -75,6 +75,7 @@ in
     system = "aarch64-linux";
     host = ./canopus;
     home = ./canopus/home;
+    homeStateVersion = "26.05";
     hardware = [
       nixos-hardware.nixosModules.raspberry-pi-5
     ];

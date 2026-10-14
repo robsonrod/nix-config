@@ -35,11 +35,7 @@
         terminal = "foot";
         editor = "nvim";
         dotfiles = ./dotfiles;
-
-        home = {
-          username = "${user}";
-          stateVersion = "26.05";
-        };
+        home = "/home/${user}";
       };
       home-modules = ./home-manager;
     in
