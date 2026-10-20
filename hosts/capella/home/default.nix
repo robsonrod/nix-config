@@ -17,5 +17,4 @@
   brave-origin.enable = true;
   foot.enable = true;
   mpv.enable = true;
-  calibre.enable = true;
 }

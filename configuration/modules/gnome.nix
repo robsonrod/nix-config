@@ -55,9 +55,6 @@
       # Personalização e administração GNOME
       gnome-tweaks
       gnome-system-monitor
-
-      # Desenvolvimento e ferramentas
-      pkgs.home-manager
     ];
   };
 
