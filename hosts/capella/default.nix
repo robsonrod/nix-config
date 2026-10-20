@@ -14,4 +14,20 @@
   };
   nh.enable = true;
   cpu.intel.enable = true;
+
+  services = {
+    fwupd.enable = true;
+    acpid.enable = true;
+
+    fstrim = {
+      enable = true;
+      interval = "weekly";
+    };
+  };
+
+  system = {
+    stateVersion = "25.11";
+    copySystemConfiguration = false;
+  };
+
 }

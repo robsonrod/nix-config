@@ -14,7 +14,6 @@
       ./modules/fingerprint.nix
       ./modules/security.nix
       ./modules/nixconfig.nix
-      ./modules/misc.nix
       ./modules/keyboard.nix
       ./modules/video/intel.nix
       ./modules/nh.nix
