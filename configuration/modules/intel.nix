@@ -49,15 +49,5 @@ in
         };
       };
 
-
-      #      systemd.services.dell-battery-threshold = {
-      #        description = "Set Dell XPS battery charge thresholds";
-      #        wantedBy = [ "multi-user.target" ];
-      #        serviceConfig = {
-      #          Type = "oneshot";
-      #          ExecStart = "${pkgs.smbios-utils}/bin/smbios-battery-ctl --set-charging-mode custom && ${pkgs.smbios-utils}/bin/smbios-battery-ctl --set-custom-charge-interval 75 80";
-      #        };
-      #      };
-
     };
 }

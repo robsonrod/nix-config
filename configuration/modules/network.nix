@@ -19,8 +19,6 @@ in
       hostName = "${cfg.hostname}";
       networkmanager = {
         enable = true;
-        #dns = "dnsmasq";
-        #dhcp = "internal";
       };
 
       firewall = {

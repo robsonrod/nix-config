@@ -8,14 +8,22 @@ let
     , host
     , home
     , homeStateVersion
+    , user ? vars.user
     , hardware ? [ ]
     ,
     }:
+    let
+      hostVars = vars // {
+        inherit user;
+        home = "/home/${user}";
+      };
+    in
     lib.nixosSystem {
       inherit system;
 
       specialArgs = {
-        inherit inputs system vars;
+        inherit inputs system;
+        vars = hostVars;
 
         stable = import nixpkgs-stable {
           inherit system;
@@ -35,10 +43,11 @@ let
               backupFileExtension = "bkp";
 
               extraSpecialArgs = {
-                inherit inputs vars;
+                inherit inputs;
+                vars = hostVars;
               };
 
-              users.robson = {
+              users.${user} = {
                 home.stateVersion = homeStateVersion;
                 imports = [
                   home
@@ -80,4 +89,17 @@ in
       nixos-hardware.nixosModules.raspberry-pi-5
     ];
   };
+
+  capella = mkHost {
+    system = "x86_64-linux";
+    host = ./capella;
+    home = ./capella/home;
+    homeStateVersion = "26.05";
+    hardware = [
+      nixos-hardware.nixosModules.common-pc-laptop
+      nixos-hardware.nixosModules.common-pc-laptop-ssd
+      nixos-hardware.nixosModules.common-cpu-intel
+    ];
+  };
+
 }

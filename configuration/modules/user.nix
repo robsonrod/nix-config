@@ -1,8 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, vars, ... }:
 {
-  users.users.robson = {
+  users.users.${vars.user} = {
     isNormalUser = true;
-    description = "robson";
+    description = vars.user;
     shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
