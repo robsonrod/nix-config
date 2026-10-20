@@ -95,6 +95,7 @@ in
     host = ./capella;
     home = ./capella/home;
     homeStateVersion = "26.05";
+    user = "tayane";
     hardware = [
       nixos-hardware.nixosModules.common-pc-laptop
       nixos-hardware.nixosModules.common-pc-laptop-ssd
