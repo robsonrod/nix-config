@@ -8,7 +8,7 @@ let
     src = pkgs.fetchFromCodeberg {
       owner = "robsonrod";
       repo = "envocado";
-      sha256 = "sha256-9PxA2AKuQE04Ij3GNbggYGa+2QLtn0M8E73Pq9f8U78=";
+      sha256 = "sha256-fDkChildixcitwdKKCmSS93oxwDxaiQ6NIkWokfnKNo=";
       rev = "v2.0.0";
     };
 
